@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.19)
-project(SxTree)
+project(SxTree CXX)
 
 set(CMAKE_CXX_STANDARD 20)
 
