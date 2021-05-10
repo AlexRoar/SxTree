@@ -144,7 +144,6 @@ namespace SxTree::LexerStruct {
     }
 
     optional<Value> LexerStruct::pValue() {
-        skipChars(skipLine);
         auto getExpr = [=](const char *errMsg) -> optional<Value> {
             auto expr = pExpression();
             if (!expr.has_value()) {
@@ -154,6 +153,7 @@ namespace SxTree::LexerStruct {
             return Value(expr.value(), true);
         };
 
+        skipChars(skipLine);
         if (expectWord("skip"))
             return getExpr("Expected expression directly after 'skip' keyword");
 
