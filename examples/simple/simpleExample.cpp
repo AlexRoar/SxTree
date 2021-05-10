@@ -15,12 +15,16 @@
 #include "IOTools/FileRead.h"
 
 using std::string;
+using SxTree::Lexer::Lexer;
 
 int main() {
-    SxTree::Lexer::Lexer lexer = SxTree::Lexer::coreLexer;
+    Lexer lexer = SxTree::Lexer::coreLexer;
 
     string code = SxTree::IO::readFullFile("code.txt");
     lexer.parse(code);
+
+    for(const auto& err: lexer.getErrors())
+        printf("%zu:%s\n", err.position, err.msg);
 
     for(const auto& lex: lexer.getLexemes()){
         printf("%s ", lex.to_string().c_str());

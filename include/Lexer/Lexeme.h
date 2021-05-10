@@ -106,13 +106,17 @@ namespace SxTree::Lexer {
          */
         void setType(const string *pString) noexcept;
 
+        /**
+         * Standard to_string function
+         * @return string representation
+         */
         [[nodiscard]] string to_string() const;
 
-        const string *getType() const;
+        [[nodiscard]] const string *getType() const;
 
-        size_t getStart() const;
+        [[nodiscard]] size_t getStart() const;
 
-        size_t getSize() const;
+        [[nodiscard]] size_t getSize() const;
     };
 }
 

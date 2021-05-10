@@ -167,7 +167,7 @@ namespace SxTree::LexerStruct {
             errors.push_back({"RegExpr can't be empty", lexerStructPos.posNow});
             return optional<Value>();
         }
-        string stringReg = std::regex_replace(current->str(), std::regex(R"(\\")"), "\"");
+        string stringReg = current->str();/*std::regex_replace(current->str(), std::regex(R"(\\")"), "\"");*/
         stringReg = stringReg.substr(1, current->str().size() - 2);
         lexerStructPos.moveForward(current->str().size());
         try {

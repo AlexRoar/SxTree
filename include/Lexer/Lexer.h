@@ -42,6 +42,8 @@ namespace SxTree::Lexer {
         void parse(const string& parseContent);
 
         const vector<Lexeme>& getLexemes();
+
+        const vector<LexerError> &getErrors() const;
     };
 }
 

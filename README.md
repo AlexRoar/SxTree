@@ -66,6 +66,21 @@ const Lexer coreLexer({
     });
 ```
 
+Here's an example that can be found in `/examples/simple`
+
+```python
+def someFunction() {
+    "Hello world"
+}
+```
+
+```bash
+Lexeme<def[0-3]> Lexeme<identifier[4-16]> Lexeme<leftPa[16-17]>
+Lexeme<rightPa[17-18]> Lexeme<leftBlock[19-20]> Lexeme<lineBreak[20-21]>
+Lexeme<margin[21-25]> Lexeme<margin[25-29]> Lexeme<string[29-42]>
+Lexeme<lineBreak[42-43]> Lexeme<rightBlock[43-44]>
+```
+
 ## Parser
 
 In progress

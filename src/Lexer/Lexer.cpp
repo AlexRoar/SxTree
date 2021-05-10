@@ -48,4 +48,8 @@ namespace SxTree::Lexer {
     const vector<Lexeme> &Lexer::getLexemes() {
         return lexemes;
     }
+
+    const vector<LexerError> &Lexer::getErrors() const {
+        return errors;
+    }
 }

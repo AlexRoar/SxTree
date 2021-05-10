@@ -23,10 +23,21 @@ namespace SxTree::Lexer::Generator {
             #include "lexerStructTemplateHeader.h.template"
 
     string getCompleteLexerStruct(const SxTree::LexerStruct::LexerStruct &structure) {
-        return std::regex_replace(contents, std::regex(R"(INSERT)"), structure.generateLexerStruct());
+        string newContent = contents;
+        return replaceFirstOccurrence(newContent, "INSERT", structure.generateLexerStruct());
     }
 
     string getHeader() {
         return contentsHeader;
+    }
+
+    std::string replaceFirstOccurrence(
+            std::string& s,
+            const std::string& toReplace,
+            const std::string& replaceWith)
+    {
+        std::size_t pos = s.find(toReplace);
+        if (pos == std::string::npos) return s;
+        return s.replace(pos, toReplace.length(), replaceWith);
     }
 }
