@@ -25,6 +25,8 @@ namespace SxTree::IO {
      * @return file contents
      */
     string readFullFile(const char *fileName);
+
+    void dumpFile(const char *fileName, const string& content);
 }
 
 #endif //SXTREE_FILEREAD_H

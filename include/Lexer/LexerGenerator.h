@@ -1,0 +1,25 @@
+
+/*
+ * =================================================
+ * Copyright © 2021
+ * Aleksandr Dremov
+ *
+ * This code has been written by Aleksandr Dremov
+ * Check license agreement of this project to evade
+ * possible illegal use.
+ * =================================================
+ */
+
+#ifndef SXTREE_LEXERGENERATOR_H
+#define SXTREE_LEXERGENERATOR_H
+
+#include <string>
+#include "LexerStruct.h"
+
+namespace SxTree::Lexer::Generator {
+    using std::string;
+
+    [[maybe_unused]] string getCompleteLexerStruct(const LexerStruct::LexerStruct& structure);
+}
+
+#endif //SXTREE_LEXERGENERATOR_H

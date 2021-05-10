@@ -114,7 +114,7 @@ namespace SxTree::LexerStruct {
                 break;
         }
 
-        switch (expr.type){
+        switch (expr.type) {
             case Expression::EXP_ONE: {
                 if (!expectWord(")")) {
                     errors.push_back({"Expected ')' after expression", lexerStructPos.posNow});
@@ -157,7 +157,7 @@ namespace SxTree::LexerStruct {
         if (expectWord("skip"))
             return getExpr("Expected expression directly after 'skip' keyword");
 
-        std::regex rgx("([\"'])(?:(?=(\\\\?))\\2.)*?\\1");
+        std::regex rgx(R"((["'])(?:(?=(\\?))\2.)*?\1)");
         std::sregex_iterator current(lexerStructPos.begin(), lexerStructPos.end(), rgx);
         std::sregex_iterator end;
 //        printf("%s\n", current->str().c_str());
@@ -171,8 +171,9 @@ namespace SxTree::LexerStruct {
         stringReg = stringReg.substr(1, current->str().size() - 2);
         lexerStructPos.moveForward(current->str().size());
         try {
-            return Value(regex(stringReg));
-        } catch (std::regex_error e) {
+            return Value(stringReg);
+        } catch (const std::regex_error &e) {
+            errors.push_back({"Wrong regular expression detected", lexerStructPos.posNow});
             errors.push_back({e.what(), lexerStructPos.posNow});
             return optional<Value>();
         }
@@ -180,19 +181,6 @@ namespace SxTree::LexerStruct {
 
     bool LexerStruct::isEnded() const noexcept {
         return lexerStructPos.isEnded();
-    }
-
-    void LexerStruct::skipWhitespaces() noexcept {
-        skipChar(' ');
-    }
-
-    void LexerStruct::skipChar(char c) {
-        while (!isEnded()) {
-            if (getChar() == c)
-                lexerStructPos.moveForward(1);
-            else
-                break;
-        }
     }
 
     void LexerStruct::skipChars(const std::set<char> &chars) {
@@ -226,4 +214,47 @@ namespace SxTree::LexerStruct {
     const decltype(LexerStruct::errors) &LexerStruct::getErrors() {
         return errors;
     }
+
+    string LexerStruct::generateLexerStruct() const noexcept {
+        string output = "{\n";
+        for (const auto &rule: rules) {
+            output += "\t{R\"(" + rule.id + ")\" , " + generateExpression(rule.expression) + "},\n";
+        }
+
+        output += "}";
+        return output;
+    }
+
+    static string valTypeString(Value::ValueType type) {
+        switch (type) {
+            case Value::VAL_EXPRESSION:
+                return "Value::VAL_EXPRESSION";
+            case Value::VAL_REGEXP:
+                return "Value::VAL_REGEXP";
+            case Value::VAL_SKIP:
+                return "Value::VAL_SKIP";
+        }
+    }
+
+    static string exprTypeString(Expression::ExprType type) {
+        switch (type) {
+            case Expression::EXP_ONE:
+                return "Expression::EXP_ONE";
+            case Expression::EXP_ANY:
+                return "Expression::EXP_ANY";
+            case Expression::EXP_OPTIONAL:
+                return "Expression::EXP_OPTIONAL";
+        }
+    }
+
+    string LexerStruct::generateExpression(const Expression &exp) const {
+        string output = "{{";
+        for (const auto &val: exp.possible) {
+            output += "{ R\"(" + val.regexString + ")\", " + valTypeString(val.type) + "," +
+                    generateExpression(val.expr) + "},";
+        }
+        output += "}, " + exprTypeString(exp.type) + "}";
+        return output;
+    }
+
 }

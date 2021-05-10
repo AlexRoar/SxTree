@@ -30,8 +30,6 @@ namespace SxTree::LexerStruct {
         vector<Structure::Rule> rules;
         vector<Structure::ParseError> errors;
 
-        void skipWhitespaces() noexcept;
-
         [[nodiscard]] bool isEnded() const noexcept;
 
         optional <Rule> pRule();
@@ -39,8 +37,6 @@ namespace SxTree::LexerStruct {
         optional <Expression> pExpression();
 
         optional <Value> pValue();
-
-        void skipChar(char c);
 
         void skipChars(const std::set<char> &chars);
 
@@ -53,6 +49,10 @@ namespace SxTree::LexerStruct {
         void parseRules() noexcept;
 
         const decltype(LexerStruct::errors)& getErrors();
+
+        [[nodiscard]] string generateLexerStruct() const noexcept;
+
+        [[nodiscard]] string generateExpression(const Expression &exp) const;
     };
 }
 

@@ -46,6 +46,10 @@ namespace SxTree::LexerStruct::Structure {
 
         optional<Lexeme> parse(LexerStructPos& lexer) const noexcept;
         optional<Lexeme> parseSkipping(LexerStructPos& lexer) const noexcept;
+
+        Expression();
+
+        Expression(vector<Value>  possibleNew, ExprType typeNew);
     };
 
     struct Value{
@@ -55,12 +59,15 @@ namespace SxTree::LexerStruct::Structure {
             VAL_SKIP
         };
         regex strRegex;
+        string regexString;
         ValueType type;
         Expression expr;
 
-        explicit Value(regex  reg);
+        explicit Value(const string& regex);
 
-        explicit Value(Expression  e, bool skip=false);
+        Value(Expression  e, bool skip=false);
+
+        Value(const string&& regexStringNew, ValueType typeNew, const Expression&& exprNew);
 
         optional<Lexeme> parse(LexerStructPos& lexer) const noexcept;
     private:
@@ -68,7 +75,6 @@ namespace SxTree::LexerStruct::Structure {
     };
 
     struct Rule {
-
         string id;
         Expression expression;
 

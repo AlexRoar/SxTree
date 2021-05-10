@@ -11,10 +11,17 @@
 
 #include <string>
 #include <cstdio>
+#include <IOTools/FileRead.h>
+
 #include "Exceptions/IOExceptions.h"
 
 namespace SxTree::IO {
 
+    /**
+     * @throws OpenFileException
+     * @param fileName
+     * @return
+     */
     std::string readFullFile(const char *fileName) {
         auto inputFile = fopen(fileName, "rb");
         if (!inputFile)
@@ -28,6 +35,21 @@ namespace SxTree::IO {
         fclose(inputFile);
 
         return input;
+    }
+
+    /**
+     * @throws OpenFileException
+     * @param fileName
+     * @param content
+     */
+    void dumpFile(const char *fileName, const string &content) {
+        auto inputFile = fopen(fileName, "wb");
+        if (!inputFile)
+            throw OpenFileException();
+
+        fwrite(content.c_str(), 1, content.size(), inputFile);
+
+        fclose(inputFile);
     }
 
 }
