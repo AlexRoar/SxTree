@@ -31,3 +31,4 @@ Several main types of rules are used:
 - `'('P [, P]*')'`  – sequence of parts, all parts must be met one by one.
 - `'['P [, P]*']'`  – any of listed parts.
 - `'?['P [, P]*']'` – any of listed parts or none.
+- `skip+Exp`        - get expression and skip it.
