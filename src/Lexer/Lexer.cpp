@@ -13,7 +13,11 @@
 #include "Lexer/Lexer.h"
 
 namespace SxTree::Lexer {
-    class Lexer{
+    Lexer::Lexer(const vector<Rule> &rulesNew) :
+            rules(rulesNew),
+            lexemes() {}
 
-    };
+    void Lexer::parse(const string& parseContent) {
+        content = parseContent;
+    }
 }

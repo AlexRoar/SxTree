@@ -22,6 +22,7 @@
 #include "Lexer/LexerStructPos.h"
 
 namespace SxTree::LexerStruct::Structure {
+    using namespace SxTree::Lexer;
     using std::string;
     using std::vector;
     using std::regex;

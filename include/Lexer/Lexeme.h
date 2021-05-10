@@ -15,7 +15,7 @@
 #include <cstdlib>
 #include <string>
 
-namespace SxTree::LexerStruct {
+namespace SxTree::Lexer {
     using std::string;
     class Lexeme {
         /**

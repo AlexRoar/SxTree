@@ -11,20 +11,20 @@
  */
 
 #include <cassert>
-#include <string>
 #include <utility>
 #include <vector>
 #include <regex>
 #include <optional>
 #include "Lexer/Lexeme.h"
-#include "Lexer/LexerStruct.h"
 #include "Lexer/StructureUnits.h"
 
 namespace SxTree::LexerStruct {
+    using namespace SxTree::LexerStruct::Structure;
     using std::string;
     using std::vector;
     using std::regex;
     using std::optional;
+    using SxTree::Lexer::Lexeme;
 
     const string tmpLexType("TMP");
 

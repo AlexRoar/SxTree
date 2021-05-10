@@ -18,6 +18,7 @@
 using std::string;
 using SxTree::LexerStruct::LexerStruct;
 using SxTree::Lexer::Generator::getCompleteLexerStruct;
+using SxTree::Lexer::Generator::getHeader;
 
 int main(int argc, const char* const* argv){
     cxxopts::Options options("SxTree Lexer Generator", "Generate lexer file from lexer syntax");
@@ -25,6 +26,7 @@ int main(int argc, const char* const* argv){
     options.add_options()
             ("i,input" , "Input file [required]", cxxopts::value<string>())
             ("o,output", "Output file", cxxopts::value<string>()->default_value("lexer.cpp"))
+            ("p,outputHeader", "Output header file", cxxopts::value<string>()->default_value("lexer.h"))
             ("q,quiet" , "Quiet mode (do not show errors)", cxxopts::value<bool>()->default_value("false"))
             ("h,help", "Print usage");
 
@@ -35,10 +37,11 @@ int main(int argc, const char* const* argv){
         return EXIT_SUCCESS;
     }
 
-    string inputFile, outputFile;
+    string inputFile, outputFile, outputFileHeader;
     try {
         inputFile = result["input"].as<std::string>();
         outputFile = result["output"].as<std::string>();
+        outputFileHeader = result["outputHeader"].as<std::string>();
     } catch (const cxxopts::option_has_no_value_exception& exception) {
         std::cout << "Required arguments are not specified\n" << options.help() << std::endl;
         return EXIT_FAILURE;
@@ -62,6 +65,7 @@ int main(int argc, const char* const* argv){
     }
 
     SxTree::IO::dumpFile(outputFile.c_str(), getCompleteLexerStruct(lexerStruct));
+    SxTree::IO::dumpFile(outputFileHeader.c_str(), getHeader());
 
     return EXIT_SUCCESS;
 }

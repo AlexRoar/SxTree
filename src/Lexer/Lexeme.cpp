@@ -13,7 +13,7 @@
 #include <string>
 #include "Lexer/Lexeme.h"
 
-namespace SxTree::LexerStruct {
+namespace SxTree::Lexer {
     using std::string;
 
     Lexeme::Lexeme(const Lexeme &other) = default;

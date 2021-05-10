@@ -10,11 +10,27 @@
  * =================================================
  */
 
-#ifndef SXTREE_LEXER_H
-#define SXTREE_LEXER_H
+#ifndef SXTREE_LEXERFILE_H
+#define SXTREE_LEXERFILE_H
+
+#include <vector>
+#include "Lexer/Lexeme.h"
+#include "Lexer/LexerStruct.h"
+#include "Lexer/StructureUnits.h"
 
 namespace SxTree::Lexer {
+    using std::vector;
+    using namespace SxTree::LexerStruct::Structure;
 
+    class Lexer {
+        string content;
+        vector<Rule>   rules;
+        vector<Lexeme> lexemes;
+    public:
+        explicit Lexer(const vector<Rule>& rulesNew);
+
+        void parse(const string& parseContent);
+    };
 }
 
-#endif //SXTREE_LEXER_H
+#endif //SXTREE_LEXERFILE_H

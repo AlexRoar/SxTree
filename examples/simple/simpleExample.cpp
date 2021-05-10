@@ -1,4 +1,4 @@
-R"(/*
+/*
  * =================================================
  * Copyright © 2021
  * Aleksandr Dremov
@@ -9,13 +9,8 @@ R"(/*
  * =================================================
  */
 
-#include <vector>
-#include "Lexer/LexerStruct.h"
-#include "Lexer/Lexer.h"
+#include "lexer.h"
 
-namespace SxTree::Lexer {
-    using namespace SxTree::LexerStruct;
-
-    const Lexer coreLexer(INSERT);
+int main() {
 }
-)";
+

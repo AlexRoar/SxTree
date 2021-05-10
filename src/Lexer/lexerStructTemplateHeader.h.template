@@ -16,6 +16,6 @@ R"(/*
 namespace SxTree::Lexer {
     using namespace SxTree::LexerStruct;
 
-    const Lexer coreLexer(INSERT);
+    extern const Lexer coreLexer;
 }
 )";
