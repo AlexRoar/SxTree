@@ -24,6 +24,7 @@ namespace SxTree::Lexer {
 
     class Lexer {
         string content;
+        LexerStructPos lexPos;
         vector<Rule>   rules;
         vector<Lexeme> lexemes;
     public:
