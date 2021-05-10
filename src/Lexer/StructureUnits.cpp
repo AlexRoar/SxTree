@@ -47,8 +47,8 @@ namespace SxTree::LexerStruct {
         if (iter == end || iter->position() != 0)
             return std::optional<Lexeme>();
 
-        auto parsedLexeme = Lexeme(lexer.getStorage(), &tmpLexType, lexer.getPosNow(), iter->size());
-        lexer.moveForward(iter->size());
+        auto parsedLexeme = Lexeme(lexer.getStorage(), &tmpLexType, lexer.getPosNow(), iter->str().size());
+        lexer.moveForward(iter->str().size());
         return parsedLexeme;
     }
 
@@ -69,27 +69,58 @@ namespace SxTree::LexerStruct {
             expr(exprNew) {
     }
 
-    optional<Lexeme> Structure::Expression::parse(LexerStructPos &lexer) const noexcept {
-        assert((!possible.empty()) && "Can't have empty rules");
+    optional <Lexeme> Structure::Expression::exprParseOneType(LexerStructPos &lexer) const {
         auto firstLexeme = possible[0].parse(lexer);
         if (!firstLexeme.has_value())
-            return std::optional<Lexeme>();
+            return optional<Lexeme>();
 
         Lexeme &lexeme = firstLexeme.value();
         for (auto val = ++(possible.begin()); val != possible.end(); ++val) {
             auto tryParse = val->parse(lexer);
             if (!tryParse.has_value())
-                return std::optional<Lexeme>();
+                return optional<Lexeme>();
             lexeme.connect(tryParse.value(), &tmpLexType);
         }
+        if (lexeme == Lexeme::zero())
+            return optional<Lexeme>();
+        return optional<Lexeme>(std::move(lexeme));
+    }
 
-        return std::optional<Lexeme>(std::move(lexeme));
+    optional <Lexeme> Structure::Expression::exprParseAnyType(LexerStructPos &lexer) const {
+        for (const auto & val : possible) {
+            auto tryParse = val.parse(lexer);
+            if (tryParse.has_value()) {
+//                lexer.moveForward(tryParse.value().getSize());
+                return tryParse.value();
+            }
+        }
+        return optional<Lexeme>();
+    }
+
+    optional<Lexeme> Structure::Expression::parse(LexerStructPos &lexer) const noexcept {
+        assert((!possible.empty()) && "Can't have empty rules");
+
+        switch (type) {
+            case EXP_ONE:
+                return exprParseOneType(lexer);
+            case EXP_ANY:
+                return exprParseAnyType(lexer);
+            case EXP_OPTIONAL: {
+                auto parsed = exprParseAnyType(lexer);
+                if (parsed.has_value())
+                    return parsed;
+                return Lexeme::zero();
+            }
+        }
     }
 
     optional<Lexeme> Structure::Expression::parseSkipping(LexerStructPos &lexer) const noexcept {
         assert((!possible.empty()) && "Can't have empty rules");
+        bool found = false;
         for (const auto &val : possible)
-            val.parse(lexer);
+            found |= val.parse(lexer).has_value();
+        if (!found)
+            return std::optional<Lexeme>();
         return std::optional<Lexeme>(Lexeme::zero());
     }
 

@@ -22,5 +22,30 @@ namespace SxTree::Lexer {
         content = parseContent;
         lexPos.storage = &content;
         lexPos.posNow = 0;
+
+        while (!lexPos.isEnded()) {
+            bool resolved = false;
+            for (const auto& rule: rules) {
+                auto lexeme = rule.parse(lexPos);
+                if (lexeme.has_value()){
+                    resolved = true;
+                    lexemes.push_back(std::move(lexeme.value()));
+                    break;
+                }
+            }
+
+            if (!resolved) {
+                addError("Unresolved sequence");
+                break;
+            }
+        }
+    }
+
+    void Lexer::addError(const char *msg) {
+        errors.push_back({msg, lexPos.posNow});
+    }
+
+    const vector<Lexeme> &Lexer::getLexemes() {
+        return lexemes;
     }
 }

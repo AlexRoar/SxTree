@@ -22,15 +22,26 @@ namespace SxTree::Lexer {
     using std::vector;
     using namespace SxTree::LexerStruct::Structure;
 
+    struct LexerError {
+        const char* msg;
+        size_t position;
+    };
+
     class Lexer {
         string content;
         LexerStructPos lexPos;
         vector<Rule>   rules;
         vector<Lexeme> lexemes;
+        vector<LexerError> errors;
+
+        void addError(const char* msg);
+
     public:
         explicit Lexer(const vector<Rule>& rulesNew);
 
         void parse(const string& parseContent);
+
+        const vector<Lexeme>& getLexemes();
     };
 }
 

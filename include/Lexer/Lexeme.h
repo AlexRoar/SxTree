@@ -105,6 +105,14 @@ namespace SxTree::Lexer {
          * @param pString
          */
         void setType(const string *pString) noexcept;
+
+        [[nodiscard]] string to_string() const;
+
+        const string *getType() const;
+
+        size_t getStart() const;
+
+        size_t getSize() const;
     };
 }
 

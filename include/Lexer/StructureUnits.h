@@ -51,6 +51,10 @@ namespace SxTree::LexerStruct::Structure {
         Expression();
 
         Expression(vector<Value>  possibleNew, ExprType typeNew);
+
+        optional <Lexeme> exprParseOneType(LexerStructPos &lexer) const;
+
+        optional <Lexeme> exprParseAnyType(LexerStructPos &lexer) const;
     };
 
     struct Value{

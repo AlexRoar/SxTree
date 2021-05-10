@@ -10,6 +10,7 @@
  */
 
 #include <cassert>
+#include <sstream>
 #include <string>
 #include "Lexer/Lexeme.h"
 
@@ -101,5 +102,23 @@ namespace SxTree::Lexer {
 
     void Lexeme::setType(const string *pString) noexcept{
         type = pString;
+    }
+
+    string Lexeme::to_string() const {
+        std::stringstream ss;
+        ss << "Lexeme<" << (*type) << "[" << start << "-" << (start+size) << "]>";
+        return ss.str();
+    }
+
+    const string *Lexeme::getType() const {
+        return type;
+    }
+
+    size_t Lexeme::getStart() const {
+        return start;
+    }
+
+    size_t Lexeme::getSize() const {
+        return size;
     }
 }

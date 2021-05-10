@@ -1,4 +1,8 @@
-space       = (skip("\s"))
-var         = ("var")
-funcDecl    = ["def", "define"]
-ok          = ("o", ?["k"])
+def         = ("def", ?["\s"])
+let         = ("let")
+assign      = ("=")
+leftPa      = ("\(")
+rightPa     = ("\)")
+statEnd     = (";")
+comma       = (",")
+return      = ("ret")
