@@ -66,7 +66,7 @@ const Lexer coreLexer({
     });
 ```
 
-Here's an example that can be found in `/examples/simple`
+Here's an example that can be found in `/examples/simple`. It is extremely easy to adjust lexer for your needs.
 
 ```python
 def someFunction() {
