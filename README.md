@@ -36,8 +36,10 @@ Several main types of rules are used:
 Tokens parsed from top to bottom – upper statements have higher priority.
 
 ### Lexer generator usage
+
 Generator takes lexer syntax file and generates a file used by SxTree parser further.
 ```bash
+> sxlgen -h
 Generate lexer file from lexer syntax
 Usage:
   SxTree Lexer Generator [OPTION...]
