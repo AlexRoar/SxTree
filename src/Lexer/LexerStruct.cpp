@@ -144,18 +144,18 @@ namespace SxTree::LexerStruct {
     }
 
     optional<Value> LexerStruct::pValue() {
-        auto getExpr = [=](const char *errMsg) -> optional<Value> {
+        auto getExpr = [=](const char *errMsg, bool skip=false) -> optional<Value> {
             auto expr = pExpression();
             if (!expr.has_value()) {
                 errors.push_back({errMsg, lexerStructPos.posNow});
                 return optional<Value>();
             }
-            return Value(expr.value(), true);
+            return Value(expr.value(), skip);
         };
 
         skipChars(skipLine);
         if (expectWord("skip"))
-            return getExpr("Expected expression directly after 'skip' keyword");
+            return getExpr("Expected expression directly after 'skip' keyword", true);
 
         std::regex rgx(R"((["'])(?:(?=(\\?))\2.)*?\1)");
         std::sregex_iterator current(lexerStructPos.begin(), lexerStructPos.end(), rgx);
