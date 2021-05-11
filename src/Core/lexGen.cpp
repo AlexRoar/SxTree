@@ -55,8 +55,8 @@ int main(int argc, const char* const* argv){
         return EXIT_FAILURE;
     }
 
-    LexerStruct lexerStruct(&fullFile);
-    lexerStruct.parseRules();
+    LexerStruct lexerStruct;
+    lexerStruct.parseRules(fullFile);
     if (!(result["quiet"].as<bool>())) {
         printf("errors: %zu\n", lexerStruct.getErrors().size());
         for (auto error: lexerStruct.getErrors()) {

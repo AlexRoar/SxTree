@@ -1,0 +1,7 @@
+skipper       =    (skip("\s"))
+
+margin        =    ["t", "ssss", "ss"]
+
+space         =    (skip("s"))
+
+wordAnyOrNot  =    ("any", "\s", ?[("or", "\s")], "not")

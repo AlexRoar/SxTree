@@ -81,8 +81,6 @@ namespace SxTree::LexerStruct {
                 return optional<Lexeme>();
             lexeme.connect(tryParse.value(), &tmpLexType);
         }
-        if (lexeme == Lexeme::zero())
-            return optional<Lexeme>();
         return optional<Lexeme>(std::move(lexeme));
     }
 

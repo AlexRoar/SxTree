@@ -31,7 +31,6 @@ namespace SxTree::Lexer {
         string content;
         LexerStructPos lexPos;
         vector<Rule>   rules;
-        vector<Lexeme> lexemes;
         vector<LexerError> errors;
 
         void addError(const char* msg);
@@ -39,11 +38,9 @@ namespace SxTree::Lexer {
     public:
         explicit Lexer(const vector<Rule>& rulesNew);
 
-        void parse(const string& parseContent);
+        vector<Lexeme> parse(const string& parseContent);
 
-        const vector<Lexeme>& getLexemes();
-
-        const vector<LexerError> &getErrors() const;
+        [[nodiscard]] const vector<LexerError> &getErrors() const;
     };
 }
 

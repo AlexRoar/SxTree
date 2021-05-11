@@ -15,10 +15,10 @@
 namespace SxTree::Lexer {
     Lexer::Lexer(const vector<Rule> &rulesNew) :
             rules(rulesNew),
-            lexPos(nullptr),
-            lexemes() {}
+            lexPos(nullptr){}
 
-    void Lexer::parse(const string &parseContent) {
+    vector<Lexeme> Lexer::parse(const string &parseContent) {
+        vector<Lexeme> lexemes;
         content = parseContent;
         lexPos.storage = &content;
         lexPos.posNow = 0;
@@ -29,7 +29,8 @@ namespace SxTree::Lexer {
                 auto lexeme = rule.parse(lexPos);
                 if (lexeme.has_value()){
                     resolved = true;
-                    lexemes.push_back(std::move(lexeme.value()));
+                    if(lexeme.value() != Lexeme::zero())
+                        lexemes.push_back(std::move(lexeme.value()));
                     break;
                 }
             }
@@ -39,14 +40,11 @@ namespace SxTree::Lexer {
                 break;
             }
         }
+        return lexemes;
     }
 
     void Lexer::addError(const char *msg) {
         errors.push_back({msg, lexPos.posNow});
-    }
-
-    const vector<Lexeme> &Lexer::getLexemes() {
-        return lexemes;
     }
 
     const vector<LexerError> &Lexer::getErrors() const {

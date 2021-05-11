@@ -21,12 +21,12 @@ int main() {
     Lexer lexer = SxTree::Lexer::coreLexer;
 
     string code = SxTree::IO::readFullFile("code.txt");
-    lexer.parse(code);
+    auto lexemes = lexer.parse(code);
 
     for(const auto& err: lexer.getErrors())
         printf("%zu:%s\n", err.position, err.msg);
 
-    for(const auto& lex: lexer.getLexemes()){
+    for(const auto& lex: lexemes){
         printf("%s ", lex.to_string().c_str());
     }
 }

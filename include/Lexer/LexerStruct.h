@@ -25,34 +25,37 @@ namespace SxTree::LexerStruct {
     using namespace Structure;
 
     class LexerStruct {
-        const string* storage;
-        LexerStructPos lexerStructPos;
         vector<Structure::Rule> rules;
         vector<Structure::ParseError> errors;
 
-        [[nodiscard]] bool isEnded() const noexcept;
+    private:
+        [[nodiscard]] static bool isEnded(LexerStructPos& lexerStructPos) noexcept;
 
-        optional <Rule> pRule();
+        optional <Rule> pRule(LexerStructPos& lexerStructPos);
 
-        optional <Expression> pExpression();
+        optional <Expression> pExpression(LexerStructPos& lexerStructPos);
 
-        optional <Value> pValue();
+        optional <Value> pValue(LexerStructPos& lexerStructPos);
 
-        void skipChars(const std::set<char> &chars);
+        void skipChars(LexerStructPos& lexerStructPos, const std::set<char> &chars);
 
-        char getChar() const;
+        static char getChar(LexerStructPos& lexerStructPos) ;
 
-        bool expectWord(const char* word);
+        bool expectWord(LexerStructPos& lexerStructPos, const char* word);
+
+        [[nodiscard]] string generateExpression(const Expression &exp) const;
+
+        optional <Expression> expectClosingBracket(LexerStructPos &lexerStructPos, Expression &expr);
     public:
-        explicit LexerStruct(const string* structStorage) noexcept;
+        LexerStruct() noexcept;
 
-        void parseRules() noexcept;
+        void parseRules(const string& storage) noexcept;
 
         const decltype(LexerStruct::errors)& getErrors();
 
         [[nodiscard]] string generateLexerStruct() const noexcept;
 
-        [[nodiscard]] string generateExpression(const Expression &exp) const;
+        [[nodiscard]] const vector<Structure::Rule> &getRules() const;
     };
 }
 

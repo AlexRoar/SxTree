@@ -13,84 +13,81 @@
 #include <set>
 #include <cctype>
 #include <cassert>
+#include <utility>
 #include "Lexer/LexerStruct.h"
 
 namespace SxTree::LexerStruct {
     const std::set skipBefore = {' ', '\n', '\t', '\r'};
     const std::set skipLine = {' ', '\t'};
 
-    LexerStruct::LexerStruct(const string *structStorage) noexcept:
-            storage(structStorage),
-            rules(),
-            lexerStructPos(structStorage) {
+    LexerStruct::LexerStruct() noexcept = default;
 
-    }
-
-    void LexerStruct::parseRules() noexcept {
-        while (errors.empty() && !isEnded()) {
-            auto rule = pRule();
+    void LexerStruct::parseRules(const string& storage) noexcept {
+        LexerStructPos lexerStructPos(&storage);
+        while (errors.empty() && !isEnded(lexerStructPos)) {
+            auto rule = pRule(lexerStructPos);
             if (rule.has_value()) {
                 rules.push_back(std::move(rule.value()));
             } else {
-                skipChars(skipBefore);
-                if (!isEnded())
+                skipChars(lexerStructPos, skipBefore);
+                if (!isEnded(lexerStructPos))
                     errors.push_back({"Invalid rule", lexerStructPos.posNow});
                 break;
             }
-            skipChars(skipBefore);
+            skipChars(lexerStructPos, skipBefore);
         }
     }
 
-    optional<Rule> LexerStruct::pRule() {
-        skipChars(skipBefore);
+    optional<Rule> LexerStruct::pRule(LexerStructPos& lexerStructPos) {
+        skipChars(lexerStructPos, skipBefore);
         string id;
         char tmpChar = 0;
-        while (isalpha(tmpChar = getChar()) || isdigit(tmpChar)) {
+        while (isalpha(tmpChar = getChar(lexerStructPos)) || isdigit(tmpChar)) {
             id += tmpChar;
             lexerStructPos.moveForward(1);
         }
 
-        skipChars(skipLine);
+        skipChars(lexerStructPos, skipLine);
 
-        if (!expectWord("=")) {
+        if (!expectWord(lexerStructPos, "=")) {
             errors.push_back({"No '=' symbol after identifier", lexerStructPos.posNow});
-            skipChars(skipBefore);
+            skipChars(lexerStructPos, skipBefore);
             return optional<Rule>();
         }
-        skipChars(skipLine);
-        auto expr = pExpression();
+        skipChars(lexerStructPos, skipLine);
+        auto expr = pExpression(lexerStructPos);
         if (!expr.has_value()) {
             errors.push_back({"Invalid expression after <id> = ", lexerStructPos.posNow});
-            skipChars(skipBefore);
+            skipChars(lexerStructPos, skipBefore);
             return optional<Rule>();
         }
-        skipChars(skipLine);
+        skipChars(lexerStructPos, skipLine);
 
-        if (!expectWord("\n")) {
+        if (!expectWord(lexerStructPos, "\n")) {
             errors.push_back({"No new line after definition", lexerStructPos.posNow});
-            skipChars(skipBefore);
+            skipChars(lexerStructPos, skipBefore);
             return optional<Rule>();
         }
 
         return optional<Rule>({id, expr.value()});
     }
 
-    optional<Expression> LexerStruct::pExpression() {
-        skipChars(skipLine);
+    optional<Expression> LexerStruct::pExpression(LexerStructPos& lexerStructPos) {
+        skipChars(lexerStructPos, skipLine);
         Expression::ExprType type = Structure::Expression::EXP_ONE;
-        if (!expectWord("(")) {
-            if (!expectWord("[")) {
-                if (!expectWord("?[")) {
+        if (!expectWord(lexerStructPos, "(")) {
+            if (!expectWord(lexerStructPos, "[")) {
+                if (!expectWord(lexerStructPos, "?[")) {
                     errors.push_back({"Expected left parenthesis before expression", lexerStructPos.posNow});
-                    skipChars(skipBefore);
+                    skipChars(lexerStructPos, skipBefore);
                     return optional<Expression>();
                 } else
                     type = Structure::Expression::EXP_OPTIONAL;
             } else
                 type = Structure::Expression::EXP_ANY;
         }
-        skipChars(skipLine);
-        auto firstExpr = pValue();
+        skipChars(lexerStructPos, skipLine);
+        auto firstExpr = pValue(lexerStructPos);
         if (!firstExpr.has_value()) {
             errors.push_back({"At least one rule required in the expression", lexerStructPos.posNow});
             return optional<Expression>();
@@ -100,13 +97,13 @@ namespace SxTree::LexerStruct {
         expr.possible.push_back(std::move(firstExpr.value()));
 
         while (true) {
-            skipChars(skipLine);
-            if (expectWord(",")) {
-                skipChars(skipLine);
-                auto nextExpr = pValue();
+            skipChars(lexerStructPos, skipLine);
+            if (expectWord(lexerStructPos, ",")) {
+                skipChars(lexerStructPos, skipLine);
+                auto nextExpr = pValue(lexerStructPos);
                 if (!nextExpr.has_value()) {
                     errors.push_back({"Expected a comma before declarations", lexerStructPos.posNow});
-                    skipChars(skipBefore);
+                    skipChars(lexerStructPos, skipBefore);
                     return optional<Expression>();
                 }
                 expr.possible.push_back(std::move(nextExpr.value()));
@@ -114,38 +111,42 @@ namespace SxTree::LexerStruct {
                 break;
         }
 
+        return expectClosingBracket(lexerStructPos, expr);
+    }
+
+    optional <Expression> LexerStruct::expectClosingBracket(LexerStructPos &lexerStructPos, Expression &expr) {
         switch (expr.type) {
             case Expression::EXP_ONE: {
-                if (!expectWord(")")) {
+                if (!expectWord(lexerStructPos, ")")) {
                     errors.push_back({"Expected ')' after expression", lexerStructPos.posNow});
-                    skipChars(skipBefore);
-                    return optional<Expression>();
+                    skipChars(lexerStructPos, skipBefore);
+                    return std::__1::optional<Expression>();
                 }
                 break;
             }
             case Expression::EXP_ANY: {
-                if (!expectWord("]")) {
+                if (!expectWord(lexerStructPos, "]")) {
                     errors.push_back({"Expected ']' after expression", lexerStructPos.posNow});
-                    skipChars(skipBefore);
-                    return optional<Expression>();
+                    skipChars(lexerStructPos, skipBefore);
+                    return std::__1::optional<Expression>();
                 }
                 break;
             }
             case Expression::EXP_OPTIONAL: {
-                if (!expectWord("]")) {
+                if (!expectWord(lexerStructPos, "]")) {
                     errors.push_back({"Expected ']' after ?[ expression", lexerStructPos.posNow});
-                    skipChars(skipBefore);
-                    return optional<Expression>();
+                    skipChars(lexerStructPos, skipBefore);
+                    return std::__1::optional<Expression>();
                 }
                 break;
             }
         }
-        return optional<Expression>(std::move(expr));
+        return std::__1::optional<Expression>(std::move(expr));
     }
 
-    optional<Value> LexerStruct::pValue() {
-        auto getExpr = [=](const char *errMsg, bool skip=false) -> optional<Value> {
-            auto expr = pExpression();
+    optional<Value> LexerStruct::pValue(LexerStructPos &lexerStructPos) {
+        auto getExpr = [=](LexerStructPos &lexerStructPos, const char *errMsg, bool skip=false) -> optional<Value> {
+            auto expr = pExpression(lexerStructPos);
             if (!expr.has_value()) {
                 errors.push_back({errMsg, lexerStructPos.posNow});
                 return optional<Value>();
@@ -153,16 +154,16 @@ namespace SxTree::LexerStruct {
             return Value(expr.value(), skip);
         };
 
-        skipChars(skipLine);
-        if (expectWord("skip"))
-            return getExpr("Expected expression directly after 'skip' keyword", true);
+        skipChars(lexerStructPos, skipLine);
+        if (expectWord(lexerStructPos, "skip"))
+            return getExpr(lexerStructPos, "Expected expression directly after 'skip' keyword", true);
 
         std::regex rgx(R"((["'])(?:(?=(\\?))\2.)*?\1)");
         std::sregex_iterator current(lexerStructPos.begin(), lexerStructPos.end(), rgx);
         std::sregex_iterator end;
 //        printf("%s\n", current->str().c_str());
         if (current == end || current->position() != 0)
-            return getExpr("Malformed rule");
+            return getExpr(lexerStructPos, "Malformed rule");
         if (current->str().size() <= 2) {
             errors.push_back({"RegExpr can't be empty", lexerStructPos.posNow});
             return optional<Value>();
@@ -179,28 +180,28 @@ namespace SxTree::LexerStruct {
         }
     }
 
-    bool LexerStruct::isEnded() const noexcept {
+    bool LexerStruct::isEnded(LexerStructPos &lexerStructPos) noexcept {
         return lexerStructPos.isEnded();
     }
 
-    void LexerStruct::skipChars(const std::set<char> &chars) {
-        while (!isEnded()) {
-            if (chars.find(getChar()) != chars.end())
+    void LexerStruct::skipChars(LexerStructPos &lexerStructPos, const std::set<char> &chars) {
+        while (!isEnded(lexerStructPos)) {
+            if (chars.find(getChar(lexerStructPos)) != chars.end())
                 lexerStructPos.moveForward(1);
             else
                 break;
         }
     }
 
-    char LexerStruct::getChar() const {
+    char LexerStruct::getChar(LexerStructPos &lexerStructPos) {
         return (*lexerStructPos.storage)[lexerStructPos.posNow];
     }
 
-    bool LexerStruct::expectWord(const char *word) {
+    bool LexerStruct::expectWord(LexerStructPos &lexerStructPos, const char *word) {
         assert(word && "Cannot expect nullptr string");
         unsigned i = 0;
         while (*word) {
-            if (getChar() != *word) {
+            if (getChar(lexerStructPos) != *word) {
                 lexerStructPos.moveBack(i);
                 return false;
             }
@@ -257,4 +258,7 @@ namespace SxTree::LexerStruct {
         return output;
     }
 
+    const vector<Structure::Rule> &LexerStruct::getRules() const {
+        return rules;
+    }
 }

@@ -8,6 +8,7 @@ set(DEFAULT_BUILD_TYPE "Release")
 set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -g3 -O0")
 include_directories(include)
 include_directories("${CMAKE_INSTALL_PREFIX}/include")
+add_subdirectory(googletest)
 
 #[[Collect files]]
 file(GLOB_RECURSE SX_SOURCES
@@ -32,9 +33,19 @@ add_executable(sxlgen src/Core/lexGen.cpp)
 #[[Examples]]
 add_executable(SimpleExample examples/simple/lexer.cpp examples/simple/simpleExample.cpp)
 
+#[[Testing includes]]
+enable_testing()
+include(GoogleTest)
+
+#[[Tests]]
+add_executable(LexerGenTests tests/LexerGenerator/tests.cpp)
+gtest_discover_tests(LexerGenTests)
+
 #[[Links]]
 target_link_libraries(SimpleExample ${PROJECT_NAME})
 target_link_libraries(sxlgen ${PROJECT_NAME})
+target_link_libraries(LexerGenTests gtest gtest_main ${PROJECT_NAME})
+
 
 #[[Install]]
 message("${CMAKE_INSTALL_INCLUDEDIR}")
