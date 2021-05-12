@@ -52,11 +52,11 @@ namespace SxTree::LexerStruct {
         return parsedLexeme;
     }
 
-    Value::Value(const string &regex) : strRegex(regex), type(VAL_REGEXP), regexString(regex) {
+    Value::Value(const string &regex) : strRegex(regex), regexString(regex), type(VAL_REGEXP) {
 
     }
 
-    Value::Value(Expression e, bool skip) : expr(std::move(e)), type(skip ? VAL_SKIP : VAL_EXPRESSION) {
+    Value::Value(Expression e, bool skip) : type(skip ? VAL_SKIP : VAL_EXPRESSION), expr(std::move(e)) {
 
     }
 
@@ -122,9 +122,7 @@ namespace SxTree::LexerStruct {
         return std::optional<Lexeme>(Lexeme::zero());
     }
 
-    Expression::Expression(): type(EXP_ONE), possible(){
-
-    }
+    Expression::Expression(): type(EXP_ONE) {}
 
     Expression::Expression(std::vector<Value>  possibleNew, ExprType typeNew):possible(std::move(possibleNew)), type(typeNew) {
 

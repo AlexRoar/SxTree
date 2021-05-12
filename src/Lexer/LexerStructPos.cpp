@@ -45,6 +45,5 @@ namespace SxTree::LexerStruct::Structure {
         posNow -= dist;
     }
 
-    LexerStructPos::LexerStructPos(const string *s): storage(s), posNow(0) {
-    }
+    LexerStructPos::LexerStructPos(const string *s): posNow(0), storage(s) {}
 }

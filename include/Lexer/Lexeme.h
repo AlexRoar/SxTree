@@ -125,7 +125,7 @@ namespace SxTree::Lexer {
 
         [[nodiscard]] unsigned getType() const;
 
-        [[nodiscard]] size_t getStart() const;
+        [[maybe_unused]] [[nodiscard]] size_t getStart() const;
 
         [[nodiscard]] size_t getSize() const;
     };

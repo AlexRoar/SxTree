@@ -5,7 +5,8 @@ set(CMAKE_CXX_STANDARD 20)
 
 #[[Init]]
 set(DEFAULT_BUILD_TYPE "Release")
-set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -g3 -O0")
+set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -g3 -O0 -Wall -Wextra")
+set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O3")
 include_directories(include)
 include_directories("${CMAKE_INSTALL_PREFIX}/include")
 add_subdirectory(googletest)
@@ -31,7 +32,7 @@ set_target_properties(${PROJECT_NAME} PROPERTIES SOVERSION 1)
 add_executable(sxlgen src/Core/lexGen.cpp)
 
 #[[Examples]]
-add_executable(SimpleExample examples/simple/lexer.cpp examples/simple/simpleExample.cpp)
+add_executable(SimpleExample examples/lexerSimple/lexer.cpp examples/lexerSimple/simpleExample.cpp)
 
 #[[Testing includes]]
 enable_testing()

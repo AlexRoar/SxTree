@@ -14,8 +14,8 @@
 
 namespace SxTree::Lexer {
     Lexer::Lexer(const vector<Rule> &rulesNew) :
-            rules(rulesNew),
-            lexPos(nullptr){}
+            lexPos(nullptr),
+            rules(rulesNew){}
 
     vector<Lexeme> Lexer::parse(const string &parseContent) {
         vector<Lexeme> lexemes;

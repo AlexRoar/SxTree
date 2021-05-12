@@ -21,9 +21,9 @@ namespace SxTree::Lexer {
 
     Lexeme::Lexeme(const string *sourceText, unsigned lexType, size_t startInd, size_t lexSize) noexcept:
             source(sourceText),
-            type(0),
+            type(lexType),
             start(startInd),
-            size(lexSize) {
+            size(lexSize){
     }
 
     void Lexeme::connect(const Lexeme &other, unsigned newType) noexcept {
@@ -52,19 +52,19 @@ namespace SxTree::Lexer {
         type = newType;
     }
 
-    Lexeme::Lexeme(const Lexeme &first, const Lexeme &second, unsigned lexType) noexcept:
-            size(first.size),
-            start(first.start),
+    Lexeme::Lexeme(const Lexeme &first, const Lexeme &second, unsigned lexType) noexcept :
             source(first.source),
-            type(first.type) {
+            type(first.type),
+            start(first.start),
+            size(first.size){
         connect(second, lexType);
     }
 
     Lexeme::Lexeme(const Lexeme &first, const Lexeme &second) noexcept:
-            size(first.size),
-            start(first.start),
             source(first.source),
-            type(first.type) {
+            type(first.type),
+            start(first.start),
+            size(first.size){
         assert(first.type == second.type);
         connect(second, second.type);
     }
@@ -80,10 +80,10 @@ namespace SxTree::Lexer {
     }
 
     Lexeme::Lexeme(Lexeme &&other) noexcept:
-            start(other.start),
-            size(other.size),
             source(other.source),
-            type(other.type) {
+            type(other.type),
+            start(other.start),
+            size(other.size){
         other.type = 0;
         other.source = nullptr;
         other.start = other.size = 0;
@@ -115,7 +115,7 @@ namespace SxTree::Lexer {
         return type;
     }
 
-    size_t Lexeme::getStart() const {
+    [[maybe_unused]] size_t Lexeme::getStart() const {
         return start;
     }
 
