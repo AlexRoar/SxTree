@@ -1,0 +1,202 @@
+\hypertarget{classSxTree_1_1Lexer_1_1Lexer}{}\doxysection{Sx\+Tree\+::Lexer\+::Lexer Class Reference}
+\label{classSxTree_1_1Lexer_1_1Lexer}\index{SxTree::Lexer::Lexer@{SxTree::Lexer::Lexer}}
+
+
+{\ttfamily \#include $<$Lexer.\+h$>$}
+
+
+
+Collaboration diagram for Sx\+Tree\+::Lexer\+::Lexer\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/dec/classSxTree_1_1Lexer_1_1Lexer__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSxTree_1_1Lexer_1_1Lexer_af7148fa0b3f855c2b314bf0b5ff9cf1a}{Lexer}} (const vector$<$ \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Rule}{Rule}} $>$ \&rules\+New)
+\item 
+vector$<$ \mbox{\hyperlink{classSxTree_1_1Lexer_1_1Lexeme}{Lexeme}} $>$ \mbox{\hyperlink{classSxTree_1_1Lexer_1_1Lexer_a4fff90095df43c03fdf2da027cf02555}{parse}} (const string \&parse\+Content)
+\item 
+const vector$<$ \mbox{\hyperlink{namespaceSxTree_1_1Lexer_d8/db5/structSxTree_1_1Lexer_1_1LexerError}{Lexer\+Error}} $>$ \& \mbox{\hyperlink{classSxTree_1_1Lexer_1_1Lexer_a6fbca3735616d5601de8f7a2e7f7d061}{get\+Errors}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classSxTree_1_1Lexer_1_1Lexer_a52dd8e34d18ac733571943081bb8a150}{add\+Error}} (const char $\ast$msg)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{classSxTree_1_1Lexer_1_1Lexer_ac92d0946573a7d7d8b8f7d2945017f4d}{content}}
+\item 
+\mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1LexerStructPos}{Lexer\+Struct\+Pos}} \mbox{\hyperlink{classSxTree_1_1Lexer_1_1Lexer_a2bc09e614098b3a3af783de5efc1ce04}{lex\+Pos}}
+\item 
+vector$<$ \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Rule}{Rule}} $>$ \mbox{\hyperlink{classSxTree_1_1Lexer_1_1Lexer_a25c181763b9b956e2775d75b0bea0579}{rules}}
+\item 
+vector$<$ \mbox{\hyperlink{namespaceSxTree_1_1Lexer_d8/db5/structSxTree_1_1Lexer_1_1LexerError}{Lexer\+Error}} $>$ \mbox{\hyperlink{classSxTree_1_1Lexer_1_1Lexer_a2c68fe55c7cf3e59ad0eefcc25e74724}{errors}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSxTree_1_1Lexer_1_1Lexer_af7148fa0b3f855c2b314bf0b5ff9cf1a}\label{classSxTree_1_1Lexer_1_1Lexer_af7148fa0b3f855c2b314bf0b5ff9cf1a}} 
+\index{SxTree::Lexer::Lexer@{SxTree::Lexer::Lexer}!Lexer@{Lexer}}
+\index{Lexer@{Lexer}!SxTree::Lexer::Lexer@{SxTree::Lexer::Lexer}}
+\doxysubsubsection{\texorpdfstring{Lexer()}{Lexer()}}
+{\footnotesize\ttfamily Sx\+Tree\+::\+Lexer\+::\+Lexer\+::\+Lexer (\begin{DoxyParamCaption}\item[{const vector$<$ \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Rule}{Rule}} $>$ \&}]{rules\+New }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{16                                              :}
+\DoxyCodeLine{17             \mbox{\hyperlink{classSxTree_1_1Lexer_1_1Lexer_a2bc09e614098b3a3af783de5efc1ce04}{lexPos}}(\textcolor{keyword}{nullptr}),}
+\DoxyCodeLine{18             \mbox{\hyperlink{classSxTree_1_1Lexer_1_1Lexer_a25c181763b9b956e2775d75b0bea0579}{rules}}(rulesNew)\{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSxTree_1_1Lexer_1_1Lexer_a52dd8e34d18ac733571943081bb8a150}\label{classSxTree_1_1Lexer_1_1Lexer_a52dd8e34d18ac733571943081bb8a150}} 
+\index{SxTree::Lexer::Lexer@{SxTree::Lexer::Lexer}!addError@{addError}}
+\index{addError@{addError}!SxTree::Lexer::Lexer@{SxTree::Lexer::Lexer}}
+\doxysubsubsection{\texorpdfstring{addError()}{addError()}}
+{\footnotesize\ttfamily void Sx\+Tree\+::\+Lexer\+::\+Lexer\+::add\+Error (\begin{DoxyParamCaption}\item[{const char $\ast$}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{46                                         \{}
+\DoxyCodeLine{47         \mbox{\hyperlink{classSxTree_1_1Lexer_1_1Lexer_a2c68fe55c7cf3e59ad0eefcc25e74724}{errors}}.push\_back(\{msg, \mbox{\hyperlink{classSxTree_1_1Lexer_1_1Lexer_a2bc09e614098b3a3af783de5efc1ce04}{lexPos}}.\mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1LexerStructPos_a68ab7cd99f0aa6fd4e7bf8171be43b52}{posNow}}\});}
+\DoxyCodeLine{48     \}}
+
+\end{DoxyCode}
+
+
+References errors, lex\+Pos, and Sx\+Tree\+::\+Lexer\+Struct\+::\+Structure\+::\+Lexer\+Struct\+Pos\+::pos\+Now.
+
+
+
+Referenced by parse().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{de/deb/classSxTree_1_1Lexer_1_1Lexer_a52dd8e34d18ac733571943081bb8a150_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSxTree_1_1Lexer_1_1Lexer_a6fbca3735616d5601de8f7a2e7f7d061}\label{classSxTree_1_1Lexer_1_1Lexer_a6fbca3735616d5601de8f7a2e7f7d061}} 
+\index{SxTree::Lexer::Lexer@{SxTree::Lexer::Lexer}!getErrors@{getErrors}}
+\index{getErrors@{getErrors}!SxTree::Lexer::Lexer@{SxTree::Lexer::Lexer}}
+\doxysubsubsection{\texorpdfstring{getErrors()}{getErrors()}}
+{\footnotesize\ttfamily const vector$<$ \mbox{\hyperlink{namespaceSxTree_1_1Lexer_d8/db5/structSxTree_1_1Lexer_1_1LexerError}{Lexer\+Error}} $>$ \& Sx\+Tree\+::\+Lexer\+::\+Lexer\+::get\+Errors (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{50                                                      \{}
+\DoxyCodeLine{51         \textcolor{keywordflow}{return} \mbox{\hyperlink{classSxTree_1_1Lexer_1_1Lexer_a2c68fe55c7cf3e59ad0eefcc25e74724}{errors}};}
+\DoxyCodeLine{52     \}}
+
+\end{DoxyCode}
+
+
+References errors.
+
+\mbox{\Hypertarget{classSxTree_1_1Lexer_1_1Lexer_a4fff90095df43c03fdf2da027cf02555}\label{classSxTree_1_1Lexer_1_1Lexer_a4fff90095df43c03fdf2da027cf02555}} 
+\index{SxTree::Lexer::Lexer@{SxTree::Lexer::Lexer}!parse@{parse}}
+\index{parse@{parse}!SxTree::Lexer::Lexer@{SxTree::Lexer::Lexer}}
+\doxysubsubsection{\texorpdfstring{parse()}{parse()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{classSxTree_1_1Lexer_1_1Lexeme}{Lexeme}} $>$ Sx\+Tree\+::\+Lexer\+::\+Lexer\+::parse (\begin{DoxyParamCaption}\item[{const string \&}]{parse\+Content }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{20                                                           \{}
+\DoxyCodeLine{21         vector<Lexeme> lexemes;}
+\DoxyCodeLine{22         \mbox{\hyperlink{classSxTree_1_1Lexer_1_1Lexer_ac92d0946573a7d7d8b8f7d2945017f4d}{content}} = parseContent;}
+\DoxyCodeLine{23         \mbox{\hyperlink{classSxTree_1_1Lexer_1_1Lexer_a2bc09e614098b3a3af783de5efc1ce04}{lexPos}}.\mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1LexerStructPos_a35340214fa906f33b714deb4f428ba9d}{storage}} = \&\mbox{\hyperlink{classSxTree_1_1Lexer_1_1Lexer_ac92d0946573a7d7d8b8f7d2945017f4d}{content}};}
+\DoxyCodeLine{24         \mbox{\hyperlink{classSxTree_1_1Lexer_1_1Lexer_a2bc09e614098b3a3af783de5efc1ce04}{lexPos}}.\mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1LexerStructPos_a68ab7cd99f0aa6fd4e7bf8171be43b52}{posNow}} = 0;}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26         \textcolor{keywordflow}{while} (!\mbox{\hyperlink{classSxTree_1_1Lexer_1_1Lexer_a2bc09e614098b3a3af783de5efc1ce04}{lexPos}}.\mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1LexerStructPos_afe423ec381487c1e26040f58999d3eb6}{isEnded}}()) \{}
+\DoxyCodeLine{27             \textcolor{keywordtype}{bool} resolved = \textcolor{keyword}{false};}
+\DoxyCodeLine{28             \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& rule: \mbox{\hyperlink{classSxTree_1_1Lexer_1_1Lexer_a25c181763b9b956e2775d75b0bea0579}{rules}}) \{}
+\DoxyCodeLine{29                 \textcolor{keyword}{auto} lexeme = rule.parse(\mbox{\hyperlink{classSxTree_1_1Lexer_1_1Lexer_a2bc09e614098b3a3af783de5efc1ce04}{lexPos}});}
+\DoxyCodeLine{30                 \textcolor{keywordflow}{if} (lexeme.has\_value())\{}
+\DoxyCodeLine{31                     resolved = \textcolor{keyword}{true};}
+\DoxyCodeLine{32                     \textcolor{keywordflow}{if}(lexeme.value() != \mbox{\hyperlink{classSxTree_1_1Lexer_1_1Lexeme_a4a87fbca99bc9856dd20eb17876d49e3}{Lexeme::zero}}())}
+\DoxyCodeLine{33                         lexemes.push\_back(std::move(lexeme.value()));}
+\DoxyCodeLine{34                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{35                 \}}
+\DoxyCodeLine{36             \}}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38             \textcolor{keywordflow}{if} (!resolved) \{}
+\DoxyCodeLine{39                 \mbox{\hyperlink{classSxTree_1_1Lexer_1_1Lexer_a52dd8e34d18ac733571943081bb8a150}{addError}}(\textcolor{stringliteral}{"{}Unresolved sequence"{}});}
+\DoxyCodeLine{40                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{41             \}}
+\DoxyCodeLine{42         \}}
+\DoxyCodeLine{43         \textcolor{keywordflow}{return} lexemes;}
+\DoxyCodeLine{44     \}}
+
+\end{DoxyCode}
+
+
+References add\+Error(), content, Sx\+Tree\+::\+Lexer\+Struct\+::\+Structure\+::\+Lexer\+Struct\+Pos\+::is\+Ended(), lex\+Pos, Sx\+Tree\+::\+Lexer\+Struct\+::\+Structure\+::\+Lexer\+Struct\+Pos\+::pos\+Now, rules, Sx\+Tree\+::\+Lexer\+Struct\+::\+Structure\+::\+Lexer\+Struct\+Pos\+::storage, and Sx\+Tree\+::\+Lexer\+::\+Lexeme\+::zero().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/deb/classSxTree_1_1Lexer_1_1Lexer_a4fff90095df43c03fdf2da027cf02555_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Field Documentation}
+\mbox{\Hypertarget{classSxTree_1_1Lexer_1_1Lexer_ac92d0946573a7d7d8b8f7d2945017f4d}\label{classSxTree_1_1Lexer_1_1Lexer_ac92d0946573a7d7d8b8f7d2945017f4d}} 
+\index{SxTree::Lexer::Lexer@{SxTree::Lexer::Lexer}!content@{content}}
+\index{content@{content}!SxTree::Lexer::Lexer@{SxTree::Lexer::Lexer}}
+\doxysubsubsection{\texorpdfstring{content}{content}}
+{\footnotesize\ttfamily string Sx\+Tree\+::\+Lexer\+::\+Lexer\+::content\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Referenced by parse().
+
+\mbox{\Hypertarget{classSxTree_1_1Lexer_1_1Lexer_a2c68fe55c7cf3e59ad0eefcc25e74724}\label{classSxTree_1_1Lexer_1_1Lexer_a2c68fe55c7cf3e59ad0eefcc25e74724}} 
+\index{SxTree::Lexer::Lexer@{SxTree::Lexer::Lexer}!errors@{errors}}
+\index{errors@{errors}!SxTree::Lexer::Lexer@{SxTree::Lexer::Lexer}}
+\doxysubsubsection{\texorpdfstring{errors}{errors}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{namespaceSxTree_1_1Lexer_d8/db5/structSxTree_1_1Lexer_1_1LexerError}{Lexer\+Error}}$>$ Sx\+Tree\+::\+Lexer\+::\+Lexer\+::errors\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Referenced by add\+Error(), and get\+Errors().
+
+\mbox{\Hypertarget{classSxTree_1_1Lexer_1_1Lexer_a2bc09e614098b3a3af783de5efc1ce04}\label{classSxTree_1_1Lexer_1_1Lexer_a2bc09e614098b3a3af783de5efc1ce04}} 
+\index{SxTree::Lexer::Lexer@{SxTree::Lexer::Lexer}!lexPos@{lexPos}}
+\index{lexPos@{lexPos}!SxTree::Lexer::Lexer@{SxTree::Lexer::Lexer}}
+\doxysubsubsection{\texorpdfstring{lexPos}{lexPos}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1LexerStructPos}{Lexer\+Struct\+Pos}} Sx\+Tree\+::\+Lexer\+::\+Lexer\+::lex\+Pos\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Referenced by add\+Error(), and parse().
+
+\mbox{\Hypertarget{classSxTree_1_1Lexer_1_1Lexer_a25c181763b9b956e2775d75b0bea0579}\label{classSxTree_1_1Lexer_1_1Lexer_a25c181763b9b956e2775d75b0bea0579}} 
+\index{SxTree::Lexer::Lexer@{SxTree::Lexer::Lexer}!rules@{rules}}
+\index{rules@{rules}!SxTree::Lexer::Lexer@{SxTree::Lexer::Lexer}}
+\doxysubsubsection{\texorpdfstring{rules}{rules}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Rule}{Rule}}$>$ Sx\+Tree\+::\+Lexer\+::\+Lexer\+::rules\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Referenced by parse().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/alexroar/\+Desktop/\+Dev/\+Sx\+Tree/include/\+Lexer/\mbox{\hyperlink{Lexer_8h}{Lexer.\+h}}\item 
+/\+Users/alexroar/\+Desktop/\+Dev/\+Sx\+Tree/src/\+Lexer/\mbox{\hyperlink{Lexer_8cpp}{Lexer.\+cpp}}\end{DoxyCompactItemize}

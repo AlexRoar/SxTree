@@ -1,0 +1,632 @@
+\hypertarget{classSxTree_1_1LexerStruct_1_1LexerStruct}{}\doxysection{Sx\+Tree\+::Lexer\+Struct\+::Lexer\+Struct Class Reference}
+\label{classSxTree_1_1LexerStruct_1_1LexerStruct}\index{SxTree::LexerStruct::LexerStruct@{SxTree::LexerStruct::LexerStruct}}
+
+
+{\ttfamily \#include $<$Lexer\+Struct.\+h$>$}
+
+
+
+Collaboration diagram for Sx\+Tree\+::Lexer\+Struct\+::Lexer\+Struct\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d11/classSxTree_1_1LexerStruct_1_1LexerStruct__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_ab17929167f2c6ebfb7aa33de58af5f23}{Lexer\+Struct}} () noexcept
+\item 
+void \mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_a523c05dc2eda74d9616e1ad84f1a73f2}{parse\+Rules}} (const string \&storage) noexcept
+\item 
+decltype(\mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_a5f3ab5c7b9af6d0fafcadb0c9dedc5dc}{Lexer\+Struct\+::errors}}) const  \& \mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_a3130f0e7fcef5b57306d8d9ee75d2b83}{get\+Errors}} ()
+\item 
+const vector$<$ \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Rule}{Structure\+::\+Rule}} $>$ \& \mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_aac4379453da365eaf5bbfdd63a0b3020}{get\+Rules}} () const
+\item 
+const unordered\+\_\+map$<$ string, unsigned $>$ \& \mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_a25588906777ed5559b7705b95d974ddc}{get\+Lexemes\+Map}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+unsigned \mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_a75a75e6a8319633cd46f491d74b6edd5}{get\+Rule\+Id}} (const string \&id)
+\item 
+optional$<$ \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Rule}{Rule}} $>$ \mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_a34d3017b38806be1d67d6d95f4927fce}{p\+Rule}} (\mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1LexerStructPos}{Lexer\+Struct\+Pos}} \&lexer\+Struct\+Pos)
+\item 
+optional$<$ \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression}{Expression}} $>$ \mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_a982323c58b381565a58782f056ea32a5}{p\+Expression}} (\mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1LexerStructPos}{Lexer\+Struct\+Pos}} \&lexer\+Struct\+Pos)
+\item 
+optional$<$ \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Value}{Value}} $>$ \mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_a86ea00c56b1e187a505b250b7999c6b5}{p\+Value}} (\mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1LexerStructPos}{Lexer\+Struct\+Pos}} \&lexer\+Struct\+Pos)
+\item 
+void \mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_a3ddc98ba0da99b7059b9e84364fedb77}{skip\+Chars}} (\mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1LexerStructPos}{Lexer\+Struct\+Pos}} \&lexer\+Struct\+Pos, const std\+::set$<$ char $>$ \&chars)
+\item 
+bool \mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_abd9e19539739405e42f3f59f86ba5337}{expect\+Word}} (\mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1LexerStructPos}{Lexer\+Struct\+Pos}} \&lexer\+Struct\+Pos, const char $\ast$word)
+\item 
+optional$<$ \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression}{Expression}} $>$ \mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_a430e3318110d4c1557ea9338ef809ffe}{expect\+Closing\+Bracket}} (\mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1LexerStructPos}{Lexer\+Struct\+Pos}} \&lexer\+Struct\+Pos, \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression}{Expression}} \&expr)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_ad706191a24e4781ccad0048ba99f2c28}{is\+Ended}} (\mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1LexerStructPos}{Lexer\+Struct\+Pos}} \&lexer\+Struct\+Pos) noexcept
+\item 
+static char \mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_abf3eb96038e0279cfa678e683e8a5b83}{get\+Char}} (\mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1LexerStructPos}{Lexer\+Struct\+Pos}} \&lexer\+Struct\+Pos)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unordered\+\_\+map$<$ string, unsigned $>$ \mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_a3362b1ce7dc23ee81dfd00a7c7a9177c}{rule\+Ids\+No}}
+\item 
+vector$<$ \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Rule}{Structure\+::\+Rule}} $>$ \mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_abccf4215b51ffac41d490ef510cf0b72}{rules}}
+\item 
+vector$<$ \mbox{\hyperlink{namespaceSxTree_1_1LexerStruct_1_1Structure_d3/d8c/structSxTree_1_1LexerStruct_1_1Structure_1_1ParseError}{Structure\+::\+Parse\+Error}} $>$ \mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_a5f3ab5c7b9af6d0fafcadb0c9dedc5dc}{errors}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSxTree_1_1LexerStruct_1_1LexerStruct_ab17929167f2c6ebfb7aa33de58af5f23}\label{classSxTree_1_1LexerStruct_1_1LexerStruct_ab17929167f2c6ebfb7aa33de58af5f23}} 
+\index{SxTree::LexerStruct::LexerStruct@{SxTree::LexerStruct::LexerStruct}!LexerStruct@{LexerStruct}}
+\index{LexerStruct@{LexerStruct}!SxTree::LexerStruct::LexerStruct@{SxTree::LexerStruct::LexerStruct}}
+\doxysubsubsection{\texorpdfstring{LexerStruct()}{LexerStruct()}}
+{\footnotesize\ttfamily Sx\+Tree\+::\+Lexer\+Struct\+::\+Lexer\+Struct\+::\+Lexer\+Struct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}, {\ttfamily [noexcept]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSxTree_1_1LexerStruct_1_1LexerStruct_a430e3318110d4c1557ea9338ef809ffe}\label{classSxTree_1_1LexerStruct_1_1LexerStruct_a430e3318110d4c1557ea9338ef809ffe}} 
+\index{SxTree::LexerStruct::LexerStruct@{SxTree::LexerStruct::LexerStruct}!expectClosingBracket@{expectClosingBracket}}
+\index{expectClosingBracket@{expectClosingBracket}!SxTree::LexerStruct::LexerStruct@{SxTree::LexerStruct::LexerStruct}}
+\doxysubsubsection{\texorpdfstring{expectClosingBracket()}{expectClosingBracket()}}
+{\footnotesize\ttfamily optional$<$ \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression}{Expression}} $>$ Sx\+Tree\+::\+Lexer\+Struct\+::\+Lexer\+Struct\+::expect\+Closing\+Bracket (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1LexerStructPos}{Lexer\+Struct\+Pos}} \&}]{lexer\+Struct\+Pos,  }\item[{\mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression}{Expression}} \&}]{expr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{117                                                                                                             \{}
+\DoxyCodeLine{118         \textcolor{keywordflow}{switch} (expr.type) \{}
+\DoxyCodeLine{119             \textcolor{keywordflow}{case} \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression_aad1e9a60b7d31550dd137b139c2e6492aafa430a34129765bf741db23f887c388}{Expression::EXP\_ONE}}: \{}
+\DoxyCodeLine{120                 \textcolor{keywordflow}{if} (!\mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_abd9e19539739405e42f3f59f86ba5337}{expectWord}}(lexerStructPos, \textcolor{stringliteral}{"{})"{}})) \{}
+\DoxyCodeLine{121                     \mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_a5f3ab5c7b9af6d0fafcadb0c9dedc5dc}{errors}}.push\_back(\{\textcolor{stringliteral}{"{}Expected ')' after expression"{}}, lexerStructPos.posNow\});}
+\DoxyCodeLine{122                     \mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_a3ddc98ba0da99b7059b9e84364fedb77}{skipChars}}(lexerStructPos, \mbox{\hyperlink{namespaceSxTree_1_1LexerStruct_aa149d4a2b3be1f9f46a2c9851f857b24}{skipBefore}});}
+\DoxyCodeLine{123                     \textcolor{keywordflow}{return} std::\_\_1::optional<Expression>();}
+\DoxyCodeLine{124                 \}}
+\DoxyCodeLine{125                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{126             \}}
+\DoxyCodeLine{127             \textcolor{keywordflow}{case} \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression_aad1e9a60b7d31550dd137b139c2e6492a389a471c1ede827429d59a2fcb914839}{Expression::EXP\_ANY}}: \{}
+\DoxyCodeLine{128                 \textcolor{keywordflow}{if} (!\mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_abd9e19539739405e42f3f59f86ba5337}{expectWord}}(lexerStructPos, \textcolor{stringliteral}{"{}]"{}})) \{}
+\DoxyCodeLine{129                     \mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_a5f3ab5c7b9af6d0fafcadb0c9dedc5dc}{errors}}.push\_back(\{\textcolor{stringliteral}{"{}Expected ']' after expression"{}}, lexerStructPos.posNow\});}
+\DoxyCodeLine{130                     \mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_a3ddc98ba0da99b7059b9e84364fedb77}{skipChars}}(lexerStructPos, \mbox{\hyperlink{namespaceSxTree_1_1LexerStruct_aa149d4a2b3be1f9f46a2c9851f857b24}{skipBefore}});}
+\DoxyCodeLine{131                     \textcolor{keywordflow}{return} std::\_\_1::optional<Expression>();}
+\DoxyCodeLine{132                 \}}
+\DoxyCodeLine{133                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{134             \}}
+\DoxyCodeLine{135             \textcolor{keywordflow}{case} \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression_aad1e9a60b7d31550dd137b139c2e6492a06a2cea71d70886d66de5f21791e7131}{Expression::EXP\_OPTIONAL}}: \{}
+\DoxyCodeLine{136                 \textcolor{keywordflow}{if} (!\mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_abd9e19539739405e42f3f59f86ba5337}{expectWord}}(lexerStructPos, \textcolor{stringliteral}{"{}]"{}})) \{}
+\DoxyCodeLine{137                     \mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_a5f3ab5c7b9af6d0fafcadb0c9dedc5dc}{errors}}.push\_back(\{\textcolor{stringliteral}{"{}Expected ']' after ?[ expression"{}}, lexerStructPos.posNow\});}
+\DoxyCodeLine{138                     \mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_a3ddc98ba0da99b7059b9e84364fedb77}{skipChars}}(lexerStructPos, \mbox{\hyperlink{namespaceSxTree_1_1LexerStruct_aa149d4a2b3be1f9f46a2c9851f857b24}{skipBefore}});}
+\DoxyCodeLine{139                     \textcolor{keywordflow}{return} std::\_\_1::optional<Expression>();}
+\DoxyCodeLine{140                 \}}
+\DoxyCodeLine{141                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{142             \}}
+\DoxyCodeLine{143         \}}
+\DoxyCodeLine{144         \textcolor{keywordflow}{return} std::\_\_1::optional<Expression>(std::move(expr));}
+\DoxyCodeLine{145     \}}
+
+\end{DoxyCode}
+
+
+References errors, Sx\+Tree\+::\+Lexer\+Struct\+::\+Structure\+::\+Expression\+::\+EXP\+\_\+\+ANY, Sx\+Tree\+::\+Lexer\+Struct\+::\+Structure\+::\+Expression\+::\+EXP\+\_\+\+ONE, Sx\+Tree\+::\+Lexer\+Struct\+::\+Structure\+::\+Expression\+::\+EXP\+\_\+\+OPTIONAL, expect\+Word(), Sx\+Tree\+::\+Lexer\+Struct\+::\+Structure\+::\+Lexer\+Struct\+Pos\+::pos\+Now, Sx\+Tree\+::\+Lexer\+Struct\+::skip\+Before, skip\+Chars(), and Sx\+Tree\+::\+Lexer\+Struct\+::\+Structure\+::\+Expression\+::type.
+
+
+
+Referenced by p\+Expression().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d17/classSxTree_1_1LexerStruct_1_1LexerStruct_a430e3318110d4c1557ea9338ef809ffe_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d17/classSxTree_1_1LexerStruct_1_1LexerStruct_a430e3318110d4c1557ea9338ef809ffe_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSxTree_1_1LexerStruct_1_1LexerStruct_abd9e19539739405e42f3f59f86ba5337}\label{classSxTree_1_1LexerStruct_1_1LexerStruct_abd9e19539739405e42f3f59f86ba5337}} 
+\index{SxTree::LexerStruct::LexerStruct@{SxTree::LexerStruct::LexerStruct}!expectWord@{expectWord}}
+\index{expectWord@{expectWord}!SxTree::LexerStruct::LexerStruct@{SxTree::LexerStruct::LexerStruct}}
+\doxysubsubsection{\texorpdfstring{expectWord()}{expectWord()}}
+{\footnotesize\ttfamily bool Sx\+Tree\+::\+Lexer\+Struct\+::\+Lexer\+Struct\+::expect\+Word (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1LexerStructPos}{Lexer\+Struct\+Pos}} \&}]{lexer\+Struct\+Pos,  }\item[{const char $\ast$}]{word }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{200                                                                                  \{}
+\DoxyCodeLine{201         assert(word \&\& \textcolor{stringliteral}{"{}Cannot expect nullptr string"{}});}
+\DoxyCodeLine{202         \textcolor{keywordtype}{unsigned} i = 0;}
+\DoxyCodeLine{203         \textcolor{keywordflow}{while} (*word) \{}
+\DoxyCodeLine{204             \textcolor{keywordflow}{if} (\mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_abf3eb96038e0279cfa678e683e8a5b83}{getChar}}(lexerStructPos) != *word) \{}
+\DoxyCodeLine{205                 lexerStructPos.moveBack(i);}
+\DoxyCodeLine{206                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{207             \}}
+\DoxyCodeLine{208             word++;}
+\DoxyCodeLine{209             i++;}
+\DoxyCodeLine{210             lexerStructPos.moveForward(1);}
+\DoxyCodeLine{211         \}}
+\DoxyCodeLine{212         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{213     \}}
+
+\end{DoxyCode}
+
+
+References get\+Char(), Sx\+Tree\+::\+Lexer\+Struct\+::\+Structure\+::\+Lexer\+Struct\+Pos\+::move\+Back(), and Sx\+Tree\+::\+Lexer\+Struct\+::\+Structure\+::\+Lexer\+Struct\+Pos\+::move\+Forward().
+
+
+
+Referenced by expect\+Closing\+Bracket(), p\+Expression(), p\+Rule(), and p\+Value().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d17/classSxTree_1_1LexerStruct_1_1LexerStruct_abd9e19539739405e42f3f59f86ba5337_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d17/classSxTree_1_1LexerStruct_1_1LexerStruct_abd9e19539739405e42f3f59f86ba5337_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSxTree_1_1LexerStruct_1_1LexerStruct_abf3eb96038e0279cfa678e683e8a5b83}\label{classSxTree_1_1LexerStruct_1_1LexerStruct_abf3eb96038e0279cfa678e683e8a5b83}} 
+\index{SxTree::LexerStruct::LexerStruct@{SxTree::LexerStruct::LexerStruct}!getChar@{getChar}}
+\index{getChar@{getChar}!SxTree::LexerStruct::LexerStruct@{SxTree::LexerStruct::LexerStruct}}
+\doxysubsubsection{\texorpdfstring{getChar()}{getChar()}}
+{\footnotesize\ttfamily char Sx\+Tree\+::\+Lexer\+Struct\+::\+Lexer\+Struct\+::get\+Char (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1LexerStructPos}{Lexer\+Struct\+Pos}} \&}]{lexer\+Struct\+Pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{196                                                             \{}
+\DoxyCodeLine{197         \textcolor{keywordflow}{return} (*lexerStructPos.storage)[lexerStructPos.posNow];}
+\DoxyCodeLine{198     \}}
+
+\end{DoxyCode}
+
+
+References Sx\+Tree\+::\+Lexer\+Struct\+::\+Structure\+::\+Lexer\+Struct\+Pos\+::pos\+Now, and Sx\+Tree\+::\+Lexer\+Struct\+::\+Structure\+::\+Lexer\+Struct\+Pos\+::storage.
+
+
+
+Referenced by expect\+Word(), p\+Rule(), and skip\+Chars().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d17/classSxTree_1_1LexerStruct_1_1LexerStruct_abf3eb96038e0279cfa678e683e8a5b83_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSxTree_1_1LexerStruct_1_1LexerStruct_a3130f0e7fcef5b57306d8d9ee75d2b83}\label{classSxTree_1_1LexerStruct_1_1LexerStruct_a3130f0e7fcef5b57306d8d9ee75d2b83}} 
+\index{SxTree::LexerStruct::LexerStruct@{SxTree::LexerStruct::LexerStruct}!getErrors@{getErrors}}
+\index{getErrors@{getErrors}!SxTree::LexerStruct::LexerStruct@{SxTree::LexerStruct::LexerStruct}}
+\doxysubsubsection{\texorpdfstring{getErrors()}{getErrors()}}
+{\footnotesize\ttfamily decltype(\mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_a5f3ab5c7b9af6d0fafcadb0c9dedc5dc}{Lexer\+Struct\+::errors}}) const\& Sx\+Tree\+::\+Lexer\+Struct\+::\+Lexer\+Struct\+::get\+Errors (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Referenced by main().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=273pt]{d3/d17/classSxTree_1_1LexerStruct_1_1LexerStruct_a3130f0e7fcef5b57306d8d9ee75d2b83_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSxTree_1_1LexerStruct_1_1LexerStruct_a25588906777ed5559b7705b95d974ddc}\label{classSxTree_1_1LexerStruct_1_1LexerStruct_a25588906777ed5559b7705b95d974ddc}} 
+\index{SxTree::LexerStruct::LexerStruct@{SxTree::LexerStruct::LexerStruct}!getLexemesMap@{getLexemesMap}}
+\index{getLexemesMap@{getLexemesMap}!SxTree::LexerStruct::LexerStruct@{SxTree::LexerStruct::LexerStruct}}
+\doxysubsubsection{\texorpdfstring{getLexemesMap()}{getLexemesMap()}}
+{\footnotesize\ttfamily const unordered\+\_\+map$<$ string, unsigned $>$ \& Sx\+Tree\+::\+Lexer\+Struct\+::\+Lexer\+Struct\+::get\+Lexemes\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{232                                                                             \{}
+\DoxyCodeLine{233         \textcolor{keywordflow}{return} \mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_a3362b1ce7dc23ee81dfd00a7c7a9177c}{ruleIdsNo}};}
+\DoxyCodeLine{234     \}}
+
+\end{DoxyCode}
+
+
+References rule\+Ids\+No.
+
+\mbox{\Hypertarget{classSxTree_1_1LexerStruct_1_1LexerStruct_a75a75e6a8319633cd46f491d74b6edd5}\label{classSxTree_1_1LexerStruct_1_1LexerStruct_a75a75e6a8319633cd46f491d74b6edd5}} 
+\index{SxTree::LexerStruct::LexerStruct@{SxTree::LexerStruct::LexerStruct}!getRuleId@{getRuleId}}
+\index{getRuleId@{getRuleId}!SxTree::LexerStruct::LexerStruct@{SxTree::LexerStruct::LexerStruct}}
+\doxysubsubsection{\texorpdfstring{getRuleId()}{getRuleId()}}
+{\footnotesize\ttfamily unsigned Sx\+Tree\+::\+Lexer\+Struct\+::\+Lexer\+Struct\+::get\+Rule\+Id (\begin{DoxyParamCaption}\item[{const string \&}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{223                                                     \{}
+\DoxyCodeLine{224         \textcolor{keyword}{const} \textcolor{keyword}{auto} found = \mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_a3362b1ce7dc23ee81dfd00a7c7a9177c}{ruleIdsNo}}.find(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{225         \textcolor{keywordflow}{if} (found == \mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_a3362b1ce7dc23ee81dfd00a7c7a9177c}{ruleIdsNo}}.end()) \{}
+\DoxyCodeLine{226             \mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_a3362b1ce7dc23ee81dfd00a7c7a9177c}{ruleIdsNo}}[id] = \mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_a3362b1ce7dc23ee81dfd00a7c7a9177c}{ruleIdsNo}}.size();}
+\DoxyCodeLine{227             \textcolor{keywordflow}{return} \mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_a3362b1ce7dc23ee81dfd00a7c7a9177c}{ruleIdsNo}}.size() -\/ 1;}
+\DoxyCodeLine{228         \}}
+\DoxyCodeLine{229         \textcolor{keywordflow}{return} found-\/>second;}
+\DoxyCodeLine{230     \}}
+
+\end{DoxyCode}
+
+
+References rule\+Ids\+No.
+
+
+
+Referenced by p\+Rule().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=341pt]{d3/d17/classSxTree_1_1LexerStruct_1_1LexerStruct_a75a75e6a8319633cd46f491d74b6edd5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSxTree_1_1LexerStruct_1_1LexerStruct_aac4379453da365eaf5bbfdd63a0b3020}\label{classSxTree_1_1LexerStruct_1_1LexerStruct_aac4379453da365eaf5bbfdd63a0b3020}} 
+\index{SxTree::LexerStruct::LexerStruct@{SxTree::LexerStruct::LexerStruct}!getRules@{getRules}}
+\index{getRules@{getRules}!SxTree::LexerStruct::LexerStruct@{SxTree::LexerStruct::LexerStruct}}
+\doxysubsubsection{\texorpdfstring{getRules()}{getRules()}}
+{\footnotesize\ttfamily const vector$<$ \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Rule}{Structure\+::\+Rule}} $>$ \& Sx\+Tree\+::\+Lexer\+Struct\+::\+Lexer\+Struct\+::get\+Rules (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{219                                                              \{}
+\DoxyCodeLine{220         \textcolor{keywordflow}{return} \mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_abccf4215b51ffac41d490ef510cf0b72}{rules}};}
+\DoxyCodeLine{221     \}}
+
+\end{DoxyCode}
+
+
+References rules.
+
+\mbox{\Hypertarget{classSxTree_1_1LexerStruct_1_1LexerStruct_ad706191a24e4781ccad0048ba99f2c28}\label{classSxTree_1_1LexerStruct_1_1LexerStruct_ad706191a24e4781ccad0048ba99f2c28}} 
+\index{SxTree::LexerStruct::LexerStruct@{SxTree::LexerStruct::LexerStruct}!isEnded@{isEnded}}
+\index{isEnded@{isEnded}!SxTree::LexerStruct::LexerStruct@{SxTree::LexerStruct::LexerStruct}}
+\doxysubsubsection{\texorpdfstring{isEnded()}{isEnded()}}
+{\footnotesize\ttfamily bool Sx\+Tree\+::\+Lexer\+Struct\+::\+Lexer\+Struct\+::is\+Ended (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1LexerStructPos}{Lexer\+Struct\+Pos}} \&}]{lexer\+Struct\+Pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}, {\ttfamily [noexcept]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{183                                                                      \{}
+\DoxyCodeLine{184         \textcolor{keywordflow}{return} lexerStructPos.isEnded();}
+\DoxyCodeLine{185     \}}
+
+\end{DoxyCode}
+
+
+Referenced by skip\+Chars().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d17/classSxTree_1_1LexerStruct_1_1LexerStruct_ad706191a24e4781ccad0048ba99f2c28_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSxTree_1_1LexerStruct_1_1LexerStruct_a523c05dc2eda74d9616e1ad84f1a73f2}\label{classSxTree_1_1LexerStruct_1_1LexerStruct_a523c05dc2eda74d9616e1ad84f1a73f2}} 
+\index{SxTree::LexerStruct::LexerStruct@{SxTree::LexerStruct::LexerStruct}!parseRules@{parseRules}}
+\index{parseRules@{parseRules}!SxTree::LexerStruct::LexerStruct@{SxTree::LexerStruct::LexerStruct}}
+\doxysubsubsection{\texorpdfstring{parseRules()}{parseRules()}}
+{\footnotesize\ttfamily void Sx\+Tree\+::\+Lexer\+Struct\+::\+Lexer\+Struct\+::parse\+Rules (\begin{DoxyParamCaption}\item[{const string \&}]{storage }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{25                                                                \{}
+\DoxyCodeLine{26         LexerStructPos lexerStructPos(\&storage);}
+\DoxyCodeLine{27         \textcolor{keywordflow}{while} (\mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_a5f3ab5c7b9af6d0fafcadb0c9dedc5dc}{errors}}.empty() \&\& !\mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_ad706191a24e4781ccad0048ba99f2c28}{isEnded}}(lexerStructPos)) \{}
+\DoxyCodeLine{28             \textcolor{keyword}{auto} rule = \mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_a34d3017b38806be1d67d6d95f4927fce}{pRule}}(lexerStructPos);}
+\DoxyCodeLine{29             \textcolor{keywordflow}{if} (rule.has\_value()) \{}
+\DoxyCodeLine{30                 \mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_abccf4215b51ffac41d490ef510cf0b72}{rules}}.push\_back(std::move(rule.value()));}
+\DoxyCodeLine{31             \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{32                 \mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_a3ddc98ba0da99b7059b9e84364fedb77}{skipChars}}(lexerStructPos, \mbox{\hyperlink{namespaceSxTree_1_1LexerStruct_aa149d4a2b3be1f9f46a2c9851f857b24}{skipBefore}});}
+\DoxyCodeLine{33                 \textcolor{keywordflow}{if} (!\mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_ad706191a24e4781ccad0048ba99f2c28}{isEnded}}(lexerStructPos))}
+\DoxyCodeLine{34                     \mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_a5f3ab5c7b9af6d0fafcadb0c9dedc5dc}{errors}}.push\_back(\{\textcolor{stringliteral}{"{}Invalid rule"{}}, lexerStructPos.posNow\});}
+\DoxyCodeLine{35                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{36             \}}
+\DoxyCodeLine{37             \mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_a3ddc98ba0da99b7059b9e84364fedb77}{skipChars}}(lexerStructPos, \mbox{\hyperlink{namespaceSxTree_1_1LexerStruct_aa149d4a2b3be1f9f46a2c9851f857b24}{skipBefore}});}
+\DoxyCodeLine{38         \}}
+\DoxyCodeLine{39     \}}
+
+\end{DoxyCode}
+
+
+References Sx\+Tree\+::\+Lexer\+Struct\+::\+Structure\+::\+Lexer\+Struct\+Pos\+::pos\+Now, and Sx\+Tree\+::\+Lexer\+Struct\+::skip\+Before.
+
+
+
+Referenced by main().
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{d3/d17/classSxTree_1_1LexerStruct_1_1LexerStruct_a523c05dc2eda74d9616e1ad84f1a73f2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSxTree_1_1LexerStruct_1_1LexerStruct_a982323c58b381565a58782f056ea32a5}\label{classSxTree_1_1LexerStruct_1_1LexerStruct_a982323c58b381565a58782f056ea32a5}} 
+\index{SxTree::LexerStruct::LexerStruct@{SxTree::LexerStruct::LexerStruct}!pExpression@{pExpression}}
+\index{pExpression@{pExpression}!SxTree::LexerStruct::LexerStruct@{SxTree::LexerStruct::LexerStruct}}
+\doxysubsubsection{\texorpdfstring{pExpression()}{pExpression()}}
+{\footnotesize\ttfamily optional$<$ \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression}{Expression}} $>$ Sx\+Tree\+::\+Lexer\+Struct\+::\+Lexer\+Struct\+::p\+Expression (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1LexerStructPos}{Lexer\+Struct\+Pos}} \&}]{lexer\+Struct\+Pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{75                                                                                 \{}
+\DoxyCodeLine{76         \mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_a3ddc98ba0da99b7059b9e84364fedb77}{skipChars}}(lexerStructPos, \mbox{\hyperlink{namespaceSxTree_1_1LexerStruct_ad65f385871327f4d3586c20bf81df71a}{skipLine}});}
+\DoxyCodeLine{77         \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression_aad1e9a60b7d31550dd137b139c2e6492}{Expression::ExprType}} type = \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression_aad1e9a60b7d31550dd137b139c2e6492aafa430a34129765bf741db23f887c388}{Structure::Expression::EXP\_ONE}};}
+\DoxyCodeLine{78         \textcolor{keywordflow}{if} (!\mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_abd9e19539739405e42f3f59f86ba5337}{expectWord}}(lexerStructPos, \textcolor{stringliteral}{"{}("{}})) \{}
+\DoxyCodeLine{79             \textcolor{keywordflow}{if} (!\mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_abd9e19539739405e42f3f59f86ba5337}{expectWord}}(lexerStructPos, \textcolor{stringliteral}{"{}["{}})) \{}
+\DoxyCodeLine{80                 \textcolor{keywordflow}{if} (!\mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_abd9e19539739405e42f3f59f86ba5337}{expectWord}}(lexerStructPos, \textcolor{stringliteral}{"{}?["{}})) \{}
+\DoxyCodeLine{81                     \mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_a5f3ab5c7b9af6d0fafcadb0c9dedc5dc}{errors}}.push\_back(\{\textcolor{stringliteral}{"{}Expected left parenthesis before expression"{}}, lexerStructPos.posNow\});}
+\DoxyCodeLine{82                     \mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_a3ddc98ba0da99b7059b9e84364fedb77}{skipChars}}(lexerStructPos, \mbox{\hyperlink{namespaceSxTree_1_1LexerStruct_aa149d4a2b3be1f9f46a2c9851f857b24}{skipBefore}});}
+\DoxyCodeLine{83                     \textcolor{keywordflow}{return} optional<Expression>();}
+\DoxyCodeLine{84                 \} \textcolor{keywordflow}{else}}
+\DoxyCodeLine{85                     type = \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression_aad1e9a60b7d31550dd137b139c2e6492a06a2cea71d70886d66de5f21791e7131}{Structure::Expression::EXP\_OPTIONAL}};}
+\DoxyCodeLine{86             \} \textcolor{keywordflow}{else}}
+\DoxyCodeLine{87                 type = \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression_aad1e9a60b7d31550dd137b139c2e6492a389a471c1ede827429d59a2fcb914839}{Structure::Expression::EXP\_ANY}};}
+\DoxyCodeLine{88         \}}
+\DoxyCodeLine{89         \mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_a3ddc98ba0da99b7059b9e84364fedb77}{skipChars}}(lexerStructPos, \mbox{\hyperlink{namespaceSxTree_1_1LexerStruct_ad65f385871327f4d3586c20bf81df71a}{skipLine}});}
+\DoxyCodeLine{90         \textcolor{keyword}{auto} firstExpr = \mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_a86ea00c56b1e187a505b250b7999c6b5}{pValue}}(lexerStructPos);}
+\DoxyCodeLine{91         \textcolor{keywordflow}{if} (!firstExpr.has\_value()) \{}
+\DoxyCodeLine{92             \mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_a5f3ab5c7b9af6d0fafcadb0c9dedc5dc}{errors}}.push\_back(\{\textcolor{stringliteral}{"{}At least one rule required in the expression"{}}, lexerStructPos.posNow\});}
+\DoxyCodeLine{93             \textcolor{keywordflow}{return} optional<Expression>();}
+\DoxyCodeLine{94         \}}
+\DoxyCodeLine{95         Expression expr;}
+\DoxyCodeLine{96         expr.type = type;}
+\DoxyCodeLine{97         expr.possible.push\_back(std::move(firstExpr.value()));}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99         \textcolor{keywordflow}{while} (\textcolor{keyword}{true}) \{}
+\DoxyCodeLine{100             \mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_a3ddc98ba0da99b7059b9e84364fedb77}{skipChars}}(lexerStructPos, \mbox{\hyperlink{namespaceSxTree_1_1LexerStruct_ad65f385871327f4d3586c20bf81df71a}{skipLine}});}
+\DoxyCodeLine{101             \textcolor{keywordflow}{if} (\mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_abd9e19539739405e42f3f59f86ba5337}{expectWord}}(lexerStructPos, \textcolor{stringliteral}{"{},"{}})) \{}
+\DoxyCodeLine{102                 \mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_a3ddc98ba0da99b7059b9e84364fedb77}{skipChars}}(lexerStructPos, \mbox{\hyperlink{namespaceSxTree_1_1LexerStruct_ad65f385871327f4d3586c20bf81df71a}{skipLine}});}
+\DoxyCodeLine{103                 \textcolor{keyword}{auto} nextExpr = \mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_a86ea00c56b1e187a505b250b7999c6b5}{pValue}}(lexerStructPos);}
+\DoxyCodeLine{104                 \textcolor{keywordflow}{if} (!nextExpr.has\_value()) \{}
+\DoxyCodeLine{105                     \mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_a5f3ab5c7b9af6d0fafcadb0c9dedc5dc}{errors}}.push\_back(\{\textcolor{stringliteral}{"{}Expected a comma before declarations"{}}, lexerStructPos.posNow\});}
+\DoxyCodeLine{106                     \mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_a3ddc98ba0da99b7059b9e84364fedb77}{skipChars}}(lexerStructPos, \mbox{\hyperlink{namespaceSxTree_1_1LexerStruct_aa149d4a2b3be1f9f46a2c9851f857b24}{skipBefore}});}
+\DoxyCodeLine{107                     \textcolor{keywordflow}{return} optional<Expression>();}
+\DoxyCodeLine{108                 \}}
+\DoxyCodeLine{109                 expr.possible.push\_back(std::move(nextExpr.value()));}
+\DoxyCodeLine{110             \} \textcolor{keywordflow}{else}}
+\DoxyCodeLine{111                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{112         \}}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{114         \textcolor{keywordflow}{return} \mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_a430e3318110d4c1557ea9338ef809ffe}{expectClosingBracket}}(lexerStructPos, expr);}
+\DoxyCodeLine{115     \}}
+
+\end{DoxyCode}
+
+
+References errors, Sx\+Tree\+::\+Lexer\+Struct\+::\+Structure\+::\+Expression\+::\+EXP\+\_\+\+ANY, Sx\+Tree\+::\+Lexer\+Struct\+::\+Structure\+::\+Expression\+::\+EXP\+\_\+\+ONE, Sx\+Tree\+::\+Lexer\+Struct\+::\+Structure\+::\+Expression\+::\+EXP\+\_\+\+OPTIONAL, expect\+Closing\+Bracket(), expect\+Word(), Sx\+Tree\+::\+Lexer\+Struct\+::\+Structure\+::\+Lexer\+Struct\+Pos\+::pos\+Now, Sx\+Tree\+::\+Lexer\+Struct\+::\+Structure\+::\+Expression\+::possible, p\+Value(), Sx\+Tree\+::\+Lexer\+Struct\+::skip\+Before, skip\+Chars(), Sx\+Tree\+::\+Lexer\+Struct\+::skip\+Line, and Sx\+Tree\+::\+Lexer\+Struct\+::\+Structure\+::\+Expression\+::type.
+
+
+
+Referenced by p\+Rule(), and p\+Value().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d17/classSxTree_1_1LexerStruct_1_1LexerStruct_a982323c58b381565a58782f056ea32a5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d17/classSxTree_1_1LexerStruct_1_1LexerStruct_a982323c58b381565a58782f056ea32a5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSxTree_1_1LexerStruct_1_1LexerStruct_a34d3017b38806be1d67d6d95f4927fce}\label{classSxTree_1_1LexerStruct_1_1LexerStruct_a34d3017b38806be1d67d6d95f4927fce}} 
+\index{SxTree::LexerStruct::LexerStruct@{SxTree::LexerStruct::LexerStruct}!pRule@{pRule}}
+\index{pRule@{pRule}!SxTree::LexerStruct::LexerStruct@{SxTree::LexerStruct::LexerStruct}}
+\doxysubsubsection{\texorpdfstring{pRule()}{pRule()}}
+{\footnotesize\ttfamily optional$<$ \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Rule}{Rule}} $>$ Sx\+Tree\+::\+Lexer\+Struct\+::\+Lexer\+Struct\+::p\+Rule (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1LexerStructPos}{Lexer\+Struct\+Pos}} \&}]{lexer\+Struct\+Pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{41                                                                     \{}
+\DoxyCodeLine{42         \mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_a3ddc98ba0da99b7059b9e84364fedb77}{skipChars}}(lexerStructPos, \mbox{\hyperlink{namespaceSxTree_1_1LexerStruct_aa149d4a2b3be1f9f46a2c9851f857b24}{skipBefore}});}
+\DoxyCodeLine{43         \textcolor{keywordtype}{string} id;}
+\DoxyCodeLine{44         \textcolor{keywordtype}{char} tmpChar = 0;}
+\DoxyCodeLine{45         \textcolor{keywordflow}{while} (isalpha(tmpChar = \mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_abf3eb96038e0279cfa678e683e8a5b83}{getChar}}(lexerStructPos)) || isdigit(tmpChar)) \{}
+\DoxyCodeLine{46             \textcolor{keywordtype}{id} += tmpChar;}
+\DoxyCodeLine{47             lexerStructPos.moveForward(1);}
+\DoxyCodeLine{48         \}}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50         \mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_a3ddc98ba0da99b7059b9e84364fedb77}{skipChars}}(lexerStructPos, \mbox{\hyperlink{namespaceSxTree_1_1LexerStruct_ad65f385871327f4d3586c20bf81df71a}{skipLine}});}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52         \textcolor{keywordflow}{if} (!\mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_abd9e19539739405e42f3f59f86ba5337}{expectWord}}(lexerStructPos, \textcolor{stringliteral}{"{}="{}})) \{}
+\DoxyCodeLine{53             \mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_a5f3ab5c7b9af6d0fafcadb0c9dedc5dc}{errors}}.push\_back(\{\textcolor{stringliteral}{"{}No '=' symbol after identifier"{}}, lexerStructPos.posNow\});}
+\DoxyCodeLine{54             \mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_a3ddc98ba0da99b7059b9e84364fedb77}{skipChars}}(lexerStructPos, \mbox{\hyperlink{namespaceSxTree_1_1LexerStruct_aa149d4a2b3be1f9f46a2c9851f857b24}{skipBefore}});}
+\DoxyCodeLine{55             \textcolor{keywordflow}{return} optional<Rule>();}
+\DoxyCodeLine{56         \}}
+\DoxyCodeLine{57         \mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_a3ddc98ba0da99b7059b9e84364fedb77}{skipChars}}(lexerStructPos, \mbox{\hyperlink{namespaceSxTree_1_1LexerStruct_ad65f385871327f4d3586c20bf81df71a}{skipLine}});}
+\DoxyCodeLine{58         \textcolor{keyword}{auto} expr = \mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_a982323c58b381565a58782f056ea32a5}{pExpression}}(lexerStructPos);}
+\DoxyCodeLine{59         \textcolor{keywordflow}{if} (!expr.has\_value()) \{}
+\DoxyCodeLine{60             \mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_a5f3ab5c7b9af6d0fafcadb0c9dedc5dc}{errors}}.push\_back(\{\textcolor{stringliteral}{"{}Invalid expression after <id> = "{}}, lexerStructPos.posNow\});}
+\DoxyCodeLine{61             \mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_a3ddc98ba0da99b7059b9e84364fedb77}{skipChars}}(lexerStructPos, \mbox{\hyperlink{namespaceSxTree_1_1LexerStruct_aa149d4a2b3be1f9f46a2c9851f857b24}{skipBefore}});}
+\DoxyCodeLine{62             \textcolor{keywordflow}{return} optional<Rule>();}
+\DoxyCodeLine{63         \}}
+\DoxyCodeLine{64         \mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_a3ddc98ba0da99b7059b9e84364fedb77}{skipChars}}(lexerStructPos, \mbox{\hyperlink{namespaceSxTree_1_1LexerStruct_ad65f385871327f4d3586c20bf81df71a}{skipLine}});}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66         \textcolor{keywordflow}{if} (!\mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_abd9e19539739405e42f3f59f86ba5337}{expectWord}}(lexerStructPos, \textcolor{stringliteral}{"{}\(\backslash\)n"{}})) \{}
+\DoxyCodeLine{67             \mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_a5f3ab5c7b9af6d0fafcadb0c9dedc5dc}{errors}}.push\_back(\{\textcolor{stringliteral}{"{}No new line after definition"{}}, lexerStructPos.posNow\});}
+\DoxyCodeLine{68             \mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_a3ddc98ba0da99b7059b9e84364fedb77}{skipChars}}(lexerStructPos, \mbox{\hyperlink{namespaceSxTree_1_1LexerStruct_aa149d4a2b3be1f9f46a2c9851f857b24}{skipBefore}});}
+\DoxyCodeLine{69             \textcolor{keywordflow}{return} optional<Rule>();}
+\DoxyCodeLine{70         \}}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72         \textcolor{keywordflow}{return} optional<Rule>(\{\mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_a75a75e6a8319633cd46f491d74b6edd5}{getRuleId}}(\textcolor{keywordtype}{id}), expr.value()\});}
+\DoxyCodeLine{73     \}}
+
+\end{DoxyCode}
+
+
+References errors, expect\+Word(), get\+Char(), get\+Rule\+Id(), Sx\+Tree\+::\+Lexer\+Struct\+::\+Structure\+::\+Lexer\+Struct\+Pos\+::move\+Forward(), p\+Expression(), Sx\+Tree\+::\+Lexer\+Struct\+::\+Structure\+::\+Lexer\+Struct\+Pos\+::pos\+Now, Sx\+Tree\+::\+Lexer\+Struct\+::skip\+Before, skip\+Chars(), and Sx\+Tree\+::\+Lexer\+Struct\+::skip\+Line.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d17/classSxTree_1_1LexerStruct_1_1LexerStruct_a34d3017b38806be1d67d6d95f4927fce_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSxTree_1_1LexerStruct_1_1LexerStruct_a86ea00c56b1e187a505b250b7999c6b5}\label{classSxTree_1_1LexerStruct_1_1LexerStruct_a86ea00c56b1e187a505b250b7999c6b5}} 
+\index{SxTree::LexerStruct::LexerStruct@{SxTree::LexerStruct::LexerStruct}!pValue@{pValue}}
+\index{pValue@{pValue}!SxTree::LexerStruct::LexerStruct@{SxTree::LexerStruct::LexerStruct}}
+\doxysubsubsection{\texorpdfstring{pValue()}{pValue()}}
+{\footnotesize\ttfamily optional$<$ \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Value}{Value}} $>$ Sx\+Tree\+::\+Lexer\+Struct\+::\+Lexer\+Struct\+::p\+Value (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1LexerStructPos}{Lexer\+Struct\+Pos}} \&}]{lexer\+Struct\+Pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{147                                                                       \{}
+\DoxyCodeLine{148         \textcolor{keyword}{auto} getExpr = [=](LexerStructPos \&lexerStructPos, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *errMsg, \textcolor{keywordtype}{bool} skip=\textcolor{keyword}{false}) -\/> optional<Value> \{}
+\DoxyCodeLine{149             \textcolor{keyword}{auto} expr = \mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_a982323c58b381565a58782f056ea32a5}{pExpression}}(lexerStructPos);}
+\DoxyCodeLine{150             \textcolor{keywordflow}{if} (!expr.has\_value()) \{}
+\DoxyCodeLine{151                 \mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_a5f3ab5c7b9af6d0fafcadb0c9dedc5dc}{errors}}.push\_back(\{errMsg, lexerStructPos.posNow\});}
+\DoxyCodeLine{152                 \textcolor{keywordflow}{return} optional<Value>();}
+\DoxyCodeLine{153             \}}
+\DoxyCodeLine{154             \textcolor{keywordflow}{return} Value(expr.value(), skip);}
+\DoxyCodeLine{155         \};}
+\DoxyCodeLine{156 }
+\DoxyCodeLine{157         \mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_a3ddc98ba0da99b7059b9e84364fedb77}{skipChars}}(lexerStructPos, \mbox{\hyperlink{namespaceSxTree_1_1LexerStruct_ad65f385871327f4d3586c20bf81df71a}{skipLine}});}
+\DoxyCodeLine{158         \textcolor{keywordflow}{if} (\mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_abd9e19539739405e42f3f59f86ba5337}{expectWord}}(lexerStructPos, \textcolor{stringliteral}{"{}skip"{}}))}
+\DoxyCodeLine{159             \textcolor{keywordflow}{return} getExpr(lexerStructPos, \textcolor{stringliteral}{"{}Expected expression directly after 'skip' keyword"{}}, \textcolor{keyword}{true});}
+\DoxyCodeLine{160 }
+\DoxyCodeLine{161         std::regex rgx(R\textcolor{stringliteral}{"{}((["{}'])(?:(?=(\(\backslash\)\(\backslash\)?))\(\backslash\)2.)*?\(\backslash\)1)"{});}}
+\DoxyCodeLine{162 \textcolor{stringliteral}{        std::sregex\_iterator current(lexerStructPos.begin(), lexerStructPos.end(), rgx);}}
+\DoxyCodeLine{163 \textcolor{stringliteral}{        std::sregex\_iterator end;}}
+\DoxyCodeLine{164 \textcolor{stringliteral}{}\textcolor{comment}{//        printf("{}\%s\(\backslash\)n"{}, current-\/>str().c\_str());}}
+\DoxyCodeLine{165         \textcolor{keywordflow}{if} (current == end || current-\/>position() != 0)}
+\DoxyCodeLine{166             \textcolor{keywordflow}{return} getExpr(lexerStructPos, \textcolor{stringliteral}{"{}Malformed rule"{}});}
+\DoxyCodeLine{167         \textcolor{keywordflow}{if} (current-\/>str().size() <= 2) \{}
+\DoxyCodeLine{168             \mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_a5f3ab5c7b9af6d0fafcadb0c9dedc5dc}{errors}}.push\_back(\{\textcolor{stringliteral}{"{}RegExpr can't be empty"{}}, lexerStructPos.posNow\});}
+\DoxyCodeLine{169             \textcolor{keywordflow}{return} optional<Value>();}
+\DoxyCodeLine{170         \}}
+\DoxyCodeLine{171         \textcolor{keywordtype}{string} stringReg = current-\/>str();\textcolor{comment}{/*std::regex\_replace(current-\/>str(), std::regex(R"{}(\(\backslash\)\(\backslash\)"{})"{}), "{}\(\backslash\)"{}"{});*/}}
+\DoxyCodeLine{172         stringReg = stringReg.substr(1, current-\/>str().size() -\/ 2);}
+\DoxyCodeLine{173         lexerStructPos.moveForward(current-\/>str().size());}
+\DoxyCodeLine{174         \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{175             \textcolor{keywordflow}{return} Value(stringReg);}
+\DoxyCodeLine{176         \} \textcolor{keywordflow}{catch} (\textcolor{keyword}{const} std::regex\_error \&e) \{}
+\DoxyCodeLine{177             \mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_a5f3ab5c7b9af6d0fafcadb0c9dedc5dc}{errors}}.push\_back(\{\textcolor{stringliteral}{"{}Wrong regular expression detected"{}}, lexerStructPos.posNow\});}
+\DoxyCodeLine{178             \mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_a5f3ab5c7b9af6d0fafcadb0c9dedc5dc}{errors}}.push\_back(\{e.what(), lexerStructPos.posNow\});}
+\DoxyCodeLine{179             \textcolor{keywordflow}{return} optional<Value>();}
+\DoxyCodeLine{180         \}}
+\DoxyCodeLine{181     \}}
+
+\end{DoxyCode}
+
+
+References Sx\+Tree\+::\+Lexer\+Struct\+::\+Structure\+::\+Lexer\+Struct\+Pos\+::begin(), Sx\+Tree\+::\+Lexer\+Struct\+::\+Structure\+::\+Lexer\+Struct\+Pos\+::end(), errors, expect\+Word(), Sx\+Tree\+::\+Lexer\+Struct\+::\+Structure\+::\+Lexer\+Struct\+Pos\+::move\+Forward(), p\+Expression(), Sx\+Tree\+::\+Lexer\+Struct\+::\+Structure\+::\+Lexer\+Struct\+Pos\+::pos\+Now, skip\+Chars(), and Sx\+Tree\+::\+Lexer\+Struct\+::skip\+Line.
+
+
+
+Referenced by p\+Expression().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d17/classSxTree_1_1LexerStruct_1_1LexerStruct_a86ea00c56b1e187a505b250b7999c6b5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d17/classSxTree_1_1LexerStruct_1_1LexerStruct_a86ea00c56b1e187a505b250b7999c6b5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSxTree_1_1LexerStruct_1_1LexerStruct_a3ddc98ba0da99b7059b9e84364fedb77}\label{classSxTree_1_1LexerStruct_1_1LexerStruct_a3ddc98ba0da99b7059b9e84364fedb77}} 
+\index{SxTree::LexerStruct::LexerStruct@{SxTree::LexerStruct::LexerStruct}!skipChars@{skipChars}}
+\index{skipChars@{skipChars}!SxTree::LexerStruct::LexerStruct@{SxTree::LexerStruct::LexerStruct}}
+\doxysubsubsection{\texorpdfstring{skipChars()}{skipChars()}}
+{\footnotesize\ttfamily void Sx\+Tree\+::\+Lexer\+Struct\+::\+Lexer\+Struct\+::skip\+Chars (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1LexerStructPos}{Lexer\+Struct\+Pos}} \&}]{lexer\+Struct\+Pos,  }\item[{const std\+::set$<$ char $>$ \&}]{chars }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{187                                                                                          \{}
+\DoxyCodeLine{188         \textcolor{keywordflow}{while} (!\mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_ad706191a24e4781ccad0048ba99f2c28}{isEnded}}(lexerStructPos)) \{}
+\DoxyCodeLine{189             \textcolor{keywordflow}{if} (chars.find(\mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_abf3eb96038e0279cfa678e683e8a5b83}{getChar}}(lexerStructPos)) != chars.end())}
+\DoxyCodeLine{190                 lexerStructPos.moveForward(1);}
+\DoxyCodeLine{191             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{192                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{193         \}}
+\DoxyCodeLine{194     \}}
+
+\end{DoxyCode}
+
+
+References get\+Char(), is\+Ended(), and Sx\+Tree\+::\+Lexer\+Struct\+::\+Structure\+::\+Lexer\+Struct\+Pos\+::move\+Forward().
+
+
+
+Referenced by expect\+Closing\+Bracket(), p\+Expression(), p\+Rule(), and p\+Value().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d17/classSxTree_1_1LexerStruct_1_1LexerStruct_a3ddc98ba0da99b7059b9e84364fedb77_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d17/classSxTree_1_1LexerStruct_1_1LexerStruct_a3ddc98ba0da99b7059b9e84364fedb77_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Field Documentation}
+\mbox{\Hypertarget{classSxTree_1_1LexerStruct_1_1LexerStruct_a5f3ab5c7b9af6d0fafcadb0c9dedc5dc}\label{classSxTree_1_1LexerStruct_1_1LexerStruct_a5f3ab5c7b9af6d0fafcadb0c9dedc5dc}} 
+\index{SxTree::LexerStruct::LexerStruct@{SxTree::LexerStruct::LexerStruct}!errors@{errors}}
+\index{errors@{errors}!SxTree::LexerStruct::LexerStruct@{SxTree::LexerStruct::LexerStruct}}
+\doxysubsubsection{\texorpdfstring{errors}{errors}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{namespaceSxTree_1_1LexerStruct_1_1Structure_d3/d8c/structSxTree_1_1LexerStruct_1_1Structure_1_1ParseError}{Structure\+::\+Parse\+Error}}$>$ Sx\+Tree\+::\+Lexer\+Struct\+::\+Lexer\+Struct\+::errors\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Referenced by expect\+Closing\+Bracket(), p\+Expression(), p\+Rule(), and p\+Value().
+
+\mbox{\Hypertarget{classSxTree_1_1LexerStruct_1_1LexerStruct_a3362b1ce7dc23ee81dfd00a7c7a9177c}\label{classSxTree_1_1LexerStruct_1_1LexerStruct_a3362b1ce7dc23ee81dfd00a7c7a9177c}} 
+\index{SxTree::LexerStruct::LexerStruct@{SxTree::LexerStruct::LexerStruct}!ruleIdsNo@{ruleIdsNo}}
+\index{ruleIdsNo@{ruleIdsNo}!SxTree::LexerStruct::LexerStruct@{SxTree::LexerStruct::LexerStruct}}
+\doxysubsubsection{\texorpdfstring{ruleIdsNo}{ruleIdsNo}}
+{\footnotesize\ttfamily unordered\+\_\+map$<$string, unsigned$>$ Sx\+Tree\+::\+Lexer\+Struct\+::\+Lexer\+Struct\+::rule\+Ids\+No\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Referenced by get\+Lexemes\+Map(), and get\+Rule\+Id().
+
+\mbox{\Hypertarget{classSxTree_1_1LexerStruct_1_1LexerStruct_abccf4215b51ffac41d490ef510cf0b72}\label{classSxTree_1_1LexerStruct_1_1LexerStruct_abccf4215b51ffac41d490ef510cf0b72}} 
+\index{SxTree::LexerStruct::LexerStruct@{SxTree::LexerStruct::LexerStruct}!rules@{rules}}
+\index{rules@{rules}!SxTree::LexerStruct::LexerStruct@{SxTree::LexerStruct::LexerStruct}}
+\doxysubsubsection{\texorpdfstring{rules}{rules}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Rule}{Structure\+::\+Rule}}$>$ Sx\+Tree\+::\+Lexer\+Struct\+::\+Lexer\+Struct\+::rules\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Referenced by get\+Rules().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/alexroar/\+Desktop/\+Dev/\+Sx\+Tree/include/\+Lexer/\mbox{\hyperlink{LexerStruct_8h}{Lexer\+Struct.\+h}}\item 
+/\+Users/alexroar/\+Desktop/\+Dev/\+Sx\+Tree/src/\+Lexer/\mbox{\hyperlink{LexerStruct_8cpp}{Lexer\+Struct.\+cpp}}\end{DoxyCompactItemize}

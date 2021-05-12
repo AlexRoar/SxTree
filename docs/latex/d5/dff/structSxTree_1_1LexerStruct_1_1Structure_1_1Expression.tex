@@ -1,0 +1,261 @@
+\hypertarget{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression}{}\doxysection{Sx\+Tree\+::Lexer\+Struct\+::Structure\+::Expression Struct Reference}
+\label{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression}\index{SxTree::LexerStruct::Structure::Expression@{SxTree::LexerStruct::Structure::Expression}}
+
+
+{\ttfamily \#include $<$Structure\+Units.\+h$>$}
+
+
+
+Collaboration diagram for Sx\+Tree\+::Lexer\+Struct\+::Structure\+::Expression\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/ded/structSxTree_1_1LexerStruct_1_1Structure_1_1Expression__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression_aad1e9a60b7d31550dd137b139c2e6492}{Expr\+Type}} \{ \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression_aad1e9a60b7d31550dd137b139c2e6492aafa430a34129765bf741db23f887c388}{EXP\+\_\+\+ONE}}
+, \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression_aad1e9a60b7d31550dd137b139c2e6492a389a471c1ede827429d59a2fcb914839}{EXP\+\_\+\+ANY}}
+, \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression_aad1e9a60b7d31550dd137b139c2e6492a06a2cea71d70886d66de5f21791e7131}{EXP\+\_\+\+OPTIONAL}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+optional$<$ \mbox{\hyperlink{classSxTree_1_1Lexer_1_1Lexeme}{Lexeme}} $>$ \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression_ac1f506d55f7c1eb9f267b6c229996a57}{parse}} (\mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1LexerStructPos}{Lexer\+Struct\+Pos}} \&lexer) const noexcept
+\item 
+optional$<$ \mbox{\hyperlink{classSxTree_1_1Lexer_1_1Lexeme}{Lexeme}} $>$ \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression_a3462d507ca4e25a98eb756c56b58dd8c}{parse\+Skipping}} (\mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1LexerStructPos}{Lexer\+Struct\+Pos}} \&lexer) const noexcept
+\item 
+\mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression_a10e2b93488dc12a58de89b2abbcfa0a0}{Expression}} ()
+\item 
+\mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression_a73091a1bd073c8e1cae70ac396b41945}{Expression}} (vector$<$ \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Value}{Value}} $>$ possible\+New, \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression_aad1e9a60b7d31550dd137b139c2e6492}{Expr\+Type}} type\+New)
+\item 
+optional$<$ \mbox{\hyperlink{classSxTree_1_1Lexer_1_1Lexeme}{Lexeme}} $>$ \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression_ae4d5b8cf35c8fd86e9d425712fec6f0a}{expr\+Parse\+One\+Type}} (\mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1LexerStructPos}{Lexer\+Struct\+Pos}} \&lexer) const
+\item 
+optional$<$ \mbox{\hyperlink{classSxTree_1_1Lexer_1_1Lexeme}{Lexeme}} $>$ \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression_acdabcb52c5b1b405723ae71d906c66d4}{expr\+Parse\+Any\+Type}} (\mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1LexerStructPos}{Lexer\+Struct\+Pos}} \&lexer) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Value}{Value}} $>$ \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression_abe96fb0e20bd98b52139f24eaf8d3395}{possible}}
+\item 
+\mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression_aad1e9a60b7d31550dd137b139c2e6492}{Expr\+Type}} \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression_a3237700eb4740f1e7deb29c75adccc28}{type}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression_aad1e9a60b7d31550dd137b139c2e6492}\label{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression_aad1e9a60b7d31550dd137b139c2e6492}} 
+\index{SxTree::LexerStruct::Structure::Expression@{SxTree::LexerStruct::Structure::Expression}!ExprType@{ExprType}}
+\index{ExprType@{ExprType}!SxTree::LexerStruct::Structure::Expression@{SxTree::LexerStruct::Structure::Expression}}
+\doxysubsubsection{\texorpdfstring{ExprType}{ExprType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression_aad1e9a60b7d31550dd137b139c2e6492}{Sx\+Tree\+::\+Lexer\+Struct\+::\+Structure\+::\+Expression\+::\+Expr\+Type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EXP\_ONE@{EXP\_ONE}!SxTree::LexerStruct::Structure::Expression@{SxTree::LexerStruct::Structure::Expression}}\index{SxTree::LexerStruct::Structure::Expression@{SxTree::LexerStruct::Structure::Expression}!EXP\_ONE@{EXP\_ONE}}}\mbox{\Hypertarget{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression_aad1e9a60b7d31550dd137b139c2e6492aafa430a34129765bf741db23f887c388}\label{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression_aad1e9a60b7d31550dd137b139c2e6492aafa430a34129765bf741db23f887c388}} 
+EXP\+\_\+\+ONE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EXP\_ANY@{EXP\_ANY}!SxTree::LexerStruct::Structure::Expression@{SxTree::LexerStruct::Structure::Expression}}\index{SxTree::LexerStruct::Structure::Expression@{SxTree::LexerStruct::Structure::Expression}!EXP\_ANY@{EXP\_ANY}}}\mbox{\Hypertarget{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression_aad1e9a60b7d31550dd137b139c2e6492a389a471c1ede827429d59a2fcb914839}\label{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression_aad1e9a60b7d31550dd137b139c2e6492a389a471c1ede827429d59a2fcb914839}} 
+EXP\+\_\+\+ANY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EXP\_OPTIONAL@{EXP\_OPTIONAL}!SxTree::LexerStruct::Structure::Expression@{SxTree::LexerStruct::Structure::Expression}}\index{SxTree::LexerStruct::Structure::Expression@{SxTree::LexerStruct::Structure::Expression}!EXP\_OPTIONAL@{EXP\_OPTIONAL}}}\mbox{\Hypertarget{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression_aad1e9a60b7d31550dd137b139c2e6492a06a2cea71d70886d66de5f21791e7131}\label{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression_aad1e9a60b7d31550dd137b139c2e6492a06a2cea71d70886d66de5f21791e7131}} 
+EXP\+\_\+\+OPTIONAL&\\
+\hline
+
+\end{DoxyEnumFields}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{40                       \{}
+\DoxyCodeLine{41             \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression_aad1e9a60b7d31550dd137b139c2e6492aafa430a34129765bf741db23f887c388}{EXP\_ONE}},}
+\DoxyCodeLine{42             \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression_aad1e9a60b7d31550dd137b139c2e6492a389a471c1ede827429d59a2fcb914839}{EXP\_ANY}},}
+\DoxyCodeLine{43             \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression_aad1e9a60b7d31550dd137b139c2e6492a06a2cea71d70886d66de5f21791e7131}{EXP\_OPTIONAL}}}
+\DoxyCodeLine{44         \};}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression_a10e2b93488dc12a58de89b2abbcfa0a0}\label{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression_a10e2b93488dc12a58de89b2abbcfa0a0}} 
+\index{SxTree::LexerStruct::Structure::Expression@{SxTree::LexerStruct::Structure::Expression}!Expression@{Expression}}
+\index{Expression@{Expression}!SxTree::LexerStruct::Structure::Expression@{SxTree::LexerStruct::Structure::Expression}}
+\doxysubsubsection{\texorpdfstring{Expression()}{Expression()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Sx\+Tree\+::\+Lexer\+Struct\+::\+Expression\+::\+Expression (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{125 : \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression_a3237700eb4740f1e7deb29c75adccc28}{type}}(\mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression_aad1e9a60b7d31550dd137b139c2e6492aafa430a34129765bf741db23f887c388}{EXP\_ONE}}) \{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression_a73091a1bd073c8e1cae70ac396b41945}\label{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression_a73091a1bd073c8e1cae70ac396b41945}} 
+\index{SxTree::LexerStruct::Structure::Expression@{SxTree::LexerStruct::Structure::Expression}!Expression@{Expression}}
+\index{Expression@{Expression}!SxTree::LexerStruct::Structure::Expression@{SxTree::LexerStruct::Structure::Expression}}
+\doxysubsubsection{\texorpdfstring{Expression()}{Expression()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Sx\+Tree\+::\+Lexer\+Struct\+::\+Expression\+::\+Expression (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Value}{Value}} $>$}]{possible\+New,  }\item[{\mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression_aad1e9a60b7d31550dd137b139c2e6492}{Expr\+Type}}}]{type\+New }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{127                                                                          :\mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression_abe96fb0e20bd98b52139f24eaf8d3395}{possible}}(std::move(possibleNew)), \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression_a3237700eb4740f1e7deb29c75adccc28}{type}}(typeNew) \{}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{129     \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression_acdabcb52c5b1b405723ae71d906c66d4}\label{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression_acdabcb52c5b1b405723ae71d906c66d4}} 
+\index{SxTree::LexerStruct::Structure::Expression@{SxTree::LexerStruct::Structure::Expression}!exprParseAnyType@{exprParseAnyType}}
+\index{exprParseAnyType@{exprParseAnyType}!SxTree::LexerStruct::Structure::Expression@{SxTree::LexerStruct::Structure::Expression}}
+\doxysubsubsection{\texorpdfstring{exprParseAnyType()}{exprParseAnyType()}}
+{\footnotesize\ttfamily optional$<$ \mbox{\hyperlink{classSxTree_1_1Lexer_1_1Lexeme}{Lexeme}} $>$ Sx\+Tree\+::\+Lexer\+Struct\+::\+Structure\+::\+Expression\+::expr\+Parse\+Any\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1LexerStructPos}{Lexer\+Struct\+Pos}} \&}]{lexer }\end{DoxyParamCaption}) const}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{87                                                                                        \{}
+\DoxyCodeLine{88         \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto} \& val : \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression_abe96fb0e20bd98b52139f24eaf8d3395}{possible}}) \{}
+\DoxyCodeLine{89             \textcolor{keyword}{auto} tryParse = val.parse(lexer);}
+\DoxyCodeLine{90             \textcolor{keywordflow}{if} (tryParse.has\_value()) \{}
+\DoxyCodeLine{91 \textcolor{comment}{//                lexer.moveForward(tryParse.value().getSize());}}
+\DoxyCodeLine{92                 \textcolor{keywordflow}{return} tryParse.value();}
+\DoxyCodeLine{93             \}}
+\DoxyCodeLine{94         \}}
+\DoxyCodeLine{95         \textcolor{keywordflow}{return} optional<Lexeme>();}
+\DoxyCodeLine{96     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression_ae4d5b8cf35c8fd86e9d425712fec6f0a}\label{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression_ae4d5b8cf35c8fd86e9d425712fec6f0a}} 
+\index{SxTree::LexerStruct::Structure::Expression@{SxTree::LexerStruct::Structure::Expression}!exprParseOneType@{exprParseOneType}}
+\index{exprParseOneType@{exprParseOneType}!SxTree::LexerStruct::Structure::Expression@{SxTree::LexerStruct::Structure::Expression}}
+\doxysubsubsection{\texorpdfstring{exprParseOneType()}{exprParseOneType()}}
+{\footnotesize\ttfamily optional$<$ \mbox{\hyperlink{classSxTree_1_1Lexer_1_1Lexeme}{Lexeme}} $>$ Sx\+Tree\+::\+Lexer\+Struct\+::\+Structure\+::\+Expression\+::expr\+Parse\+One\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1LexerStructPos}{Lexer\+Struct\+Pos}} \&}]{lexer }\end{DoxyParamCaption}) const}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{72                                                                                        \{}
+\DoxyCodeLine{73         \textcolor{keyword}{auto} firstLexeme = \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression_abe96fb0e20bd98b52139f24eaf8d3395}{possible}}[0].parse(lexer);}
+\DoxyCodeLine{74         \textcolor{keywordflow}{if} (!firstLexeme.has\_value())}
+\DoxyCodeLine{75             \textcolor{keywordflow}{return} optional<Lexeme>();}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77         \mbox{\hyperlink{classSxTree_1_1Lexer_1_1Lexeme}{Lexeme}} \&lexeme = firstLexeme.value();}
+\DoxyCodeLine{78         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} val = ++(\mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression_abe96fb0e20bd98b52139f24eaf8d3395}{possible}}.begin()); val != \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression_abe96fb0e20bd98b52139f24eaf8d3395}{possible}}.end(); ++val) \{}
+\DoxyCodeLine{79             \textcolor{keyword}{auto} tryParse = val-\/>parse(lexer);}
+\DoxyCodeLine{80             \textcolor{keywordflow}{if} (!tryParse.has\_value())}
+\DoxyCodeLine{81                 \textcolor{keywordflow}{return} optional<Lexeme>();}
+\DoxyCodeLine{82             lexeme.\mbox{\hyperlink{classSxTree_1_1Lexer_1_1Lexeme_a35d035446e2e08c3843cb614c8021144}{connect}}(tryParse.value(), \mbox{\hyperlink{namespaceSxTree_1_1LexerStruct_ad22d04d03b059cc7de884d43c7707af5}{tmpLexType}});}
+\DoxyCodeLine{83         \}}
+\DoxyCodeLine{84         \textcolor{keywordflow}{return} optional<Lexeme>(std::move(lexeme));}
+\DoxyCodeLine{85     \}}
+
+\end{DoxyCode}
+
+
+References Sx\+Tree\+::\+Lexer\+::\+Lexeme\+::connect(), and Sx\+Tree\+::\+Lexer\+Struct\+::tmp\+Lex\+Type.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/dff/structSxTree_1_1LexerStruct_1_1Structure_1_1Expression_ae4d5b8cf35c8fd86e9d425712fec6f0a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression_ac1f506d55f7c1eb9f267b6c229996a57}\label{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression_ac1f506d55f7c1eb9f267b6c229996a57}} 
+\index{SxTree::LexerStruct::Structure::Expression@{SxTree::LexerStruct::Structure::Expression}!parse@{parse}}
+\index{parse@{parse}!SxTree::LexerStruct::Structure::Expression@{SxTree::LexerStruct::Structure::Expression}}
+\doxysubsubsection{\texorpdfstring{parse()}{parse()}}
+{\footnotesize\ttfamily optional$<$ \mbox{\hyperlink{classSxTree_1_1Lexer_1_1Lexeme}{Lexeme}} $>$ Sx\+Tree\+::\+Lexer\+Struct\+::\+Structure\+::\+Expression\+::parse (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1LexerStructPos}{Lexer\+Struct\+Pos}} \&}]{lexer }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{98                                                                                     \{}
+\DoxyCodeLine{99         assert((!\mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression_abe96fb0e20bd98b52139f24eaf8d3395}{possible}}.empty()) \&\& \textcolor{stringliteral}{"{}Can't have empty rules"{}});}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101         \textcolor{keywordflow}{switch} (\mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression_a3237700eb4740f1e7deb29c75adccc28}{type}}) \{}
+\DoxyCodeLine{102             \textcolor{keywordflow}{case} \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression_aad1e9a60b7d31550dd137b139c2e6492aafa430a34129765bf741db23f887c388}{EXP\_ONE}}:}
+\DoxyCodeLine{103                 \textcolor{keywordflow}{return} \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression_ae4d5b8cf35c8fd86e9d425712fec6f0a}{exprParseOneType}}(lexer);}
+\DoxyCodeLine{104             \textcolor{keywordflow}{case} \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression_aad1e9a60b7d31550dd137b139c2e6492a389a471c1ede827429d59a2fcb914839}{EXP\_ANY}}:}
+\DoxyCodeLine{105                 \textcolor{keywordflow}{return} \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression_acdabcb52c5b1b405723ae71d906c66d4}{exprParseAnyType}}(lexer);}
+\DoxyCodeLine{106             \textcolor{keywordflow}{case} \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression_aad1e9a60b7d31550dd137b139c2e6492a06a2cea71d70886d66de5f21791e7131}{EXP\_OPTIONAL}}: \{}
+\DoxyCodeLine{107                 \textcolor{keyword}{auto} parsed = \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression_acdabcb52c5b1b405723ae71d906c66d4}{exprParseAnyType}}(lexer);}
+\DoxyCodeLine{108                 \textcolor{keywordflow}{if} (parsed.has\_value())}
+\DoxyCodeLine{109                     \textcolor{keywordflow}{return} parsed;}
+\DoxyCodeLine{110                 \textcolor{keywordflow}{return} \mbox{\hyperlink{classSxTree_1_1Lexer_1_1Lexeme_a4a87fbca99bc9856dd20eb17876d49e3}{Lexeme::zero}}();}
+\DoxyCodeLine{111             \}}
+\DoxyCodeLine{112         \}}
+\DoxyCodeLine{113     \}}
+
+\end{DoxyCode}
+
+
+References Sx\+Tree\+::\+Lexer\+::\+Lexeme\+::zero().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/dff/structSxTree_1_1LexerStruct_1_1Structure_1_1Expression_ac1f506d55f7c1eb9f267b6c229996a57_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression_a3462d507ca4e25a98eb756c56b58dd8c}\label{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression_a3462d507ca4e25a98eb756c56b58dd8c}} 
+\index{SxTree::LexerStruct::Structure::Expression@{SxTree::LexerStruct::Structure::Expression}!parseSkipping@{parseSkipping}}
+\index{parseSkipping@{parseSkipping}!SxTree::LexerStruct::Structure::Expression@{SxTree::LexerStruct::Structure::Expression}}
+\doxysubsubsection{\texorpdfstring{parseSkipping()}{parseSkipping()}}
+{\footnotesize\ttfamily optional$<$ \mbox{\hyperlink{classSxTree_1_1Lexer_1_1Lexeme}{Lexeme}} $>$ Sx\+Tree\+::\+Lexer\+Struct\+::\+Structure\+::\+Expression\+::parse\+Skipping (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1LexerStructPos}{Lexer\+Struct\+Pos}} \&}]{lexer }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{115                                                                                             \{}
+\DoxyCodeLine{116         assert((!\mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression_abe96fb0e20bd98b52139f24eaf8d3395}{possible}}.empty()) \&\& \textcolor{stringliteral}{"{}Can't have empty rules"{}});}
+\DoxyCodeLine{117         \textcolor{keywordtype}{bool} found = \textcolor{keyword}{false};}
+\DoxyCodeLine{118         \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto} \&val : \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression_abe96fb0e20bd98b52139f24eaf8d3395}{possible}})}
+\DoxyCodeLine{119             found |= val.parse(lexer).has\_value();}
+\DoxyCodeLine{120         \textcolor{keywordflow}{if} (!found)}
+\DoxyCodeLine{121             \textcolor{keywordflow}{return} std::optional<Lexeme>();}
+\DoxyCodeLine{122         \textcolor{keywordflow}{return} std::optional<Lexeme>(\mbox{\hyperlink{classSxTree_1_1Lexer_1_1Lexeme_a4a87fbca99bc9856dd20eb17876d49e3}{Lexeme::zero}}());}
+\DoxyCodeLine{123     \}}
+
+\end{DoxyCode}
+
+
+References Sx\+Tree\+::\+Lexer\+::\+Lexeme\+::zero().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/dff/structSxTree_1_1LexerStruct_1_1Structure_1_1Expression_a3462d507ca4e25a98eb756c56b58dd8c_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Field Documentation}
+\mbox{\Hypertarget{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression_abe96fb0e20bd98b52139f24eaf8d3395}\label{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression_abe96fb0e20bd98b52139f24eaf8d3395}} 
+\index{SxTree::LexerStruct::Structure::Expression@{SxTree::LexerStruct::Structure::Expression}!possible@{possible}}
+\index{possible@{possible}!SxTree::LexerStruct::Structure::Expression@{SxTree::LexerStruct::Structure::Expression}}
+\doxysubsubsection{\texorpdfstring{possible}{possible}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Value}{Value}}$>$ Sx\+Tree\+::\+Lexer\+Struct\+::\+Structure\+::\+Expression\+::possible}
+
+
+
+Referenced by Sx\+Tree\+::\+Lexer\+Struct\+::\+Lexer\+Struct\+::p\+Expression().
+
+\mbox{\Hypertarget{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression_a3237700eb4740f1e7deb29c75adccc28}\label{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression_a3237700eb4740f1e7deb29c75adccc28}} 
+\index{SxTree::LexerStruct::Structure::Expression@{SxTree::LexerStruct::Structure::Expression}!type@{type}}
+\index{type@{type}!SxTree::LexerStruct::Structure::Expression@{SxTree::LexerStruct::Structure::Expression}}
+\doxysubsubsection{\texorpdfstring{type}{type}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression_aad1e9a60b7d31550dd137b139c2e6492}{Expr\+Type}} Sx\+Tree\+::\+Lexer\+Struct\+::\+Structure\+::\+Expression\+::type}
+
+
+
+Referenced by Sx\+Tree\+::\+Lexer\+Struct\+::\+Lexer\+Struct\+::expect\+Closing\+Bracket(), and Sx\+Tree\+::\+Lexer\+Struct\+::\+Lexer\+Struct\+::p\+Expression().
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/alexroar/\+Desktop/\+Dev/\+Sx\+Tree/include/\+Lexer/\mbox{\hyperlink{StructureUnits_8h}{Structure\+Units.\+h}}\item 
+/\+Users/alexroar/\+Desktop/\+Dev/\+Sx\+Tree/src/\+Lexer/\mbox{\hyperlink{StructureUnits_8cpp}{Structure\+Units.\+cpp}}\end{DoxyCompactItemize}

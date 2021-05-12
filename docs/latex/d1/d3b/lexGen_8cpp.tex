@@ -1,0 +1,99 @@
+\hypertarget{lexGen_8cpp}{}\doxysection{/\+Users/alexroar/\+Desktop/\+Dev/\+Sx\+Tree/src/\+Core/lex\+Gen.cpp File Reference}
+\label{lexGen_8cpp}\index{/Users/alexroar/Desktop/Dev/SxTree/src/Core/lexGen.cpp@{/Users/alexroar/Desktop/Dev/SxTree/src/Core/lexGen.cpp}}
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$cxxopts.\+hpp$>$}\newline
+{\ttfamily \#include \char`\"{}IOTools/\+File\+Read.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Exceptions/\+IOExceptions.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Lexer/\+Lexer\+Struct.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Lexer/\+Lexer\+Generator.\+h\char`\"{}}\newline
+Include dependency graph for lex\+Gen.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d40/lexGen_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{lexGen_8cpp_a110745d0e996bc19a8c8e8cacbadd525}{main}} (int argc, const char $\ast$const $\ast$argv)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{lexGen_8cpp_a110745d0e996bc19a8c8e8cacbadd525}\label{lexGen_8cpp_a110745d0e996bc19a8c8e8cacbadd525}} 
+\index{lexGen.cpp@{lexGen.cpp}!main@{main}}
+\index{main@{main}!lexGen.cpp@{lexGen.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{const char $\ast$const $\ast$}]{argv }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{23                                            \{}
+\DoxyCodeLine{24     cxxopts::Options options(\textcolor{stringliteral}{"{}SxTree Lexer Generator"{}}, \textcolor{stringliteral}{"{}Generate lexer file from lexer syntax"{}});}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26     options.add\_options()}
+\DoxyCodeLine{27             (\textcolor{stringliteral}{"{}i,input"{}} , \textcolor{stringliteral}{"{}Input file [required]"{}}, cxxopts::value<string>())}
+\DoxyCodeLine{28             (\textcolor{stringliteral}{"{}o,output"{}}, \textcolor{stringliteral}{"{}Output file"{}}, cxxopts::value<string>()-\/>default\_value(\textcolor{stringliteral}{"{}lexer.cpp"{}}))}
+\DoxyCodeLine{29             (\textcolor{stringliteral}{"{}p,outputHeader"{}}, \textcolor{stringliteral}{"{}Output header file"{}}, cxxopts::value<string>()-\/>default\_value(\textcolor{stringliteral}{"{}lexer.h"{}}))}
+\DoxyCodeLine{30             (\textcolor{stringliteral}{"{}q,quiet"{}} , \textcolor{stringliteral}{"{}Quiet mode (do not show errors)"{}}, cxxopts::value<bool>()-\/>default\_value(\textcolor{stringliteral}{"{}false"{}}))}
+\DoxyCodeLine{31             (\textcolor{stringliteral}{"{}h,help"{}}, \textcolor{stringliteral}{"{}Print usage"{}});}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33     decltype(options.parse(argc, argv)) result = \{\};}
+\DoxyCodeLine{34     \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{35         result = options.parse(argc, argv);}
+\DoxyCodeLine{36     \} \textcolor{keywordflow}{catch} (std::exception\& exception)\{}
+\DoxyCodeLine{37         std::cout << exception.what() << std::endl;}
+\DoxyCodeLine{38         \textcolor{keywordflow}{return} EXIT\_SUCCESS;}
+\DoxyCodeLine{39     \}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41     \textcolor{keywordflow}{if} (result.count(\textcolor{stringliteral}{"{}help"{}})) \{}
+\DoxyCodeLine{42         std::cout << options.help() << std::endl;}
+\DoxyCodeLine{43         \textcolor{keywordflow}{return} EXIT\_SUCCESS;}
+\DoxyCodeLine{44     \}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46     \textcolor{keywordtype}{string} inputFile, outputFile, outputFileHeader;}
+\DoxyCodeLine{47     \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{48         inputFile = result[\textcolor{stringliteral}{"{}input"{}}].as<std::string>();}
+\DoxyCodeLine{49         outputFile = result[\textcolor{stringliteral}{"{}output"{}}].as<std::string>();}
+\DoxyCodeLine{50         outputFileHeader = result[\textcolor{stringliteral}{"{}outputHeader"{}}].as<std::string>();}
+\DoxyCodeLine{51     \} \textcolor{keywordflow}{catch} (\textcolor{keyword}{const} cxxopts::option\_has\_no\_value\_exception\& exception) \{}
+\DoxyCodeLine{52         std::cout << \textcolor{stringliteral}{"{}Required arguments are not specified\(\backslash\)n"{}} << options.help() << std::endl;}
+\DoxyCodeLine{53         \textcolor{keywordflow}{return} EXIT\_FAILURE;}
+\DoxyCodeLine{54     \}}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56     \textcolor{keywordtype}{string} fullFile;}
+\DoxyCodeLine{57     \textcolor{keywordflow}{try} \{}
+\DoxyCodeLine{58         fullFile = \mbox{\hyperlink{namespaceSxTree_1_1IO_a40c4eabfc4eb9736c81e2c0302f9c837}{SxTree::IO::readFullFile}}(inputFile.c\_str());}
+\DoxyCodeLine{59     \}\textcolor{keywordflow}{catch}(\textcolor{keyword}{const} \mbox{\hyperlink{structSxTree_1_1IO_1_1OpenFileException}{SxTree::IO::OpenFileException}}\& exception)\{}
+\DoxyCodeLine{60         std::cout << \textcolor{stringliteral}{"{}Cannot open the file "{}}<< inputFile << std::endl;}
+\DoxyCodeLine{61         \textcolor{keywordflow}{return} EXIT\_FAILURE;}
+\DoxyCodeLine{62     \}}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64     \mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct}{LexerStruct}} lexerStruct;}
+\DoxyCodeLine{65     lexerStruct.\mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_a523c05dc2eda74d9616e1ad84f1a73f2}{parseRules}}(fullFile);}
+\DoxyCodeLine{66     \textcolor{keywordflow}{if} (!(result[\textcolor{stringliteral}{"{}quiet"{}}].as<bool>())) \{}
+\DoxyCodeLine{67         printf(\textcolor{stringliteral}{"{}errors: \%zu\(\backslash\)n"{}}, lexerStruct.\mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_a3130f0e7fcef5b57306d8d9ee75d2b83}{getErrors}}().size());}
+\DoxyCodeLine{68         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} error: lexerStruct.\mbox{\hyperlink{classSxTree_1_1LexerStruct_1_1LexerStruct_a3130f0e7fcef5b57306d8d9ee75d2b83}{getErrors}}()) \{}
+\DoxyCodeLine{69             printf(\textcolor{stringliteral}{"{}\%zu:\%s\(\backslash\)n"{}}, error.position, error.msg);}
+\DoxyCodeLine{70         \}}
+\DoxyCodeLine{71     \}}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73     \mbox{\hyperlink{namespaceSxTree_1_1IO_a29c32582528fc71c27bb2aaaa5a03fa5}{SxTree::IO::dumpFile}}(outputFile.c\_str(), \mbox{\hyperlink{namespaceSxTree_1_1Lexer_1_1Generator_a91486cf7371600199c603edbc45a78c1}{getCompleteLexerStruct}}(lexerStruct, outputFileHeader));}
+\DoxyCodeLine{74     \mbox{\hyperlink{namespaceSxTree_1_1IO_a29c32582528fc71c27bb2aaaa5a03fa5}{SxTree::IO::dumpFile}}(outputFileHeader.c\_str(), \mbox{\hyperlink{namespaceSxTree_1_1Lexer_1_1Generator_afd56bc50dc7df5a791772f399cebdf9e}{getHeader}}(lexerStruct));}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76     \textcolor{keywordflow}{return} EXIT\_SUCCESS;}
+\DoxyCodeLine{77 \}}
+
+\end{DoxyCode}
+
+
+References Sx\+Tree\+::\+IO\+::dump\+File(), Sx\+Tree\+::\+Lexer\+::\+Generator\+::get\+Complete\+Lexer\+Struct(), Sx\+Tree\+::\+Lexer\+Struct\+::\+Lexer\+Struct\+::get\+Errors(), Sx\+Tree\+::\+Lexer\+::\+Generator\+::get\+Header(), Sx\+Tree\+::\+Lexer\+Struct\+::\+Lexer\+Struct\+::parse\+Rules(), and Sx\+Tree\+::\+IO\+::read\+Full\+File().
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{d1/d3b/lexGen_8cpp_a110745d0e996bc19a8c8e8cacbadd525_cgraph}
+\end{center}
+\end{figure}

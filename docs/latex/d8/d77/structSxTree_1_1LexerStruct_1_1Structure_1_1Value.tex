@@ -1,0 +1,212 @@
+\hypertarget{structSxTree_1_1LexerStruct_1_1Structure_1_1Value}{}\doxysection{Sx\+Tree\+::Lexer\+Struct\+::Structure\+::Value Struct Reference}
+\label{structSxTree_1_1LexerStruct_1_1Structure_1_1Value}\index{SxTree::LexerStruct::Structure::Value@{SxTree::LexerStruct::Structure::Value}}
+
+
+{\ttfamily \#include $<$Structure\+Units.\+h$>$}
+
+
+
+Collaboration diagram for Sx\+Tree\+::Lexer\+Struct\+::Structure\+::Value\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{db/dd0/structSxTree_1_1LexerStruct_1_1Structure_1_1Value__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Value_a8f639a8b8a44389473040f2d1823c810}{Value\+Type}} \{ \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Value_a8f639a8b8a44389473040f2d1823c810ac786094d874bf89eeff2d0a9b95b9b92}{VAL\+\_\+\+EXPRESSION}}
+, \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Value_a8f639a8b8a44389473040f2d1823c810a6066c11876f4e8507fb8bc307cfedf33}{VAL\+\_\+\+REGEXP}}
+, \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Value_a8f639a8b8a44389473040f2d1823c810aec4eb27d221445fb5f6ba1e010c664c2}{VAL\+\_\+\+SKIP}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Value_a7a3e0ee8dfd9e3df8de6afb8f08851f2}{Value}} (const string \&regex)
+\item 
+\mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Value_a7d4b72ba2c0dcd256e47f170eba5eefa}{Value}} (\mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression}{Expression}} e, bool skip=false)
+\item 
+\mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Value_a309d2cc4caf8a0c7de6e393c0a1020dc}{Value}} (const string \&\&regex\+String\+New, \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Value_a8f639a8b8a44389473040f2d1823c810}{Value\+Type}} type\+New, const \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression}{Expression}} \&\&expr\+New)
+\item 
+optional$<$ \mbox{\hyperlink{classSxTree_1_1Lexer_1_1Lexeme}{Lexeme}} $>$ \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Value_a25846c48b710bcbbc476de82cb829a0a}{parse}} (\mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1LexerStructPos}{Lexer\+Struct\+Pos}} \&lexer) const noexcept
+\end{DoxyCompactItemize}
+\doxysubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+regex \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Value_a93a70cfc7447d9fca339e814a67242db}{str\+Regex}}
+\item 
+string \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Value_a507a6e14ba18be4a74c7d2c0ad0cb72c}{regex\+String}}
+\item 
+\mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Value_a8f639a8b8a44389473040f2d1823c810}{Value\+Type}} \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Value_ab95ccae83f30b5c51c9a6b11ec550a17}{type}}
+\item 
+\mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression}{Expression}} \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Value_a70101c1f014d2b351646d014cf44f80f}{expr}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+optional$<$ \mbox{\hyperlink{classSxTree_1_1Lexer_1_1Lexeme}{Lexeme}} $>$ \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Value_ae0d84b0048852256b12a1d1badc94976}{parse\+Regexp}} (\mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1LexerStructPos}{Lexer\+Struct\+Pos}} \&lexer) const noexcept
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{structSxTree_1_1LexerStruct_1_1Structure_1_1Value_a8f639a8b8a44389473040f2d1823c810}\label{structSxTree_1_1LexerStruct_1_1Structure_1_1Value_a8f639a8b8a44389473040f2d1823c810}} 
+\index{SxTree::LexerStruct::Structure::Value@{SxTree::LexerStruct::Structure::Value}!ValueType@{ValueType}}
+\index{ValueType@{ValueType}!SxTree::LexerStruct::Structure::Value@{SxTree::LexerStruct::Structure::Value}}
+\doxysubsubsection{\texorpdfstring{ValueType}{ValueType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Value_a8f639a8b8a44389473040f2d1823c810}{Sx\+Tree\+::\+Lexer\+Struct\+::\+Structure\+::\+Value\+::\+Value\+Type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{VAL\_EXPRESSION@{VAL\_EXPRESSION}!SxTree::LexerStruct::Structure::Value@{SxTree::LexerStruct::Structure::Value}}\index{SxTree::LexerStruct::Structure::Value@{SxTree::LexerStruct::Structure::Value}!VAL\_EXPRESSION@{VAL\_EXPRESSION}}}\mbox{\Hypertarget{structSxTree_1_1LexerStruct_1_1Structure_1_1Value_a8f639a8b8a44389473040f2d1823c810ac786094d874bf89eeff2d0a9b95b9b92}\label{structSxTree_1_1LexerStruct_1_1Structure_1_1Value_a8f639a8b8a44389473040f2d1823c810ac786094d874bf89eeff2d0a9b95b9b92}} 
+VAL\+\_\+\+EXPRESSION&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{VAL\_REGEXP@{VAL\_REGEXP}!SxTree::LexerStruct::Structure::Value@{SxTree::LexerStruct::Structure::Value}}\index{SxTree::LexerStruct::Structure::Value@{SxTree::LexerStruct::Structure::Value}!VAL\_REGEXP@{VAL\_REGEXP}}}\mbox{\Hypertarget{structSxTree_1_1LexerStruct_1_1Structure_1_1Value_a8f639a8b8a44389473040f2d1823c810a6066c11876f4e8507fb8bc307cfedf33}\label{structSxTree_1_1LexerStruct_1_1Structure_1_1Value_a8f639a8b8a44389473040f2d1823c810a6066c11876f4e8507fb8bc307cfedf33}} 
+VAL\+\_\+\+REGEXP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{VAL\_SKIP@{VAL\_SKIP}!SxTree::LexerStruct::Structure::Value@{SxTree::LexerStruct::Structure::Value}}\index{SxTree::LexerStruct::Structure::Value@{SxTree::LexerStruct::Structure::Value}!VAL\_SKIP@{VAL\_SKIP}}}\mbox{\Hypertarget{structSxTree_1_1LexerStruct_1_1Structure_1_1Value_a8f639a8b8a44389473040f2d1823c810aec4eb27d221445fb5f6ba1e010c664c2}\label{structSxTree_1_1LexerStruct_1_1Structure_1_1Value_a8f639a8b8a44389473040f2d1823c810aec4eb27d221445fb5f6ba1e010c664c2}} 
+VAL\+\_\+\+SKIP&\\
+\hline
+
+\end{DoxyEnumFields}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{61                       \{}
+\DoxyCodeLine{62             \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Value_a8f639a8b8a44389473040f2d1823c810ac786094d874bf89eeff2d0a9b95b9b92}{VAL\_EXPRESSION}},}
+\DoxyCodeLine{63             \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Value_a8f639a8b8a44389473040f2d1823c810a6066c11876f4e8507fb8bc307cfedf33}{VAL\_REGEXP}},}
+\DoxyCodeLine{64             \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Value_a8f639a8b8a44389473040f2d1823c810aec4eb27d221445fb5f6ba1e010c664c2}{VAL\_SKIP}}}
+\DoxyCodeLine{65         \};}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structSxTree_1_1LexerStruct_1_1Structure_1_1Value_a7a3e0ee8dfd9e3df8de6afb8f08851f2}\label{structSxTree_1_1LexerStruct_1_1Structure_1_1Value_a7a3e0ee8dfd9e3df8de6afb8f08851f2}} 
+\index{SxTree::LexerStruct::Structure::Value@{SxTree::LexerStruct::Structure::Value}!Value@{Value}}
+\index{Value@{Value}!SxTree::LexerStruct::Structure::Value@{SxTree::LexerStruct::Structure::Value}}
+\doxysubsubsection{\texorpdfstring{Value()}{Value()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Sx\+Tree\+::\+Lexer\+Struct\+::\+Value\+::\+Value (\begin{DoxyParamCaption}\item[{const string \&}]{regex }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{55                                     : \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Value_a93a70cfc7447d9fca339e814a67242db}{strRegex}}(regex), \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Value_a507a6e14ba18be4a74c7d2c0ad0cb72c}{regexString}}(regex), \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Value_ab95ccae83f30b5c51c9a6b11ec550a17}{type}}(\mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Value_a8f639a8b8a44389473040f2d1823c810a6066c11876f4e8507fb8bc307cfedf33}{VAL\_REGEXP}}) \{}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{structSxTree_1_1LexerStruct_1_1Structure_1_1Value_a7d4b72ba2c0dcd256e47f170eba5eefa}\label{structSxTree_1_1LexerStruct_1_1Structure_1_1Value_a7d4b72ba2c0dcd256e47f170eba5eefa}} 
+\index{SxTree::LexerStruct::Structure::Value@{SxTree::LexerStruct::Structure::Value}!Value@{Value}}
+\index{Value@{Value}!SxTree::LexerStruct::Structure::Value@{SxTree::LexerStruct::Structure::Value}}
+\doxysubsubsection{\texorpdfstring{Value()}{Value()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Sx\+Tree\+::\+Lexer\+Struct\+::\+Value\+::\+Value (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression}{Expression}}}]{e,  }\item[{bool}]{skip = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{59                                         : \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Value_ab95ccae83f30b5c51c9a6b11ec550a17}{type}}(skip ? \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Value_a8f639a8b8a44389473040f2d1823c810aec4eb27d221445fb5f6ba1e010c664c2}{VAL\_SKIP}} : \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Value_a8f639a8b8a44389473040f2d1823c810ac786094d874bf89eeff2d0a9b95b9b92}{VAL\_EXPRESSION}}), \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Value_a70101c1f014d2b351646d014cf44f80f}{expr}}(std::move(e)) \{}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{structSxTree_1_1LexerStruct_1_1Structure_1_1Value_a309d2cc4caf8a0c7de6e393c0a1020dc}\label{structSxTree_1_1LexerStruct_1_1Structure_1_1Value_a309d2cc4caf8a0c7de6e393c0a1020dc}} 
+\index{SxTree::LexerStruct::Structure::Value@{SxTree::LexerStruct::Structure::Value}!Value@{Value}}
+\index{Value@{Value}!SxTree::LexerStruct::Structure::Value@{SxTree::LexerStruct::Structure::Value}}
+\doxysubsubsection{\texorpdfstring{Value()}{Value()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Sx\+Tree\+::\+Lexer\+Struct\+::\+Value\+::\+Value (\begin{DoxyParamCaption}\item[{const string \&\&}]{regex\+String\+New,  }\item[{\mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Value_a8f639a8b8a44389473040f2d1823c810}{Value\+::\+Value\+Type}}}]{type\+New,  }\item[{const \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression}{Expression}} \&\&}]{expr\+New }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{65                                              :}
+\DoxyCodeLine{66             \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Value_a93a70cfc7447d9fca339e814a67242db}{strRegex}}(regexStringNew),}
+\DoxyCodeLine{67             \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Value_a507a6e14ba18be4a74c7d2c0ad0cb72c}{regexString}}(regexStringNew),}
+\DoxyCodeLine{68             \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Value_ab95ccae83f30b5c51c9a6b11ec550a17}{type}}(typeNew),}
+\DoxyCodeLine{69             \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Value_a70101c1f014d2b351646d014cf44f80f}{expr}}(exprNew) \{}
+\DoxyCodeLine{70     \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structSxTree_1_1LexerStruct_1_1Structure_1_1Value_a25846c48b710bcbbc476de82cb829a0a}\label{structSxTree_1_1LexerStruct_1_1Structure_1_1Value_a25846c48b710bcbbc476de82cb829a0a}} 
+\index{SxTree::LexerStruct::Structure::Value@{SxTree::LexerStruct::Structure::Value}!parse@{parse}}
+\index{parse@{parse}!SxTree::LexerStruct::Structure::Value@{SxTree::LexerStruct::Structure::Value}}
+\doxysubsubsection{\texorpdfstring{parse()}{parse()}}
+{\footnotesize\ttfamily optional$<$ \mbox{\hyperlink{classSxTree_1_1Lexer_1_1Lexeme}{Lexeme}} $>$ Sx\+Tree\+::\+Lexer\+Struct\+::\+Structure\+::\+Value\+::parse (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1LexerStructPos}{Lexer\+Struct\+Pos}} \&}]{lexer }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{31                                                                                \{}
+\DoxyCodeLine{32         \textcolor{keywordflow}{switch} (\mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Value_ab95ccae83f30b5c51c9a6b11ec550a17}{type}}) \{}
+\DoxyCodeLine{33             \textcolor{keywordflow}{case} \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Value_a8f639a8b8a44389473040f2d1823c810ac786094d874bf89eeff2d0a9b95b9b92}{VAL\_EXPRESSION}}:}
+\DoxyCodeLine{34                 \textcolor{keywordflow}{return} \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Value_a70101c1f014d2b351646d014cf44f80f}{expr}}.\mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression_ac1f506d55f7c1eb9f267b6c229996a57}{parse}}(lexer);}
+\DoxyCodeLine{35             \textcolor{keywordflow}{case} \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Value_a8f639a8b8a44389473040f2d1823c810a6066c11876f4e8507fb8bc307cfedf33}{VAL\_REGEXP}}:}
+\DoxyCodeLine{36                 \textcolor{keywordflow}{return} \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Value_ae0d84b0048852256b12a1d1badc94976}{parseRegexp}}(lexer);}
+\DoxyCodeLine{37             \textcolor{keywordflow}{case} \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Value_a8f639a8b8a44389473040f2d1823c810aec4eb27d221445fb5f6ba1e010c664c2}{VAL\_SKIP}}:}
+\DoxyCodeLine{38                 \textcolor{keywordflow}{return} \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Value_a70101c1f014d2b351646d014cf44f80f}{expr}}.\mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression_a3462d507ca4e25a98eb756c56b58dd8c}{parseSkipping}}(lexer);}
+\DoxyCodeLine{39         \}}
+\DoxyCodeLine{40         assert(\textcolor{keyword}{false} \&\& \textcolor{stringliteral}{"{}This code must not be reached"{}});}
+\DoxyCodeLine{41     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{structSxTree_1_1LexerStruct_1_1Structure_1_1Value_ae0d84b0048852256b12a1d1badc94976}\label{structSxTree_1_1LexerStruct_1_1Structure_1_1Value_ae0d84b0048852256b12a1d1badc94976}} 
+\index{SxTree::LexerStruct::Structure::Value@{SxTree::LexerStruct::Structure::Value}!parseRegexp@{parseRegexp}}
+\index{parseRegexp@{parseRegexp}!SxTree::LexerStruct::Structure::Value@{SxTree::LexerStruct::Structure::Value}}
+\doxysubsubsection{\texorpdfstring{parseRegexp()}{parseRegexp()}}
+{\footnotesize\ttfamily optional$<$ \mbox{\hyperlink{classSxTree_1_1Lexer_1_1Lexeme}{Lexeme}} $>$ Sx\+Tree\+::\+Lexer\+Struct\+::\+Structure\+::\+Value\+::parse\+Regexp (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1LexerStructPos}{Lexer\+Struct\+Pos}} \&}]{lexer }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [noexcept]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{43                                                                                      \{}
+\DoxyCodeLine{44         std::sregex\_iterator iter(lexer.\mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1LexerStructPos_a52b7fe3aa53a290de91104e7fb44f0a9}{begin}}(), lexer.\mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1LexerStructPos_a39a94692a85531d9521877cea0931aca}{end}}(), \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Value_a93a70cfc7447d9fca339e814a67242db}{strRegex}});}
+\DoxyCodeLine{45         std::sregex\_iterator end;}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47         \textcolor{keywordflow}{if} (iter == end || iter-\/>position() != 0)}
+\DoxyCodeLine{48             \textcolor{keywordflow}{return} std::optional<Lexeme>();}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50         \textcolor{keyword}{auto} parsedLexeme = \mbox{\hyperlink{classSxTree_1_1Lexer_1_1Lexeme}{Lexeme}}(lexer.\mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1LexerStructPos_a5189ad39030e146fffe1327901891ad1}{getStorage}}(), \mbox{\hyperlink{namespaceSxTree_1_1LexerStruct_ad22d04d03b059cc7de884d43c7707af5}{tmpLexType}}, lexer.\mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1LexerStructPos_aa1bdbe9b46958570f2dd19284668c5ae}{getPosNow}}(), iter-\/>str().size());}
+\DoxyCodeLine{51         lexer.\mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1LexerStructPos_a7f511260d73243ebe7a9c5a053150d07}{moveForward}}(iter-\/>str().size());}
+\DoxyCodeLine{52         \textcolor{keywordflow}{return} parsedLexeme;}
+\DoxyCodeLine{53     \}}
+
+\end{DoxyCode}
+
+
+References Sx\+Tree\+::\+Lexer\+Struct\+::tmp\+Lex\+Type.
+
+
+
+\doxysubsection{Field Documentation}
+\mbox{\Hypertarget{structSxTree_1_1LexerStruct_1_1Structure_1_1Value_a70101c1f014d2b351646d014cf44f80f}\label{structSxTree_1_1LexerStruct_1_1Structure_1_1Value_a70101c1f014d2b351646d014cf44f80f}} 
+\index{SxTree::LexerStruct::Structure::Value@{SxTree::LexerStruct::Structure::Value}!expr@{expr}}
+\index{expr@{expr}!SxTree::LexerStruct::Structure::Value@{SxTree::LexerStruct::Structure::Value}}
+\doxysubsubsection{\texorpdfstring{expr}{expr}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression}{Expression}} Sx\+Tree\+::\+Lexer\+Struct\+::\+Structure\+::\+Value\+::expr}
+
+\mbox{\Hypertarget{structSxTree_1_1LexerStruct_1_1Structure_1_1Value_a507a6e14ba18be4a74c7d2c0ad0cb72c}\label{structSxTree_1_1LexerStruct_1_1Structure_1_1Value_a507a6e14ba18be4a74c7d2c0ad0cb72c}} 
+\index{SxTree::LexerStruct::Structure::Value@{SxTree::LexerStruct::Structure::Value}!regexString@{regexString}}
+\index{regexString@{regexString}!SxTree::LexerStruct::Structure::Value@{SxTree::LexerStruct::Structure::Value}}
+\doxysubsubsection{\texorpdfstring{regexString}{regexString}}
+{\footnotesize\ttfamily string Sx\+Tree\+::\+Lexer\+Struct\+::\+Structure\+::\+Value\+::regex\+String}
+
+\mbox{\Hypertarget{structSxTree_1_1LexerStruct_1_1Structure_1_1Value_a93a70cfc7447d9fca339e814a67242db}\label{structSxTree_1_1LexerStruct_1_1Structure_1_1Value_a93a70cfc7447d9fca339e814a67242db}} 
+\index{SxTree::LexerStruct::Structure::Value@{SxTree::LexerStruct::Structure::Value}!strRegex@{strRegex}}
+\index{strRegex@{strRegex}!SxTree::LexerStruct::Structure::Value@{SxTree::LexerStruct::Structure::Value}}
+\doxysubsubsection{\texorpdfstring{strRegex}{strRegex}}
+{\footnotesize\ttfamily regex Sx\+Tree\+::\+Lexer\+Struct\+::\+Structure\+::\+Value\+::str\+Regex}
+
+\mbox{\Hypertarget{structSxTree_1_1LexerStruct_1_1Structure_1_1Value_ab95ccae83f30b5c51c9a6b11ec550a17}\label{structSxTree_1_1LexerStruct_1_1Structure_1_1Value_ab95ccae83f30b5c51c9a6b11ec550a17}} 
+\index{SxTree::LexerStruct::Structure::Value@{SxTree::LexerStruct::Structure::Value}!type@{type}}
+\index{type@{type}!SxTree::LexerStruct::Structure::Value@{SxTree::LexerStruct::Structure::Value}}
+\doxysubsubsection{\texorpdfstring{type}{type}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Value_a8f639a8b8a44389473040f2d1823c810}{Value\+Type}} Sx\+Tree\+::\+Lexer\+Struct\+::\+Structure\+::\+Value\+::type}
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/alexroar/\+Desktop/\+Dev/\+Sx\+Tree/include/\+Lexer/\mbox{\hyperlink{StructureUnits_8h}{Structure\+Units.\+h}}\item 
+/\+Users/alexroar/\+Desktop/\+Dev/\+Sx\+Tree/src/\+Lexer/\mbox{\hyperlink{StructureUnits_8cpp}{Structure\+Units.\+cpp}}\end{DoxyCompactItemize}
