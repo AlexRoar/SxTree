@@ -1,6 +1,6 @@
 # SxTree
 
-Generate AST syntax parser from grammar files. Implements:
+Generates AST parser and lexer from grammar files. Implements:
 
 - Lexer generator
 - Parser generator
