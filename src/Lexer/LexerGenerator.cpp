@@ -64,7 +64,7 @@ static const string contentsHeader =
     static string generateLexemesToStringBody(const SxTree::LexerStruct::LexerStruct &structure) {
         string output;
         for (auto &lex: structure.getLexemesMap())
-            output += "case SxTree::Lexer::LexemeType::lex_" + lex.first + ": return \"" + lex.first + "\";\n";
+            output += "\t\tcase SxTree::Lexer::LexemeType::lex_" + lex.first + ": return \"" + lex.first + "\";\n";
         return output;
     }
 
@@ -95,8 +95,9 @@ static const string contentsHeader =
         return output;
     }
 
-    string getCompleteLexerStruct(const SxTree::LexerStruct::LexerStruct &structure) {
+    string getCompleteLexerStruct(const SxTree::LexerStruct::LexerStruct &structure, const string& headerName) {
         string newContent = contents;
+        newContent = replaceFirstOccurrence(newContent, "HEADERNAME", headerName);
         newContent = replaceFirstOccurrence(newContent, "INSERT", generateLexerStruct(structure));
         newContent = replaceFirstOccurrence(newContent, "SWITCHBODY", generateLexemesToStringBody(structure));
         newContent = replaceFirstOccurrence(newContent, "LEXNUM", std::to_string(structure.getLexemesMap().size()));

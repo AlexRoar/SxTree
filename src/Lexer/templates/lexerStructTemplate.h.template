@@ -25,6 +25,7 @@ R"(/*
 
 #include "Lexer/LexerStruct.h"
 #include "Lexer/Lexer.h"
+#include "HEADERNAME"
 
 namespace SxTree::Lexer {
     using namespace SxTree::LexerStruct;
@@ -35,9 +36,9 @@ namespace SxTree::Lexer {
 
     string to_string(LexemeType type){
         switch(type) {
-            SWITCHBODY
+SWITCHBODY
+        default: return "UNRECOGNIZED LEXEME";
         }
-        return "UNRECOGNIZED LEXEME";
     }
 }
 )";

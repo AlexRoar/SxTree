@@ -7,10 +7,14 @@
  * Check license agreement of this project to evade
  * possible illegal use.
  * =================================================
+ *
+ * THIS CODE WAS GENERATED, DO NOT EDIT
+ *
  */
 
 #include "Lexer/LexerStruct.h"
 #include "Lexer/Lexer.h"
+#include "lexer.h"
 
 namespace SxTree::Lexer {
     using namespace SxTree::LexerStruct;
@@ -53,4 +57,45 @@ namespace SxTree::Lexer {
 });
 
     const unsigned lexemesNumber = 34;
+
+    string to_string(LexemeType type){
+        switch(type) {
+		case SxTree::Lexer::LexemeType::lex_identifier: return "identifier";
+		case SxTree::Lexer::LexemeType::lex_if: return "if";
+		case SxTree::Lexer::LexemeType::lex_div: return "div";
+		case SxTree::Lexer::LexemeType::lex_minus: return "minus";
+		case SxTree::Lexer::LexemeType::lex_plus: return "plus";
+		case SxTree::Lexer::LexemeType::lex_assignDiv: return "assignDiv";
+		case SxTree::Lexer::LexemeType::lex_comma: return "comma";
+		case SxTree::Lexer::LexemeType::lex_less: return "less";
+		case SxTree::Lexer::LexemeType::lex_margin: return "margin";
+		case SxTree::Lexer::LexemeType::lex_assignPlus: return "assignPlus";
+		case SxTree::Lexer::LexemeType::lex_notEqual: return "notEqual";
+		case SxTree::Lexer::LexemeType::lex_lessEqual: return "lessEqual";
+		case SxTree::Lexer::LexemeType::lex_rightBlock: return "rightBlock";
+		case SxTree::Lexer::LexemeType::lex_else: return "else";
+		case SxTree::Lexer::LexemeType::lex_assign: return "assign";
+		case SxTree::Lexer::LexemeType::lex_return: return "return";
+		case SxTree::Lexer::LexemeType::lex_while: return "while";
+		case SxTree::Lexer::LexemeType::lex_moreEqual: return "moreEqual";
+		case SxTree::Lexer::LexemeType::lex_mul: return "mul";
+		case SxTree::Lexer::LexemeType::lex_statEnd: return "statEnd";
+		case SxTree::Lexer::LexemeType::lex_string: return "string";
+		case SxTree::Lexer::LexemeType::lex_more: return "more";
+		case SxTree::Lexer::LexemeType::lex_let: return "let";
+		case SxTree::Lexer::LexemeType::lex_assignMul: return "assignMul";
+		case SxTree::Lexer::LexemeType::lex_integer: return "integer";
+		case SxTree::Lexer::LexemeType::lex_def: return "def";
+		case SxTree::Lexer::LexemeType::lex_space: return "space";
+		case SxTree::Lexer::LexemeType::lex_lineBreak: return "lineBreak";
+		case SxTree::Lexer::LexemeType::lex_equal: return "equal";
+		case SxTree::Lexer::LexemeType::lex_leftPa: return "leftPa";
+		case SxTree::Lexer::LexemeType::lex_rightPa: return "rightPa";
+		case SxTree::Lexer::LexemeType::lex_float: return "float";
+		case SxTree::Lexer::LexemeType::lex_assignMinus: return "assignMinus";
+		case SxTree::Lexer::LexemeType::lex_leftBlock: return "leftBlock";
+
+        default: return "UNRECOGNIZED LEXEME";
+        }
+    }
 }

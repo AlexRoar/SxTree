@@ -19,7 +19,7 @@
 namespace SxTree::Lexer::Generator {
     using std::string;
 
-    [[maybe_unused]] string getCompleteLexerStruct(const LexerStruct::LexerStruct& structure);
+    [[maybe_unused]] string getCompleteLexerStruct(const LexerStruct::LexerStruct& structure, const string& headerName);
 
     [[maybe_unused]] string getHeader(const LexerStruct::LexerStruct& structure);
 

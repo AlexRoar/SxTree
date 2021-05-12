@@ -7,7 +7,11 @@
  * Check license agreement of this project to evade
  * possible illegal use.
  * =================================================
+ *
+ * THIS CODE WAS GENERATED, DO NOT EDIT
+ *
  */
+
 
 #include "Lexer/LexerStruct.h"
 #include "Lexer/Lexer.h"
@@ -52,6 +56,8 @@ namespace SxTree::Lexer {
 	lex_string = 33,
 	lex_identifier = 34,
 };
+
+    string to_string(LexemeType type);
 
     extern const unsigned lexemesNumber;
     extern Lexer coreLexer;
