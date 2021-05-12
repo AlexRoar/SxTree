@@ -61,12 +61,20 @@ ok          = ("o", ?["k"])
 ```
 
 ```cpp
-const Lexer coreLexer({
-    {R"(space)" , {{{ R"()", Value::VAL_SKIP,{{{ R"(\s)", Value::VAL_REGEXP,{{}, Expression::EXP_ONE}},}, Expression::EXP_ONE}},}, Expression::EXP_ONE}},
-    {R"(var)" , {{{ R"(var)", Value::VAL_REGEXP,{{}, Expression::EXP_ONE}},}, Expression::EXP_ONE}},
-    {R"(funcDecl)" , {{{ R"(def)", Value::VAL_REGEXP,{{}, Expression::EXP_ONE}},{ R"(define)", Value::VAL_REGEXP,{{}, Expression::EXP_ONE}},}, Expression::EXP_ANY}},
-    {R"(ok)" , {{{ R"(o)", Value::VAL_REGEXP,{{}, Expression::EXP_ONE}},{ R"()", Value::VAL_EXPRESSION,{{{ R"(k)", Value::VAL_REGEXP,{{}, Expression::EXP_ONE}},}, Expression::EXP_OPTIONAL}},}, Expression::EXP_ONE}},
-    });
+enum LexemeType {
+    lex_NONE = 0,
+    lex_space = 1,
+    lex_var = 2,
+    lex_funcDecl = 3,
+    lex_ok = 4,
+};
+
+Lexer coreLexer({
+    {1, {{{ R"()", Value::VAL_SKIP,{{{ R"(\s)", Value::VAL_REGEXP,{{}, Expression::EXP_ONE}},}, Expression::EXP_ONE}},}, Expression::EXP_ONE}},
+    {2, {{{ R"(var)", Value::VAL_REGEXP,{{}, Expression::EXP_ONE}},}, Expression::EXP_ONE}},
+    {3, {{{ R"(def)", Value::VAL_REGEXP,{{}, Expression::EXP_ONE}},{ R"(define)", Value::VAL_REGEXP,{{}, Expression::EXP_ONE}},}, Expression::EXP_ANY}},
+    {4, {{{ R"(o)", Value::VAL_REGEXP,{{}, Expression::EXP_ONE}},{ R"()", Value::VAL_EXPRESSION,{{{ R"(k)", Value::VAL_REGEXP,{{}, Expression::EXP_ONE}},}, Expression::EXP_OPTIONAL}},}, Expression::EXP_ONE}},
+});
 ```
 
 Here's an example that can be found in `/examples/simple`. It is extremely easy to adjust lexer for your needs.
