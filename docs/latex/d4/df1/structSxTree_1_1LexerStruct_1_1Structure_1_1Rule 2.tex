@@ -1,0 +1,72 @@
+\hypertarget{structSxTree_1_1LexerStruct_1_1Structure_1_1Rule}{}\doxysection{Sx\+Tree\+::Lexer\+Struct\+::Structure\+::Rule Struct Reference}
+\label{structSxTree_1_1LexerStruct_1_1Structure_1_1Rule}\index{SxTree::LexerStruct::Structure::Rule@{SxTree::LexerStruct::Structure::Rule}}
+
+
+{\ttfamily \#include $<$Structure\+Units.\+h$>$}
+
+
+
+Collaboration diagram for Sx\+Tree\+::Lexer\+Struct\+::Structure\+::Rule\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/ddc/structSxTree_1_1LexerStruct_1_1Structure_1_1Rule__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+optional$<$ \mbox{\hyperlink{classSxTree_1_1Lexer_1_1Lexeme}{Lexeme}} $>$ \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Rule_a8ba44385b97a4afbc5256fbc99ea8513}{parse}} (\mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1LexerStructPos}{Lexer\+Struct\+Pos}} \&lexer) const noexcept
+\end{DoxyCompactItemize}
+\doxysubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+unsigned \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Rule_a0a656f57a4fd56155b04c938577933b0}{id}} =0
+\item 
+\mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression}{Expression}} \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Rule_ab31b308ff7fad8cbb0c2cc82de3d433b}{expression}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structSxTree_1_1LexerStruct_1_1Structure_1_1Rule_a8ba44385b97a4afbc5256fbc99ea8513}\label{structSxTree_1_1LexerStruct_1_1Structure_1_1Rule_a8ba44385b97a4afbc5256fbc99ea8513}} 
+\index{SxTree::LexerStruct::Structure::Rule@{SxTree::LexerStruct::Structure::Rule}!parse@{parse}}
+\index{parse@{parse}!SxTree::LexerStruct::Structure::Rule@{SxTree::LexerStruct::Structure::Rule}}
+\doxysubsubsection{\texorpdfstring{parse()}{parse()}}
+{\footnotesize\ttfamily optional$<$ \mbox{\hyperlink{classSxTree_1_1Lexer_1_1Lexeme}{Lexeme}} $>$ Sx\+Tree\+::\+Lexer\+Struct\+::\+Structure\+::\+Rule\+::parse (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1LexerStructPos}{Lexer\+Struct\+Pos}} \&}]{lexer }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{131                                                                               \{}
+\DoxyCodeLine{132         \textcolor{keyword}{auto} tryParse = \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Rule_ab31b308ff7fad8cbb0c2cc82de3d433b}{expression}}.\mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression_ac1f506d55f7c1eb9f267b6c229996a57}{parse}}(lexer);}
+\DoxyCodeLine{133         \textcolor{keywordflow}{if} (!tryParse.has\_value())}
+\DoxyCodeLine{134             \textcolor{keywordflow}{return} tryParse;}
+\DoxyCodeLine{135         tryParse.value().setType(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{136         \textcolor{keywordflow}{return} tryParse;}
+\DoxyCodeLine{137     \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Field Documentation}
+\mbox{\Hypertarget{structSxTree_1_1LexerStruct_1_1Structure_1_1Rule_ab31b308ff7fad8cbb0c2cc82de3d433b}\label{structSxTree_1_1LexerStruct_1_1Structure_1_1Rule_ab31b308ff7fad8cbb0c2cc82de3d433b}} 
+\index{SxTree::LexerStruct::Structure::Rule@{SxTree::LexerStruct::Structure::Rule}!expression@{expression}}
+\index{expression@{expression}!SxTree::LexerStruct::Structure::Rule@{SxTree::LexerStruct::Structure::Rule}}
+\doxysubsubsection{\texorpdfstring{expression}{expression}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structSxTree_1_1LexerStruct_1_1Structure_1_1Expression}{Expression}} Sx\+Tree\+::\+Lexer\+Struct\+::\+Structure\+::\+Rule\+::expression}
+
+\mbox{\Hypertarget{structSxTree_1_1LexerStruct_1_1Structure_1_1Rule_a0a656f57a4fd56155b04c938577933b0}\label{structSxTree_1_1LexerStruct_1_1Structure_1_1Rule_a0a656f57a4fd56155b04c938577933b0}} 
+\index{SxTree::LexerStruct::Structure::Rule@{SxTree::LexerStruct::Structure::Rule}!id@{id}}
+\index{id@{id}!SxTree::LexerStruct::Structure::Rule@{SxTree::LexerStruct::Structure::Rule}}
+\doxysubsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily unsigned Sx\+Tree\+::\+Lexer\+Struct\+::\+Structure\+::\+Rule\+::id =0}
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/alexroar/\+Desktop/\+Dev/\+Sx\+Tree/include/\+Lexer/\mbox{\hyperlink{StructureUnits_8h}{Structure\+Units.\+h}}\item 
+/\+Users/alexroar/\+Desktop/\+Dev/\+Sx\+Tree/src/\+Lexer/\mbox{\hyperlink{StructureUnits_8cpp}{Structure\+Units.\+cpp}}\end{DoxyCompactItemize}

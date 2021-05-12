@@ -1,0 +1,124 @@
+\hypertarget{namespaceSxTree_1_1IO}{}\doxysection{Sx\+Tree\+::IO Namespace Reference}
+\label{namespaceSxTree_1_1IO}\index{SxTree::IO@{SxTree::IO}}
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structSxTree_1_1IO_1_1OpenFileException}{Open\+File\+Exception}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{namespaceSxTree_1_1IO_a40c4eabfc4eb9736c81e2c0302f9c837}{read\+Full\+File}} (const char $\ast$file\+Name)
+\item 
+void \mbox{\hyperlink{namespaceSxTree_1_1IO_a29c32582528fc71c27bb2aaaa5a03fa5}{dump\+File}} (const char $\ast$file\+Name, const string \&content)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespaceSxTree_1_1IO_a29c32582528fc71c27bb2aaaa5a03fa5}\label{namespaceSxTree_1_1IO_a29c32582528fc71c27bb2aaaa5a03fa5}} 
+\index{SxTree::IO@{SxTree::IO}!dumpFile@{dumpFile}}
+\index{dumpFile@{dumpFile}!SxTree::IO@{SxTree::IO}}
+\doxysubsubsection{\texorpdfstring{dumpFile()}{dumpFile()}}
+{\footnotesize\ttfamily void Sx\+Tree\+::\+IO\+::dump\+File (\begin{DoxyParamCaption}\item[{const char $\ast$}]{file\+Name,  }\item[{const string \&}]{content }\end{DoxyParamCaption})}
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \mbox{\hyperlink{structSxTree_1_1IO_1_1OpenFileException}{Open\+File\+Exception}}} & \\
+\hline
+\end{DoxyExceptions}
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & \\
+\hline
+{\em content} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{45                                                                \{}
+\DoxyCodeLine{46         \textcolor{keyword}{auto} inputFile = fopen(fileName, \textcolor{stringliteral}{"{}wb"{}});}
+\DoxyCodeLine{47         \textcolor{keywordflow}{if} (!inputFile)}
+\DoxyCodeLine{48             \textcolor{keywordflow}{throw} OpenFileException();}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50         fwrite(content.c\_str(), 1, content.size(), inputFile);}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52         fclose(inputFile);}
+\DoxyCodeLine{53     \}}
+
+\end{DoxyCode}
+
+
+Referenced by main().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{de/dc7/namespaceSxTree_1_1IO_a29c32582528fc71c27bb2aaaa5a03fa5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespaceSxTree_1_1IO_a40c4eabfc4eb9736c81e2c0302f9c837}\label{namespaceSxTree_1_1IO_a40c4eabfc4eb9736c81e2c0302f9c837}} 
+\index{SxTree::IO@{SxTree::IO}!readFullFile@{readFullFile}}
+\index{readFullFile@{readFullFile}!SxTree::IO@{SxTree::IO}}
+\doxysubsubsection{\texorpdfstring{readFullFile()}{readFullFile()}}
+{\footnotesize\ttfamily std\+::string Sx\+Tree\+::\+IO\+::read\+Full\+File (\begin{DoxyParamCaption}\item[{const char $\ast$}]{file\+Name }\end{DoxyParamCaption})}
+
+Reads full file to string container
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \mbox{\hyperlink{structSxTree_1_1IO_1_1OpenFileException}{Open\+File\+Exception}}} & if unable to open the file \\
+\hline
+\end{DoxyExceptions}
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+file contents
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \mbox{\hyperlink{structSxTree_1_1IO_1_1OpenFileException}{Open\+File\+Exception}}} & \\
+\hline
+\end{DoxyExceptions}
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{25                                                  \{}
+\DoxyCodeLine{26         \textcolor{keyword}{auto} inputFile = fopen(fileName, \textcolor{stringliteral}{"{}rb"{}});}
+\DoxyCodeLine{27         \textcolor{keywordflow}{if} (!inputFile)}
+\DoxyCodeLine{28             \textcolor{keywordflow}{throw} OpenFileException();}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30         fseek(inputFile, 0, SEEK\_END);}
+\DoxyCodeLine{31         \textcolor{keyword}{const} \textcolor{keyword}{auto} size = ftell(inputFile);}
+\DoxyCodeLine{32         rewind(inputFile);}
+\DoxyCodeLine{33         std::string input(size, \textcolor{charliteral}{'\(\backslash\)0'});}
+\DoxyCodeLine{34         fread(\&input[0], 1, size, inputFile);}
+\DoxyCodeLine{35         fclose(inputFile);}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37         \textcolor{keywordflow}{return} input;}
+\DoxyCodeLine{38     \}}
+
+\end{DoxyCode}
+
+
+Referenced by main().
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=275pt]{de/dc7/namespaceSxTree_1_1IO_a40c4eabfc4eb9736c81e2c0302f9c837_icgraph}
+\end{center}
+\end{figure}
