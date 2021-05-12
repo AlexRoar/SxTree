@@ -111,6 +111,12 @@ namespace SxTree::Lexer {
         return ss.str();
     }
 
+    string Lexeme::to_stringTypeDereference(string (*to_string)(unsigned)) const {
+        std::stringstream ss;
+        ss << "Lexeme<id=" << to_string(type) << ", start=" << start << ", size=" << (size) << ">";
+        return ss.str();
+    }
+
     unsigned Lexeme::getType() const {
         return type;
     }

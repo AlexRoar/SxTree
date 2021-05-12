@@ -86,10 +86,16 @@ def someFunction() {
 ```
 
 ```bash
-Lexeme<def[0-3]> Lexeme<identifier[4-16]> Lexeme<leftPa[16-17]>
-Lexeme<rightPa[17-18]> Lexeme<leftBlock[19-20]> Lexeme<lineBreak[20-21]>
-Lexeme<margin[21-25]> Lexeme<margin[25-29]> Lexeme<string[29-42]>
-Lexeme<lineBreak[42-43]> Lexeme<rightBlock[43-44]>
+Lexeme<id=def, start=0, size=3>('def')
+Lexeme<id=identifier, start=4, size=12>('someFunction')
+Lexeme<id=leftPa, start=16, size=1>('(')
+Lexeme<id=rightPa, start=17, size=1>(')')
+Lexeme<id=leftBlock, start=19, size=1>('{')
+Lexeme<id=lineBreak, start=20, size=1>('\n')
+Lexeme<id=margin, start=21, size=4>('    ')
+Lexeme<id=string, start=25, size=13>('"Hello world"')
+Lexeme<id=lineBreak, start=38, size=1>('\n')
+Lexeme<id=rightBlock, start=39, size=1>('}')
 ```
 
 ## Parser

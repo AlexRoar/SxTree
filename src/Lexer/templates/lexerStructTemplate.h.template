@@ -34,8 +34,8 @@ namespace SxTree::Lexer {
 
     const unsigned lexemesNumber = LEXNUM;
 
-    string to_string(LexemeType type){
-        switch(type) {
+    string to_string(unsigned type){
+        switch(SxTree::Lexer::LexemeType(type)) { {
 SWITCHBODY
         default: return "UNRECOGNIZED LEXEME";
         }

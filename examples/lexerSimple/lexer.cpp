@@ -58,8 +58,8 @@ namespace SxTree::Lexer {
 
     const unsigned lexemesNumber = 34;
 
-    string to_string(LexemeType type){
-        switch(type) {
+    string to_string(unsigned type){
+        switch(SxTree::Lexer::LexemeType(type)) { {
 		case SxTree::Lexer::LexemeType::lex_identifier: return "identifier";
 		case SxTree::Lexer::LexemeType::lex_if: return "if";
 		case SxTree::Lexer::LexemeType::lex_div: return "div";

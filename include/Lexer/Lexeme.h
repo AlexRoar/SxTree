@@ -128,6 +128,8 @@ namespace SxTree::Lexer {
         [[maybe_unused]] [[nodiscard]] size_t getStart() const;
 
         [[nodiscard]] size_t getSize() const;
+
+        string to_stringTypeDereference(string (*to_string)(unsigned)) const;
     };
 }
 

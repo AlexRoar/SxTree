@@ -32,7 +32,7 @@ namespace SxTree::Lexer {
 
     enum class LexemeType ENUM;
 
-    string to_string(LexemeType type);
+    string to_string(unsigned type);
 
     extern const unsigned lexemesNumber;
     extern Lexer coreLexer;

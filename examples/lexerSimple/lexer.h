@@ -57,7 +57,7 @@ namespace SxTree::Lexer {
 	lex_identifier = 34,
 };
 
-    string to_string(LexemeType type);
+    string to_string(unsigned type);
 
     extern const unsigned lexemesNumber;
     extern Lexer coreLexer;
