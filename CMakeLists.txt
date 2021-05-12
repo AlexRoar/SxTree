@@ -21,7 +21,7 @@ file(GLOB_RECURSE SX_HEADERS
         include/*.h)
 
 #[[Library]]
-add_library(${PROJECT_NAME} SHARED "${SX_SOURCES}")
+add_library(${PROJECT_NAME} STATIC "${SX_SOURCES}")
 set_target_properties(${PROJECT_NAME} PROPERTIES PUBLIC_HEADER "${SX_HEADERS}")
 set_target_properties(${PROJECT_NAME} PROPERTIES VERSION ${PROJECT_VERSION})
 set_target_properties(${PROJECT_NAME} PROPERTIES SOVERSION 1)
@@ -48,9 +48,8 @@ target_link_libraries(LexerGenTests gtest gtest_main ${PROJECT_NAME})
 
 
 #[[Install]]
-message("${CMAKE_INSTALL_INCLUDEDIR}")
 install(TARGETS sxlgen
-        RUNTIME DESTINATION "${PROJECT_NAME}/bin"
+        RUNTIME DESTINATION "${CMAKE_INSTALL_PREFIX}/bin"
         PUBLIC_HEADER DESTINATION "${PROJECT_NAME}/lib")
 
 install(TARGETS ${PROJECT_NAME}

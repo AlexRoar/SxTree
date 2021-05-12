@@ -30,7 +30,13 @@ int main(int argc, const char* const* argv){
             ("q,quiet" , "Quiet mode (do not show errors)", cxxopts::value<bool>()->default_value("false"))
             ("h,help", "Print usage");
 
-    auto result = options.parse(argc, argv);
+    decltype(options.parse(argc, argv)) result = {};
+    try {
+        result = options.parse(argc, argv);
+    } catch (std::exception& exception){
+        std::cout << exception.what() << std::endl;
+        return EXIT_SUCCESS;
+    }
 
     if (result.count("help")) {
         std::cout << options.help() << std::endl;

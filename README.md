@@ -44,10 +44,11 @@ Generate lexer file from lexer syntax
 Usage:
   SxTree Lexer Generator [OPTION...]
 
-  -i, --input arg   Input file [required]
-  -o, --output arg  Output file (default: lexer.cpp)
-  -q, --quiet       Quiet mode (do not show errors)
-  -h, --help        Print usage
+  -i, --input arg         Input file [required]
+  -o, --output arg        Output file (default: lexer.cpp)
+  -p, --outputHeader arg  Output header file (default: lexer.h)
+  -q, --quiet             Quiet mode (do not show errors)
+  -h, --help              Print usage
 ```
 
 ### Example:
