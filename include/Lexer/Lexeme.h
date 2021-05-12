@@ -17,6 +17,7 @@
 
 namespace SxTree::Lexer {
     using std::string;
+
     class Lexeme {
         /**
          * Source text where this lexeme located
@@ -63,6 +64,10 @@ namespace SxTree::Lexer {
 
         Lexeme(const Lexeme &first, const Lexeme &second, unsigned lexType) noexcept;
 
+        /**
+         * Create zero lexeme – zero size, zero position
+         * @return
+         */
         static Lexeme zero();
 
         /**
@@ -111,6 +116,12 @@ namespace SxTree::Lexer {
          * @return string representation
          */
         [[nodiscard]] string to_string() const;
+
+        /**
+         * Retrieve text of this lexeme from the source text
+         * @return
+         */
+        [[nodiscard]] string valueString() const;
 
         [[nodiscard]] unsigned getType() const;
 

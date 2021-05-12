@@ -216,64 +216,6 @@ namespace SxTree::LexerStruct {
         return errors;
     }
 
-    string LexerStruct::generateLexerStruct() const noexcept {
-        string output = "{\n";
-        for (const auto &rule: rules)
-            output += "\t{" + std::to_string(rule.id + 1) + ", " + generateExpression(rule.expression) + "},\n";
-
-        output += "}";
-        return output;
-    }
-
-    string LexerStruct::generateIdsEnum() const noexcept {
-        string output = "{\n";
-
-        vector<const string*> orderedIds(ruleIdsNo.size() + 1, nullptr);
-
-        string none = "NONE";
-        orderedIds[0] = &none;
-        for(const auto& id: ruleIdsNo)
-            orderedIds[id.second + 1] = &id.first;
-
-        for(unsigned i = 0; i < orderedIds.size(); i++)
-            output += "\tlex_" + *(orderedIds[i]) + " = " + std::to_string(i) + ",\n";
-
-        output += "}";
-        return output;
-    }
-
-    static string valTypeString(Value::ValueType type) {
-        switch (type) {
-            case Value::VAL_EXPRESSION:
-                return "Value::VAL_EXPRESSION";
-            case Value::VAL_REGEXP:
-                return "Value::VAL_REGEXP";
-            case Value::VAL_SKIP:
-                return "Value::VAL_SKIP";
-        }
-    }
-
-    static string exprTypeString(Expression::ExprType type) {
-        switch (type) {
-            case Expression::EXP_ONE:
-                return "Expression::EXP_ONE";
-            case Expression::EXP_ANY:
-                return "Expression::EXP_ANY";
-            case Expression::EXP_OPTIONAL:
-                return "Expression::EXP_OPTIONAL";
-        }
-    }
-
-    string LexerStruct::generateExpression(const Expression &exp) const {
-        string output = "{{";
-        for (const auto &val: exp.possible) {
-            output += "{ R\"(" + val.regexString + ")\", " + valTypeString(val.type) + "," +
-                    generateExpression(val.expr) + "},";
-        }
-        output += "}, " + exprTypeString(exp.type) + "}";
-        return output;
-    }
-
     const vector<Structure::Rule> &LexerStruct::getRules() const {
         return rules;
     }
@@ -285,5 +227,9 @@ namespace SxTree::LexerStruct {
             return ruleIdsNo.size() - 1;
         }
         return found->second;
+    }
+
+    const unordered_map<string, unsigned>& LexerStruct::getLexemesMap() const {
+        return ruleIdsNo;
     }
 }

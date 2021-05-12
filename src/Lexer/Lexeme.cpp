@@ -107,7 +107,7 @@ namespace SxTree::Lexer {
 
     string Lexeme::to_string() const {
         std::stringstream ss;
-        ss << "Lexeme<" << type << "[" << start << "-" << (start+size) << "]>";
+        ss << "Lexeme<id=" << type << ", start=" << start << ", size=" << (size) << ">";
         return ss.str();
     }
 
@@ -121,5 +121,10 @@ namespace SxTree::Lexer {
 
     size_t Lexeme::getSize() const {
         return size;
+    }
+
+    string Lexeme::valueString() const{
+        assert(source && "Source can't be nullptr");
+        return source->substr(start, size);
     }
 }

@@ -47,8 +47,6 @@ namespace SxTree::LexerStruct {
 
         bool expectWord(LexerStructPos& lexerStructPos, const char* word);
 
-        [[nodiscard]] string generateExpression(const Expression &exp) const;
-
         optional <Expression> expectClosingBracket(LexerStructPos &lexerStructPos, Expression &expr);
     public:
         LexerStruct() noexcept;
@@ -57,11 +55,9 @@ namespace SxTree::LexerStruct {
 
         const decltype(LexerStruct::errors)& getErrors();
 
-        [[nodiscard]] string generateLexerStruct() const noexcept;
-
         [[nodiscard]] const vector<Structure::Rule> &getRules() const;
 
-        string generateIdsEnum() const noexcept;
+        [[nodiscard]] const unordered_map<string, unsigned>& getLexemesMap() const;
     };
 }
 

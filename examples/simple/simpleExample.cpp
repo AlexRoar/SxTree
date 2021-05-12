@@ -26,8 +26,7 @@ int main() {
     for(const auto& err: lexer.getErrors())
         printf("%zu:%s\n", err.position, err.msg);
 
-    for(const auto& lex: lexemes){
-        printf("%s ", lex.to_string().c_str());
-    }
+    for(const auto& lex: lexemes)
+        printf("%s('%s')\n", lex.to_string().c_str(), lex.valueString().c_str());
 }
 

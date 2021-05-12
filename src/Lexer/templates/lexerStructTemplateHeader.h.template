@@ -1,4 +1,4 @@
-R"(/*
+/*
  * =================================================
  * Copyright © 2021
  * Aleksandr Dremov
@@ -9,15 +9,32 @@ R"(/*
  * =================================================
  */
 
-#include <vector>
+R"(/*
+ * =================================================
+ * Copyright © 2021
+ * Aleksandr Dremov
+ *
+ * This code has been written by Aleksandr Dremov
+ * Check license agreement of this project to evade
+ * possible illegal use.
+ * =================================================
+ *
+ * THIS CODE WAS GENERATED, DO NOT EDIT
+ *
+ */
+
+
 #include "Lexer/LexerStruct.h"
 #include "Lexer/Lexer.h"
 
 namespace SxTree::Lexer {
     using namespace SxTree::LexerStruct;
 
-    enum LexemeType ENUM;
+    enum class LexemeType ENUM;
 
+    string to_string(LexemeType type);
+
+    extern const unsigned lexemesNumber;
     extern Lexer coreLexer;
 }
 )";

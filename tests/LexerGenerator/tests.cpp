@@ -36,21 +36,21 @@ LexerStruct getLexer(const string& inputFile){
 TEST(LexerGenerator, generalInit) {
     auto lexerGen = getLexer("../tests/LexerGenerator/cumulativeTest.txt");
     EXPECT_EQ(lexerGen.getErrors().size(), 0);
-    EXPECT_NE(lexerGen.generateLexerStruct().size(), 0);
     EXPECT_EQ(lexerGen.getRules().size(), 4);
 
     Lexer lexer(lexerGen.getRules());
-
     auto lexemes = lexer.parse("t      ssss ss s s s s any not any or not");
     EXPECT_EQ(lexer.getErrors().size(), 0);
+
+    string expected = "Lexeme<id=1, start=0, size=1>"
+                      "Lexeme<id=1, start=7, size=4>"
+                      "Lexeme<id=1, start=12, size=2>"
+                      "Lexeme<id=3, start=23, size=7>"
+                      "Lexeme<id=3, start=31, size=10>";
+
     string result;
-    string expected = "Lexeme<margin[0-1]>"
-                      "Lexeme<margin[7-11]>"
-                      "Lexeme<margin[12-14]>"
-                      "Lexeme<wordAnyOrNot[23-30]>"
-                      "Lexeme<wordAnyOrNot[31-41]>";
-    for(const auto& lex: lexemes){
+    for(const auto& lex: lexemes)
         result += lex.to_string();
-    }
+
     EXPECT_EQ(result, expected);
 }
