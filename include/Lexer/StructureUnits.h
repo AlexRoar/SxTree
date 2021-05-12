@@ -80,7 +80,7 @@ namespace SxTree::LexerStruct::Structure {
     };
 
     struct Rule {
-        string id;
+        unsigned id=0;
         Expression expression;
 
         optional<Lexeme> parse(LexerStructPos& lexer) const noexcept;

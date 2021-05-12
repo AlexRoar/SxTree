@@ -15,6 +15,7 @@
 
 #include <cstdlib>
 #include <string>
+#include <unordered_map>
 #include <vector>
 #include "Lexer/StructureUnits.h"
 #include "Lexer/LexerStructPos.h"
@@ -22,14 +23,17 @@
 namespace SxTree::LexerStruct {
     using std::string;
     using std::vector;
+    using std::unordered_map;
     using namespace Structure;
 
     class LexerStruct {
+        unordered_map<string, unsigned> ruleIdsNo;
         vector<Structure::Rule> rules;
         vector<Structure::ParseError> errors;
 
-    private:
         [[nodiscard]] static bool isEnded(LexerStructPos& lexerStructPos) noexcept;
+
+        unsigned getRuleId(const string& id);
 
         optional <Rule> pRule(LexerStructPos& lexerStructPos);
 
@@ -56,6 +60,8 @@ namespace SxTree::LexerStruct {
         [[nodiscard]] string generateLexerStruct() const noexcept;
 
         [[nodiscard]] const vector<Structure::Rule> &getRules() const;
+
+        string generateIdsEnum() const noexcept;
     };
 }
 

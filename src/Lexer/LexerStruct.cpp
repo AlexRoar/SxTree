@@ -69,7 +69,7 @@ namespace SxTree::LexerStruct {
             return optional<Rule>();
         }
 
-        return optional<Rule>({id, expr.value()});
+        return optional<Rule>({getRuleId(id), expr.value()});
     }
 
     optional<Expression> LexerStruct::pExpression(LexerStructPos& lexerStructPos) {
@@ -218,9 +218,25 @@ namespace SxTree::LexerStruct {
 
     string LexerStruct::generateLexerStruct() const noexcept {
         string output = "{\n";
-        for (const auto &rule: rules) {
-            output += "\t{R\"(" + rule.id + ")\" , " + generateExpression(rule.expression) + "},\n";
-        }
+        for (const auto &rule: rules)
+            output += "\t{" + std::to_string(rule.id + 1) + ", " + generateExpression(rule.expression) + "},\n";
+
+        output += "}";
+        return output;
+    }
+
+    string LexerStruct::generateIdsEnum() const noexcept {
+        string output = "{\n";
+
+        vector<const string*> orderedIds(ruleIdsNo.size() + 1, nullptr);
+
+        string none = "NONE";
+        orderedIds[0] = &none;
+        for(const auto& id: ruleIdsNo)
+            orderedIds[id.second + 1] = &id.first;
+
+        for(unsigned i = 0; i < orderedIds.size(); i++)
+            output += "\tlex_" + *(orderedIds[i]) + " = " + std::to_string(i) + ",\n";
 
         output += "}";
         return output;
@@ -260,5 +276,14 @@ namespace SxTree::LexerStruct {
 
     const vector<Structure::Rule> &LexerStruct::getRules() const {
         return rules;
+    }
+
+    unsigned LexerStruct::getRuleId(const string& id) {
+        const auto found = ruleIdsNo.find(id);
+        if (found == ruleIdsNo.end()) {
+            ruleIdsNo[id] = ruleIdsNo.size();
+            return ruleIdsNo.size() - 1;
+        }
+        return found->second;
     }
 }

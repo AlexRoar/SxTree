@@ -26,7 +26,7 @@ namespace SxTree::Lexer {
         /**
          * The type of lexeme
          */
-        const string *type;
+        unsigned type;
 
         /**
          * Start position of lexeme in the source
@@ -44,7 +44,7 @@ namespace SxTree::Lexer {
          * @param other
          * @param newType
          */
-        void leftConnect(const Lexeme &other, const string *newType) noexcept;
+        void leftConnect(const Lexeme &other, unsigned newType) noexcept;
 
         /**
          * Merge two lexemes by appending other lexeme
@@ -52,16 +52,16 @@ namespace SxTree::Lexer {
          * @param other
          * @param newType
          */
-        void rightConnect(const Lexeme &other, const string *newType) noexcept;
+        void rightConnect(const Lexeme &other, unsigned newType) noexcept;
 
     public:
         Lexeme(const Lexeme &other);
 
         Lexeme(Lexeme &&other) noexcept;
 
-        Lexeme(const string *sourceText, const string *lexType, size_t startInd, size_t lexSize) noexcept;
+        Lexeme(const string *sourceText, unsigned lexType, size_t startInd, size_t lexSize) noexcept;
 
-        Lexeme(const Lexeme &first, const Lexeme &second, const string *lexType) noexcept;
+        Lexeme(const Lexeme &first, const Lexeme &second, unsigned lexType) noexcept;
 
         static Lexeme zero();
 
@@ -77,7 +77,7 @@ namespace SxTree::Lexer {
          * @param other
          * @param newType
          */
-        void connect(const Lexeme &other, const string *newType) noexcept;
+        void connect(const Lexeme &other, unsigned newType) noexcept;
 
         /**
          * Connects the lexeme to the current one
@@ -104,7 +104,7 @@ namespace SxTree::Lexer {
          * Update lexeme type
          * @param pString
          */
-        void setType(const string *pString) noexcept;
+        void setType(unsigned pString) noexcept;
 
         /**
          * Standard to_string function
@@ -112,7 +112,7 @@ namespace SxTree::Lexer {
          */
         [[nodiscard]] string to_string() const;
 
-        [[nodiscard]] const string *getType() const;
+        [[nodiscard]] unsigned getType() const;
 
         [[nodiscard]] size_t getStart() const;
 

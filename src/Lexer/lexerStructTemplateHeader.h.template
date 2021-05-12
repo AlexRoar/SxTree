@@ -16,6 +16,8 @@ R"(/*
 namespace SxTree::Lexer {
     using namespace SxTree::LexerStruct;
 
+    enum LexemeType ENUM;
+
     extern Lexer coreLexer;
 }
 )";

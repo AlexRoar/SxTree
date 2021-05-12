@@ -26,7 +26,7 @@ namespace SxTree::LexerStruct {
     using std::optional;
     using SxTree::Lexer::Lexeme;
 
-    const string tmpLexType("TMP");
+    const unsigned tmpLexType = 0;
 
     optional<Lexeme> Structure::Value::parse(LexerStructPos &lexer) const noexcept {
         switch (type) {
@@ -47,7 +47,7 @@ namespace SxTree::LexerStruct {
         if (iter == end || iter->position() != 0)
             return std::optional<Lexeme>();
 
-        auto parsedLexeme = Lexeme(lexer.getStorage(), &tmpLexType, lexer.getPosNow(), iter->str().size());
+        auto parsedLexeme = Lexeme(lexer.getStorage(), tmpLexType, lexer.getPosNow(), iter->str().size());
         lexer.moveForward(iter->str().size());
         return parsedLexeme;
     }
@@ -79,7 +79,7 @@ namespace SxTree::LexerStruct {
             auto tryParse = val->parse(lexer);
             if (!tryParse.has_value())
                 return optional<Lexeme>();
-            lexeme.connect(tryParse.value(), &tmpLexType);
+            lexeme.connect(tryParse.value(), tmpLexType);
         }
         return optional<Lexeme>(std::move(lexeme));
     }
@@ -134,7 +134,7 @@ namespace SxTree::LexerStruct {
         auto tryParse = expression.parse(lexer);
         if (!tryParse.has_value())
             return tryParse;
-        tryParse.value().setType(&id);
+        tryParse.value().setType(id);
         return tryParse;
     }
 }

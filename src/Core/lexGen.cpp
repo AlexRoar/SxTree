@@ -65,7 +65,7 @@ int main(int argc, const char* const* argv){
     }
 
     SxTree::IO::dumpFile(outputFile.c_str(), getCompleteLexerStruct(lexerStruct));
-    SxTree::IO::dumpFile(outputFileHeader.c_str(), getHeader());
+    SxTree::IO::dumpFile(outputFileHeader.c_str(), getHeader(lexerStruct));
 
     return EXIT_SUCCESS;
 }

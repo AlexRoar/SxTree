@@ -21,7 +21,7 @@ namespace SxTree::Lexer::Generator {
 
     [[maybe_unused]] string getCompleteLexerStruct(const LexerStruct::LexerStruct& structure);
 
-    [[maybe_unused]] string getHeader();
+    [[maybe_unused]] string getHeader(const LexerStruct::LexerStruct& structure);
 
     [[maybe_unused]] std::string replaceFirstOccurrence(
             std::string& s,

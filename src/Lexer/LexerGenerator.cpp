@@ -24,11 +24,14 @@ namespace SxTree::Lexer::Generator {
 
     string getCompleteLexerStruct(const SxTree::LexerStruct::LexerStruct &structure) {
         string newContent = contents;
-        return replaceFirstOccurrence(newContent, "INSERT", structure.generateLexerStruct());
+        newContent = replaceFirstOccurrence(newContent, "INSERT", structure.generateLexerStruct());
+        return newContent;
     }
 
-    string getHeader() {
-        return contentsHeader;
+    string getHeader(const SxTree::LexerStruct::LexerStruct &structure) {
+        string newContent = contentsHeader;
+        newContent = replaceFirstOccurrence(newContent, "ENUM", structure.generateIdsEnum());
+        return newContent;
     }
 
     std::string replaceFirstOccurrence(
