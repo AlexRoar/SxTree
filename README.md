@@ -59,7 +59,7 @@ var         = ("var")
 funcDecl    = ["def", "define"]
 ok          = ("o", ?["k"])
 ```
-
+Generated lexer structure:
 ```cpp
 enum LexemeType {
     lex_NONE = 0,
